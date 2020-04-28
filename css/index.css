@@ -1,0 +1,84 @@
+body{
+  background-color: black;
+}
+
+
+.main{
+  width: 60%;
+  min-width: 195px;
+  height: auto;
+  margin: auto;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 37px;
+  box-shadow: 0 0 20px white;
+}
+@media screen and (max-width: 555px){
+  .main{
+    width: 95%
+  }
+}
+
+
+
+
+.header{
+  margin: 10px 10px 20px 10px;
+}
+.header h1{
+  font-size: 69px;
+  font-family: 'NTR',sans-serif;
+  text-shadow: 0 0 5px white;
+  margin: 10px 10px 0 10px;
+}
+.header p{
+  margin-top: 0;
+}
+
+hr{
+  width: 60%
+}
+.links{
+  margin: auto;
+}
+.links ul{
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  display: inline;
+}
+
+a{
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+a:hover{
+   transform: scale(1.2);
+}
+
+
+img{
+  margin: 25px auto;
+  width: 144px;
+  height: auto;
+  animation-name: paradox;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+@keyframes paradox {
+  0% {transform: scale(1);}
+  25% {transform: scale(1.2);}
+  55% {transform: scale(1);}
+  75% {transform: scale(0.85);}
+  100% {transform: scale(1);}
+}

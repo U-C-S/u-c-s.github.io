@@ -4,7 +4,7 @@ body{
 
 
 .main{
-  width: 60%;
+  width: 50%;
   min-width: 195px;
   height: auto;
   margin: auto;
@@ -14,14 +14,17 @@ body{
   border: 3px solid white;
   border-radius: 37px;
   box-shadow: 0 0 20px white;
+  transition: all 0.2s ease-in-out;
 }
-@media screen and (max-width: 555px){
+@media screen and (max-width: 650px){
   .main{
     width: 95%
   }
 }
-
-
+.main:hover{
+  border: 3px solid crimson;
+  box-shadow: 0 0 20px crimson;
+}
 
 
 .header{
@@ -40,32 +43,37 @@ body{
 hr{
   width: 60%
 }
+
+
 .links{
   margin: auto;
 }
-.links ul{
+#link-icon ul{
   padding: 0;
   list-style-type: none;
-  text-align: center;
-  display: inline;
+}
+#link-icon li{
+  display: inline-block;
 }
 
 a{
   display: inline-block;
-  padding: 15px;
+  padding: 15px 30px;
   text-decoration: none;
   color: white;
-  font-size: 22px;
+  font-size: 40px;
   margin: 10px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 a:hover{
    transform: scale(1.2);
+   color: crimson;
 }
 
 
+
 img{
-  margin: 25px auto;
+  margin: 25px auto 35px;
   width: 144px;
   height: auto;
   animation-name: paradox;

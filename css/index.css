@@ -11,17 +11,17 @@ body{
   border-radius: 45px;
   color: white;
   text-align: center;
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 40px white;
   transition: all 0.2s ease-in-out;
 }
-@media screen and (max-width: 650px){
+@media screen and (max-width: 666px){
   .main{
-    width: 96%
+    width: 97%
   }
 }
 .main:hover{
   border: 4px solid crimson;
-  box-shadow: 0 0 20px crimson;
+  box-shadow: 0 0 60px crimson;
 }
 
 
@@ -52,27 +52,26 @@ hr{
 }
 #link-icon li{
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 15px;
 }
 
 a{
   display: inline-block;
-  padding: 15px 30px;
+  padding: 15px 25px;
   text-decoration: none;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   transition: all 0.2s ease-in-out;
 }
 a:hover{
-   transform: scale(1.2);
+   transform: scale(1.15);
    color: crimson;
 }
 
 
-
-img{
-  margin: 20px auto 35px;
-  width: 144px;
+.para-img{
+  margin: 20px auto 30px;
+  width: 120px;
   height: auto;
   animation: paradox 3s linear infinite;
 }

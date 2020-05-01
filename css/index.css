@@ -59,6 +59,7 @@ a{
   display: inline-block;
   padding: 15px 25px;
   text-decoration: none;
+  outline: none;
   color: white;
   font-size: 35px;
   transition: all 0.2s ease-in-out;

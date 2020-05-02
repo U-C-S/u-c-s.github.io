@@ -5,7 +5,7 @@ body{
 
 .main{
   width: 55%;
-  min-width: 195px;
+  min-width: 240px;
   margin: auto;
   border: 4px solid white;
   border-radius: 45px;
@@ -14,14 +14,15 @@ body{
   box-shadow: 0 0 40px white;
   transition: all 0.2s ease-in-out;
 }
+.main:hover{
+  border: 4px solid crimson;
+  box-shadow: 0 0 60px crimson;
+}
+
 @media screen and (max-width: 666px){
   .main{
     width: 97%
   }
-}
-.main:hover{
-  border: 4px solid crimson;
-  box-shadow: 0 0 60px crimson;
 }
 
 
@@ -32,8 +33,20 @@ body{
   font-size: 69px;
   font-family: 'NTR',sans-serif;
   text-shadow: 0 0 5px white;
-  margin: 10px 10px 0 10px;
+  margin: 20px 20px 10px;
+  user-select: none;
+  -ms-user-select: none;
+  animation: head-lights 15s linear infinite;
 }
+
+@keyframes head-lights {
+  0%   {color: white;}
+  25%  {color: crimson; text-shadow: 0 0 5px crimson;}
+  50%  {color: crimson; text-shadow: 0 0 11px crimson;}
+  75%  {color: crimson; text-shadow: 0 0 5px crimson;}
+  100% {color: white;}
+}
+
 .header p{
   margin-top: 0;
 }
@@ -65,7 +78,7 @@ a{
   transition: all 0.2s ease-in-out;
 }
 a:hover{
-   transform: scale(1.15);
+   transform: scale(1.2);
    color: crimson;
 }
 
@@ -74,14 +87,4 @@ a:hover{
   margin: 20px auto 30px;
   width: 120px;
   height: auto;
-  animation: paradox 3s linear infinite;
-}
-
-
-@keyframes paradox {
-  0% {transform: scale(1);}
-  25% {transform: scale(1.1);}
-  50% {transform: scale(1);}
-  75% {transform: scale(0.9);}
-  100% {transform: scale(1);}
 }

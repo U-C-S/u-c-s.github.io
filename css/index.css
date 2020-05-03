@@ -2,22 +2,24 @@ body, html{
   background-color: black;
   scroll-behavior: smooth;
 }
+/* colors: #39ff14 , #E92559 */
 
 
 .main-square{
   width: 55%;
+  height: auto;
   min-width: 240px;
-  margin: auto auto 170px;
+  margin: auto auto 180px;
   border: 4px solid white;
-  border-radius: 45px;
+  border-radius: 55px;
   color: white;
   text-align: center;
   box-shadow: 0 0 40px white;
   transition: all 0.3s ease-in-out;
 }
 .main-square:hover{
-  border: 4px solid crimson;
-  box-shadow: 0 0 60px crimson;
+  border: 4px solid #39ff14;
+  box-shadow: 0 0 60px #39ff14;
 }
 
 @media screen and (max-width: 666px){
@@ -32,19 +34,22 @@ body, html{
 }
 .title-ucs h1{
   font-size: 69px;
-  font-family: 'NTR',sans-serif;
+  font-family: 'NTR',monospace;
   text-shadow: 0 0 5px white;
   margin: 20px 20px 10px;
   user-select: none;
   -ms-user-select: none;
   animation: head-lights 15s linear infinite;
 }
+.title-ucs p{
+   font-family: monospace;
+}
 
 @keyframes head-lights {
   0%   {color: white;}
-  15%  {color: crimson; text-shadow: 0 0 5px crimson;}
-  50%  {color: crimson; text-shadow: 0 0 15px crimson;}
-  85%  {color: crimson; text-shadow: 0 0 5px crimson;}
+  15%  {color: #39ff14; text-shadow: 0 0 5px #39ff14;}
+  50%  {color: #39ff14; text-shadow: 0 0 15px #39ff14;}
+  85%  {color: #39ff14; text-shadow: 0 0 5px #39ff14;}
   100% {color: white;}
 }
 
@@ -80,7 +85,7 @@ hr{
 }
 .links a:hover{
    transform: scale(1.2);
-   color: crimson;
+   color: #E92559;
 }
 
 
@@ -94,23 +99,25 @@ hr{
 .godown{
   display: block;
   margin: 0 auto 0;
+  padding: 0;
   width: 22%;
-  min-width: 100px;
+  min-width: 108px;
   border: 4px solid white;
-  transform: translateY(26px);
+  transform: translateY(27px);
   background-color: black;
-  height: 44px;
+  height: 46px;
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
 .godown:hover{
-  border: 4px solid crimson;
-  width: 25%;
+  border: 4px solid #E92559;
+  box-shadow: 0 0 15px #E92559;
+  width: 27%;
 }
 
 #down-btn{
   height: 100%;
-  width: 99%;
+  width: 100%;
   outline: none;
   border: none;
   background-color: black;

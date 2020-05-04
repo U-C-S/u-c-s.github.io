@@ -136,6 +136,9 @@ hr{
   border-top: 10px solid white;
   color: white;
 }
+#content h1{
+  text-align: center;
+}
 
 
 /* FOOTER */

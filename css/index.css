@@ -1,7 +1,6 @@
 body, html{
   background-color: black;
   scroll-behavior: smooth;
-  height: 100%;
 }
 /* colors: #39ff14 , #ff1439 */
 
@@ -10,13 +9,13 @@ body, html{
   width: 55%;
   height: auto;
   min-width: 240px;
-  margin: auto auto 256px;
+  margin: 15px auto 256px;
   border-radius: 55px;
   color: white;
   text-align: center;
 
 }
-@media screen and (min-width: 666px){
+@media screen and (min-width: 600px){
   .main-square{
     box-shadow: 0 0 40px white;
     transition: all 0.3s ease-in-out;
@@ -28,7 +27,7 @@ body, html{
   }
 }
 
-@media screen and (max-width: 666px){
+@media screen and (max-width: 600px){
   .main-square{
     width: 97%;
     border: 4px solid #39ff14;
@@ -36,6 +35,32 @@ body, html{
   }
 }
 
+/*----------------------------------------------*/
+
+.something-special{
+  width: 20px;
+  height: 20px;
+  float: right;
+  background-color: black;
+  text-align: center;
+}
+@media screen and (max-width: 601px){
+  .something-special{
+    float: none;
+    text-align: center;
+  }
+
+}
+.egg-btn{
+  font-size: 16px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.egg-btn:hover{
+  color: #ff1439;
+}
+
+/*----------------------------------------------*/
 
 .title-ucs{
   margin: 10px 10px 20px 10px;
@@ -47,13 +72,13 @@ body, html{
   margin: 20px 20px 10px;
   user-select: none;
   -ms-user-select: none;
-  animation: head-lights 15s linear infinite;
+  animation: head-light 16s linear infinite;
 }
 .title-ucs p{
    font-family: monospace;
 }
 
-@keyframes head-lights {
+@keyframes head-light {
   0%   {color: white;}
   15%  {color: #39ff14; text-shadow: 0 0 5px #39ff14;}
   50%  {color: #39ff14; text-shadow: 0 0 15px #39ff14;}
@@ -117,14 +142,14 @@ hr{
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-@media screen and (min-width: 666px){
+@media screen and (min-width: 600px){
   .godown:hover{
     border: 4px solid #ff1439;
     box-shadow: 0 0 15px #ff1439;
     width: 27%;
   }
 }
-@media screen and (max-width: 666px){
+@media screen and (max-width: 600px){
   .godown{
     border: 4px solid #ff1439;
   }
@@ -142,8 +167,9 @@ hr{
 }
 
 
-
+/*----------------------------------------------*/
 /* DIV 2 */
+
 #content{
   margin-bottom: 600px;
   width: 100%;
@@ -169,16 +195,12 @@ hr{
   outline: none;
   text-align: center;
   font-family: monospace;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .nav-btn:hover{
-  transform: scale(1.07);
   background-color: #ff1439;
   cursor: pointer;
 }
-
-
-
 
 
 
@@ -189,7 +211,9 @@ hr{
 
 
 
+/*----------------------------------------------*/
 /* FOOTER */
+
 .footer{
   border-top: 2px solid white;
   background-color: black;
@@ -208,12 +232,12 @@ hr{
   opacity: 0.45;
   transition: 0.3s ease-in-out;
 }
-@media screen and (min-width: 666px){
+@media screen and (min-width: 600px){
   .LICENSE-content:hover{
      opacity: 1;
   }
 }
-@media screen and (max-width: 666px){
+@media screen and (max-width: 600px){
   .LICENSE-content{
     opacity: 1;
   }

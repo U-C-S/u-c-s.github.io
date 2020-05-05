@@ -1,8 +1,9 @@
 body, html{
   background-color: black;
   scroll-behavior: smooth;
+  height: 100%;
 }
-/* colors: #39ff14 , #E92559 */
+/* colors: #39ff14 , #ff1439 */
 
 
 .main-square{
@@ -10,21 +11,28 @@ body, html{
   height: auto;
   min-width: 240px;
   margin: auto auto 256px;
-  border: 4px solid white;
   border-radius: 55px;
   color: white;
   text-align: center;
-  box-shadow: 0 0 40px white;
-  transition: all 0.3s ease-in-out;
+
 }
-.main-square:hover{
-  border: 4px solid #39ff14;
-  box-shadow: 0 0 60px #39ff14;
+@media screen and (min-width: 666px){
+  .main-square{
+    box-shadow: 0 0 40px white;
+    transition: all 0.3s ease-in-out;
+    border: 4px solid white;
+  }
+  .main-square:hover{
+    border: 4px solid #39ff14;
+    box-shadow: 0 0 60px #39ff14;
+  }
 }
 
 @media screen and (max-width: 666px){
   .main-square{
-    width: 97%
+    width: 97%;
+    border: 4px solid #39ff14;
+    box-shadow: 0 0 60px #39ff14;
   }
 }
 
@@ -85,7 +93,7 @@ hr{
 }
 .links a:hover{
    transform: scale(1.2);
-   color: #E92559;
+   color: #ff1439;
 }
 
 
@@ -109,10 +117,17 @@ hr{
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-.godown:hover{
-  border: 4px solid #E92559;
-  box-shadow: 0 0 15px #E92559;
-  width: 27%;
+@media screen and (min-width: 666px){
+  .godown:hover{
+    border: 4px solid #ff1439;
+    box-shadow: 0 0 15px #ff1439;
+    width: 27%;
+  }
+}
+@media screen and (max-width: 666px){
+  .godown{
+    border: 4px solid #ff1439;
+  }
 }
 
 #down-btn{
@@ -136,9 +151,42 @@ hr{
   border-top: 10px solid white;
   color: white;
 }
+
+.c-row{
+  margin: 5px auto 10px;
+  padding: 10px 0;
+  height: 40px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+.nav-btn{
+  float: left;
+  width: 23%;
+  height: 40px;
+  border: 2px solid white;
+  margin: 0 1% 10px 1%;
+  outline: none;
+  text-align: center;
+  font-family: monospace;
+  transition: all 0.3s ease-in-out;
+}
+.nav-btn:hover{
+  transform: scale(1.07);
+  background-color: #ff1439;
+  cursor: pointer;
+}
+
+
+
+
+
+
 #content h1{
   text-align: center;
 }
+
+
 
 
 /* FOOTER */
@@ -153,12 +201,25 @@ hr{
   border: 2px solid white;
   padding: 1px;
   width: 108px;
+}
+.LICENSE-content{
+  width: auto;
+  height: auto;
+  opacity: 0.45;
   transition: 0.3s ease-in-out;
-  opacity: 0.36;
 }
-.LICENSE:hover{
-  opacity: 1;
+@media screen and (min-width: 666px){
+  .LICENSE-content:hover{
+     opacity: 1;
+  }
 }
+@media screen and (max-width: 666px){
+  .LICENSE-content{
+    opacity: 1;
+  }
+}
+
+
 .LICENSE a{
   text-decoration: none;
 }

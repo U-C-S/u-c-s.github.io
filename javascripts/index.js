@@ -5,7 +5,6 @@ console.log("Credits: Font-Awesome v5.13.0");
 
 //The botty Function
 function BOTTy() {
-  if (screen.width < 600) { alert('I HATE MOBILES'); }
   var name = prompt("Hey, What's your name? \nDon't type nothing");
    var letters = name.length;
    var notnum = isNaN(name);

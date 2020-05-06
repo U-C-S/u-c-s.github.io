@@ -17,5 +17,5 @@ function BOTTy() {
 
 
 
- console.log("I'm DEATH_BOTTy, v1.3 created by @The-UCS-Variable")
+ console.log("I'm The BOcT, v1.1 created by @The-UCS-Variable")
 }

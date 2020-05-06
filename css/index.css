@@ -38,25 +38,43 @@ body, html{
 /*----------------------------------------------*/
 
 .something-special{
-  width: 20px;
+  width: 25px;
   height: 20px;
   float: right;
+  margin-right: 5px;
+  padding: 6px;
   background-color: black;
   text-align: center;
+}
+.something-special:hover{
+  animation: shake 0.7s linear infinite
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px); }
+  10% { transform: translate(-1px, -2px); }
+  20% { transform: translate(-3px, 0px); }
+  30% { transform: translate(3px, 2px); }
+  40% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 2px); }
+  60% { transform: translate(-3px, 1px); }
+  70% { transform: translate(3px, 1px); }
+  80% { transform: translate(-1px, -1px); }
+  90% { transform: translate(1px, 2px); }
+  100% { transform: translate(1px, -2px); }
 }
 @media screen and (max-width: 601px){
   .something-special{
     float: none;
     text-align: center;
   }
-
 }
-.egg-btn{
-  font-size: 16px;
+
+.bot-btn{
+  font-size: 20px;
   color: white;
   transition: all 0.3s ease-in-out;
 }
-.egg-btn:hover{
+.bot-btn:hover{
   color: #ff1439;
 }
 

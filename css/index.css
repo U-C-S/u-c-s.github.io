@@ -153,10 +153,12 @@ hr{
   padding: 10px 0;
   height: 40px;
   background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .nav-btn{
-  float: left;
-  width: 46%;
+  width: 36%;
   height: 40px;
   border: 2px solid white;
   margin: 0 2% 10px 2%;

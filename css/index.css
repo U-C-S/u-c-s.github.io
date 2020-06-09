@@ -4,7 +4,6 @@ body, html{
 }
 /* colors: #39ff14 , #ff1439 */
 
-
 .main-square{
   width: 55%;
   height: auto;
@@ -13,26 +12,6 @@ body, html{
   border-radius: 55px;
   color: white;
   text-align: center;
-
-}
-@media screen and (min-width: 600px){
-  .main-square{
-    box-shadow: 0 0 40px white;
-    transition: all 0.3s ease-in-out;
-    border: 4px solid white;
-  }
-  .main-square:hover{
-    border: 4px solid #39ff14;
-    box-shadow: 0 0 60px #39ff14;
-  }
-}
-
-@media screen and (max-width: 600px){
-  .main-square{
-    width: 97%;
-    border: 4px solid #39ff14;
-    box-shadow: 0 0 60px #39ff14;
-  }
 }
 
 /*----------------------------------------------*/
@@ -53,11 +32,9 @@ body, html{
 }
 
 @keyframes head-light {
-  0%   {color: white;}
-  15%  {color: #39ff14; text-shadow: 0 0 5px #39ff14;}
-  50%  {color: #39ff14; text-shadow: 0 0 15px #39ff14;}
-  85%  {color: #39ff14; text-shadow: 0 0 5px #39ff14;}
-  100% {color: white;}
+  0%, 100% {color: white;}
+  15%, 85% {color: #39ff14; text-shadow: 0 0 5px #39ff14;}
+  50% {color: #39ff14; text-shadow: 0 0 15px #39ff14;}
 }
 
 .title-ucs p{
@@ -67,7 +44,6 @@ body, html{
 hr{
   width: 60%
 }
-
 
 .links{
   margin: auto;
@@ -95,13 +71,11 @@ hr{
    color: #ff1439;
 }
 
-
 .para-img{
   margin: 20px auto 10px;
   width: 120px;
   height: auto;
 }
-
 
 .godown{
   display: block;
@@ -116,18 +90,6 @@ hr{
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-@media screen and (min-width: 600px){
-  .godown:hover{
-    border: 4px solid #ff1439;
-    box-shadow: 0 0 15px #ff1439;
-    width: 27%;
-  }
-}
-@media screen and (max-width: 600px){
-  .godown{
-    border: 4px solid #ff1439;
-  }
-}
 
 #down-btn{
   height: 100%;
@@ -139,7 +101,6 @@ hr{
   cursor: pointer;
   font-family: monospace;
 }
-
 
 /*----------------------------------------------*/
 /* DIV 2 */
@@ -179,3 +140,30 @@ hr{
 }
 
 /*----------------------------------------------*/
+@media screen and (min-width: 600px){
+  .main-square{
+    box-shadow: 0 0 40px white;
+    transition: all 0.3s ease-in-out;
+    border: 4px solid white;
+  }
+  .main-square:hover{
+    border: 4px solid #39ff14;
+    box-shadow: 0 0 60px #39ff14;
+  }
+  .godown:hover{
+    border: 4px solid #ff1439;
+    box-shadow: 0 0 15px #ff1439;
+    width: 27%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .main-square{
+    width: 97%;
+    border: 4px solid #39ff14;
+    box-shadow: 0 0 60px #39ff14;
+  }
+  .godown{
+    border: 4px solid #ff1439;
+  }
+}

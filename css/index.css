@@ -104,7 +104,6 @@ hr{
 
 /*----------------------------------------------*/
 /* DIV 2 */
-
 #content{
   width: 100%;
 }
@@ -118,7 +117,7 @@ hr{
   flex-wrap: wrap;
   justify-content: center;
 }
-.nav-btn{
+#navbtn{
   width: 36%;
   height: 40px;
   border: 2px solid white;
@@ -128,7 +127,7 @@ hr{
   font-family: monospace;
   transition: all 0.2s ease-in-out;
 }
-.nav-btn:hover{
+#navbtn:hover{
   background-color: #ff1439;
   cursor: pointer;
 }

@@ -7,7 +7,7 @@ body, html{
 .main-square{
   width: 55%;
   height: auto;
-  min-width: 240px;
+  min-width: 320px;
   margin: 15px auto 256px;
   border-radius: 55px;
   color: white;
@@ -46,29 +46,42 @@ hr{
 }
 
 .links{
-  margin: auto;
-}
-#link-icon ul{
-  padding: 0;
-  list-style-type: none;
-}
-#link-icon li{
-  display: inline-block;
-  margin: 0 15px;
+  box-sizing: border-box;
+  width: 70%;
+  margin: 10px auto 25px;
 }
 
-.links a{
-  display: inline-block;
-  padding: 15px 25px;
-  text-decoration: none;
-  outline: none;
-  color: white;
-  font-size: 35px;
+.links ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.links li{
+  width: 40px;
+  height: 40px;
+  margin: 5px 15px;
   transition: all 0.2s ease-in-out;
 }
-.links a:hover{
-   transform: scale(1.2);
-   color: #ff1439;
+.links a{
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  outline: none;
+}
+.links svg{
+  fill: white;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.links svg:hover{
+  fill: red;
+}
+.links li:hover{
+  transform: scale(1.2);
 }
 
 .para-img{
@@ -166,3 +179,38 @@ hr{
     border: 4px solid #ff1439;
   }
 }
+
+
+/*
+
+.links{
+  margin: auto;
+}
+#link-icon ul{
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+#link-icon li{
+  background-color: white;
+  margin: 0 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.links a{
+  display: inline-block;
+  padding: 15px 25px;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  font-size: 35px;
+  transition: all 0.2s ease-in-out;
+}
+.links a:hover{
+   transform: scale(1.2);
+   color: #ff1439;
+}
+
+*/

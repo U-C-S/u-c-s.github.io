@@ -1,4 +1,4 @@
-body, html{
+body{
   background-color: black;
   scroll-behavior: smooth;
 }
@@ -20,7 +20,7 @@ body, html{
 }
 .title-ucs h1{
   font-size: 69px;
-  font-family: 'NTR',monospace;
+  font-family: 'Kalam', cursive;
   text-shadow: 0 0 5px white;
   margin: 20px 20px 10px;
   user-select: none;
@@ -131,7 +131,7 @@ hr{
   justify-content: center;
 }
 #navbtn{
-  width: 36%;
+  width: 30%;
   height: 40px;
   border: 2px solid white;
   margin: 0 2% 10px 2%;
@@ -179,38 +179,3 @@ hr{
     border: 4px solid #ff1439;
   }
 }
-
-
-/*
-
-.links{
-  margin: auto;
-}
-#link-icon ul{
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-evenly;
-}
-#link-icon li{
-  background-color: white;
-  margin: 0 15px;
-  width: 50px;
-  height: 50px;
-}
-
-.links a{
-  display: inline-block;
-  padding: 15px 25px;
-  text-decoration: none;
-  outline: none;
-  color: white;
-  font-size: 35px;
-  transition: all 0.2s ease-in-out;
-}
-.links a:hover{
-   transform: scale(1.2);
-   color: #ff1439;
-}
-
-*/

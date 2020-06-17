@@ -1,13 +1,11 @@
 /* colors: #39ff14 , #ff1439 , hsl(51, 100%, 59%) */
-
-
 body, html{
   background-color: black;
   scroll-behavior: smooth;
 }
 
 .main-square{
-  width: 55%;
+  width: 50%;
   min-width: 320px;
   margin: 15px auto 256px;
   border-radius: 55px;
@@ -46,7 +44,7 @@ hr{
 .links{
   box-sizing: border-box;
   width: 70%;
-  margin: 10px auto 25px;
+  margin: 15px auto 30px;
 }
 
 .links ul{
@@ -84,20 +82,21 @@ hr{
 
 .para-img{
   margin: 20px auto 10px;
+}
+.para-img img{
   width: 120px;
-  height: auto;
 }
 
 .godown{
   display: block;
-  margin: 0 auto 0;
+  margin: 0 auto;
   padding: 0;
   width: 22%;
   min-width: 108px;
+  height: 46px;
   border: 4px solid white;
   transform: translateY(27px);
   background-color: black;
-  height: 46px;
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
@@ -119,7 +118,6 @@ hr{
 #content{
   width: 100%;
 }
-
 .c-row{
   margin: 5px auto;
   padding: 10px 0;
@@ -143,14 +141,13 @@ hr{
   cursor: pointer;
   color: white;
 }
-
 #content p{
   color: white;
   text-align: center;
   font-family: monospace;
 }
 
-/*----media queries-----------------------------------------*/
+/*----media rules-----------------------------------------*/
 @media screen and (min-width: 600px){
   .main-square{
     box-shadow: 0 0 30px white;

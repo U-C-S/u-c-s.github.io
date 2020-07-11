@@ -1,4 +1,4 @@
-//current modification version: 1.3.60
+//current modification version: 1.3.7
 
 document.getElementById("navbtn").addEventListener('click', ()=>{
     document.location = "https://the-ucs-variable.github.io/The-BOcT/"});

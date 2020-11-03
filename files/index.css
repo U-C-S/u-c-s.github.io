@@ -4,10 +4,16 @@ body, html{
   scroll-behavior: smooth;
 }
 
-.main-square{
-  width: 50%;
+.Header{
   min-width: 320px;
-  margin: 15px auto 276px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-square{
+  width: 54%;
   border-radius: 55px;
   color: white;
   text-align: center;
@@ -16,7 +22,7 @@ body, html{
 
 /*----------------------------------------------*/
 .title-ucs{
-  margin: 10px 10px 20px 10px;
+  margin: 20px 10px 20px 10px;
 }
 .title-ucs h1{
   font-size: 70px;
@@ -145,39 +151,4 @@ hr{
   color: white;
   text-align: center;
   font-family: monospace;
-}
-
-/*----media rules-----------------------------------------*/
-@media screen and (min-width: 600px){
-  .main-square{
-    box-shadow: 0 0 30px white;
-    transition: all 0.3s ease-in-out;
-    border: 4px solid white;
-  }
-  .main-square:hover{
-    border: 4px solid #ff1439;
-    box-shadow: 0 0 60px #ff1439;
-  }
-  .godown:hover{
-    border: 4px solid hsl(51, 100%, 59%);
-    box-shadow: 0 0 15px hsl(51, 100%, 59%);
-    width: 27%;
-  }
-}
-@media screen and (max-width: 600px){
-  .main-square{
-    width: 97%;
-    border: 4px solid #ff1439;
-    box-shadow: 0 0 40px #ff1439;
-  }
-  .title-ucs h1{
-    font-size: 60px;
-  }
-  .godown{
-    border: 4px solid hsl(51, 100%, 59%);
-  }
-  .links li{
-    width: 30px;
-    height: 30px;
-  }
 }

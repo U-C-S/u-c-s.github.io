@@ -1,10 +1,7 @@
 /* colors: #39ff14 , #ff1439 , hsl(51, 100%, 59%) */
-body, html{
+body {
   background-color: black;
-  scroll-behavior: smooth;
-}
-
-.Header{
+  margin: 0;
   min-width: 320px;
   height: 100vh;
   display: flex;
@@ -12,143 +9,126 @@ body, html{
   justify-content: center;
 }
 
-.main-square{
-  width: 54%;
-  border-radius: 55px;
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/kalam/v11/YA9dr0Wd4kDdMthROCc.woff2) format('woff2');
+}
+
+.main-square {
+  width: 60%;
+  max-width: 640px;
+  border-radius: 37px;
   color: white;
   text-align: center;
 }
-/*hover available in media*/
-
 /*----------------------------------------------*/
-.title-ucs{
-  margin: 20px 10px 20px 10px;
+.title-ucs {
+  margin: 20px;
 }
-.title-ucs h1{
+
+.title-ucs h1 {
   font-size: 70px;
-  font-family: 'Kalam', cursive;
-  margin: 20px 20px 10px;
+  font-family: "Kalam", cursive;
+  margin: 0;
   user-select: none;
-  -ms-user-select: none;
-  animation: head-light 16s linear infinite;
+  animation: head-light 16s ease-in-out infinite;
+  height: 100px;
 }
 @keyframes head-light {
-  0%, 100% {color: white;}
-  20%, 80% {color: #ff1439; text-shadow: 0 0 5px #ff1439;}
-  50% {color: #ff1439; text-shadow: 0 0 15px #ff1439;}
+  0%, 100% {
+    color: white;
+  }
+  25%, 75% {
+    color: #ff1439;
+    text-shadow: 0 0 10px #ff1439;
+  }
+  50% {
+    color: #ff1439;
+    text-shadow: 0 0 0px #ff1439;
+  }
 }
 
-.title-ucs p{
+.title-ucs p {
   font-family: monospace;
-  margin-top: 0;
+  margin: 0;
 }
 
-hr{
-  width: 60%
+hr {
+  width: 60%;
 }
 
-.links{
+.links {
   box-sizing: border-box;
   width: 70%;
   margin: 15px auto 30px;
 }
 
-.links ul{
+.links ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
 }
-.links li{
+.links li {
   width: 40px;
   height: 40px;
   margin: 5px 15px;
   transition: all 0.2s ease-in-out;
 }
-.links a{
+.links a {
   width: 100%;
   height: 100%;
   text-decoration: none;
   outline: none;
 }
-.links svg{
+.links svg {
   fill: white;
   width: 100%;
   height: 100%;
   transition: all 0.2s ease-in-out;
 }
 
-.links svg:hover{
+.links svg:hover {
   fill: #ff1439;
 }
-.links li:hover{
+.links li:hover {
   transform: scale(1.2);
 }
 
-.para-img{
-  margin: 20px auto 10px;
+.para-img {
+  margin: auto;
 }
-.para-img img{
-  width: 120px;
-}
-
-.godown{
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: 22%;
-  min-width: 108px;
-  height: 46px;
-  border: 4px solid white;
-  transform: translateY(27px);
-  background-color: black;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-}
-/*hover available in media*/
-
-#down-btn{
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  font-family: monospace;
+.para-img img {
+  width: 240px;
 }
 
-/*----------------------------------------------*/
-/* DIV 2 */
-#content{
-  width: 100%;
+/*----media rules-----------------------------------------*/
+@media screen and (min-width: 600px) {
+  .main-square {
+    box-shadow: 0 0 30px white;
+    transition: all 0.3s ease-in-out;
+    border: 4px solid white;
+  }
+  .main-square:hover {
+    border: 4px solid #ff1439;
+    box-shadow: 0 0 60px #ff1439;
+  }
 }
-.c-row{
-  margin: 5px auto;
-  padding: 10px 0;
-  height: 40px;
-  background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#navbtn{
-  width: 110px;
-  height: 35px;
-  border: 2px solid white;
-  outline: none;
-  text-align: center;
-  font-family: monospace;
-  transition: all 0.2s ease-in-out;
-}
-#navbtn:hover{
-  background-color: #ff1439;
-  cursor: pointer;
-  color: white;
-}
-#content p{
-  color: white;
-  text-align: center;
-  font-family: monospace;
+@media screen and (max-width: 600px) {
+  .main-square {
+    width: 97%;
+    border: 4px solid #ff1439;
+    box-shadow: 0 0 40px #ff1439;
+  }
+  .title-ucs h1 {
+    font-size: 60px;
+  }
+  .links li {
+    width: 36px;
+    height: 36px;
+  }
 }

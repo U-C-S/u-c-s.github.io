@@ -1,6 +1,4 @@
 # UCS-Blog
-My Blog page....
+My simple WebCard....
 
 - https://u-c-s.github.io
-- Self-made
-- So far, No usage of dependencies. and will try to continue

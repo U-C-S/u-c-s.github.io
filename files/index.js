@@ -1,3 +1,5 @@
+console.log("version: 1.5.2");
+
 let SVGs = new Map([
   [
     "svg1",
@@ -16,5 +18,3 @@ let SVGs = new Map([
 for (let [id, svg] of SVGs) {
   document.getElementById(id).setAttribute("d", svg);
 }
-
-//current blog version: 1.5.1

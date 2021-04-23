@@ -2,18 +2,31 @@ body {
   background-color: black;
   margin: 0;
   min-width: 320px;
+  padding: 10px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+hr {
+  width: 70%;
+}
+
 main {
-  border: 4px solid white;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
-  grid-template-rows: 100px 140px 30px 200px 100px;
+  grid-template-rows: 80px 128px 140px 200px 100px;
+  column-gap: 20px;
   grid-template-areas:
     "d h a"
     "d l a"
@@ -28,19 +41,38 @@ main {
 }
 
 .OneCard:hover {
-  border: 2px solid #ff1439;
-  box-shadow: 0 0 60px #ff1439;
+  border: 2px solid #ff1439 !important;
+  box-shadow: 0 0 20px #ff1439;
 }
 
+/*----main child ---------------*/
 header {
   grid-area: h;
   border: 2px solid white;
-  border-top: 0;
 }
 
 nav {
+  box-sizing: content-box;
+
   grid-area: l;
   margin: 20px 0 0;
   border: 2px solid white;
-  min-width: 300px;
+}
+
+#about {
+  grid-area: a;
+  border: 2px solid white;
+}
+
+/*nav links div--------------------*/
+#other_pages {
+  margin-top: 20px;
+  display: flex;
+}
+
+#other_pages button {
+  width: 100%;
+  height: 34px;
+  font-size: 20px;
+  border: 1px solid white;
 }

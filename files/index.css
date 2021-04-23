@@ -27,27 +27,12 @@
 }
 /*----------------------------------------------*/
 header h1 {
-  font-size: 60px;
+  font-size: 300%;
   font-family: "Kalam", cursive;
   text-align: center;
   margin: 0;
   user-select: none;
-  animation: Head-light 16s ease-in-out infinite;
-}
-@keyframes Head-light {
-  0%,
-  100% {
-    color: white;
-  }
-  20%,
-  80% {
-    color: #ff1439;
-    text-shadow: 0 0 10px #ff1439;
-  }
-  50% {
-    color: #ff1439;
-    text-shadow: 0 0 0px #ff1439;
-  }
+  color: #ff1439;
 }
 
 .title-ucs p {
@@ -67,6 +52,7 @@ nav li {
   height: 40px;
   margin: 5px 15px;
   transition: all 0.2s ease-in-out;
+  will-change: transform;
 }
 nav a {
   width: 100%;
@@ -85,7 +71,7 @@ nav svg:hover {
   fill: #ff1439;
 }
 nav li:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .para-img {

@@ -1,19 +1,9 @@
 /* colors: #39ff14 , #ff1439 , hsl(51, 100%, 59%) */
-body {
-  background-color: black;
-  margin: 0;
-  min-width: 320px;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @font-face {
-  font-family: 'Kalam';
+  font-family: "Kalam";
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/kalam/v11/YA9dr0Wd4kDdMthROCc.woff2) format('woff2');
+  src: url(https://fonts.gstatic.com/s/kalam/v11/YA9dr0Wd4kDdMthROCc.woff2) format("woff2");
 }
 
 .main-square {
@@ -27,23 +17,30 @@ body {
   animation: Rounding 8s linear forwards;
 }
 
-@keyframes Rounding{
-  from {border-radius: 0px;} to {border-radius: 37px;}
+@keyframes Rounding {
+  from {
+    border-radius: 0px;
+  }
+  to {
+    border-radius: 37px;
+  }
 }
 /*----------------------------------------------*/
-.title-ucs h1 {
-  font-size: 70px;
+header h1 {
+  font-size: 60px;
   font-family: "Kalam", cursive;
+  text-align: center;
   margin: 0;
   user-select: none;
   animation: Head-light 16s ease-in-out infinite;
-  height: 100px;
 }
 @keyframes Head-light {
-  0%, 100% {
+  0%,
+  100% {
     color: white;
   }
-  20%, 80% {
+  20%,
+  80% {
     color: #ff1439;
     text-shadow: 0 0 10px #ff1439;
   }
@@ -58,46 +55,45 @@ body {
   margin: 0;
 }
 
-hr { width: 70%; }
-
-.links {
-  box-sizing: border-box;
-  width: 70%;
-  min-width: 300px;
-  margin: 20px auto;
-}
-
-.links ul {
+nav ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
 }
-.links li {
+nav li {
   width: 40px;
   height: 40px;
   margin: 5px 15px;
   transition: all 0.2s ease-in-out;
 }
-.links a {
+nav a {
   width: 100%;
   height: 100%;
   text-decoration: none;
   outline: none;
 }
-.links svg {
+nav svg {
   fill: white;
   width: 100%;
   height: 100%;
   transition: all 0.2s linear;
 }
 
-.links svg:hover { fill: #ff1439; }
-.links li:hover { transform: scale(1.2); }
+nav svg:hover {
+  fill: #ff1439;
+}
+nav li:hover {
+  transform: scale(1.2);
+}
 
-.para-img { margin: auto; }
-.para-img img { width: 240px; }
+.para-img {
+  margin: auto;
+}
+.para-img img {
+  width: 240px;
+}
 
 /*----media rules-----------------------------------------*/
 @media screen and (min-width: 600px) {
@@ -120,7 +116,7 @@ hr { width: 70%; }
   .title-ucs h1 {
     font-size: 60px;
   }
-  .links li {
+  nav li {
     width: 36px;
     height: 36px;
   }

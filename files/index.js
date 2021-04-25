@@ -1,4 +1,6 @@
 console.log("version: 1.5.3");
+/* colors: #39ff14 , #ff1439 , hsl(51, 100%, 59%) */
+
 new Map([
   [
     "svg1",

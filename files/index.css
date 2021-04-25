@@ -8,26 +8,6 @@
     U+2215, U+FEFF, U+FFFD;
 }
 
-.main-square {
-  box-sizing: border-box;
-  width: 60%;
-  max-width: 640px;
-  padding: 15px 15px 0;
-  color: white;
-  text-align: center;
-  transition: all 0.2s linear;
-  animation: Rounding 8s linear forwards;
-}
-
-@keyframes Rounding {
-  from {
-    border-radius: 0px;
-  }
-  to {
-    border-radius: 37px;
-  }
-}
-/*----------------------------------------------*/
 header h1 {
   font-size: 350%;
   font-family: "Quicksand", monospace;
@@ -35,11 +15,6 @@ header h1 {
   margin: 0;
   user-select: none;
   color: #ff1439;
-}
-
-.title-ucs p {
-  font-family: monospace;
-  margin: 0;
 }
 
 nav ul {
@@ -65,7 +40,6 @@ nav svg {
   fill: white;
   width: 100%;
   height: 100%;
-  will-change: transform;
   transition: fill 0.2s linear;
 }
 
@@ -75,13 +49,42 @@ nav svg:hover {
 }
 
 .para-img {
+  grid-area: i;
   margin: auto;
 }
 .para-img img {
-  width: 240px;
+  width: 150px;
 }
 
-/*----media rules-----------------------------------------*/
+/*
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.main-square {
+  box-sizing: border-box;
+  width: 60%;
+  max-width: 640px;
+  padding: 15px 15px 0;
+  color: white;
+  text-align: center;
+  transition: all 0.2s linear;
+  animation: Rounding 8s linear forwards;
+}
+
+@keyframes Rounding {
+  from {
+    border-radius: 0px;
+  }
+  to {
+    border-radius: 37px;
+  }
+}
+
 @media screen and (min-width: 600px) {
   .main-square {
     box-shadow: 0 0 30px white;
@@ -107,3 +110,4 @@ nav svg:hover {
     height: 36px;
   }
 }
+*/

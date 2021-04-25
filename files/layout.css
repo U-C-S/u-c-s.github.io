@@ -25,7 +25,8 @@ main {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
-  grid-template-rows: 80px 128px 140px 200px 100px;
+  grid-template-rows: 80px 80px 140px 200px 100px;
+  row-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
     "d h a"
@@ -37,42 +38,35 @@ main {
 }
 
 .OneCard {
+  border: 3px solid white;
   transition: all 0.2s linear;
 }
 
 .OneCard:hover {
-  border: 2px solid #ff1439 !important;
+  border-radius: 10px;
+  border: 3px solid #ff1439 !important;
   box-shadow: 0 0 20px #ff1439;
 }
 
 /*----main child ---------------*/
 header {
   grid-area: h;
-  border: 2px solid white;
 }
 
 nav {
-  box-sizing: content-box;
-
   grid-area: l;
-  margin: 20px 0 0;
-  border: 2px solid white;
+  display: flex;
+  align-items: center;
+}
+
+.social_media_links {
+  width: 100%;
 }
 
 #about {
   grid-area: a;
-  border: 2px solid white;
 }
 
-/*nav links div--------------------*/
-#other_pages {
-  margin-top: 20px;
-  display: flex;
-}
-
-#other_pages button {
-  width: 100%;
-  height: 34px;
-  font-size: 20px;
-  border: 1px solid white;
+#datame {
+  grid-area: d;
 }

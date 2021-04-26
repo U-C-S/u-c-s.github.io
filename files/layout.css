@@ -8,6 +8,18 @@ body {
   padding: 10px;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+hr {
+  width: 75%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,7 +28,7 @@ main {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
-  grid-template-rows: 80px 80px 140px 300px;
+  grid-template-rows: 120px 80px 140px 300px;
   row-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
@@ -40,6 +52,21 @@ main {
 /*----main child ---------------*/
 header {
   grid-area: h;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 340%;
+  font-family: "Quicksand", monospace;
+  margin: 0;
+  user-select: none;
+  color: var(--accentColor);
+}
+
+header p {
+  font-family: monospace;
+  font-size: 11px;
 }
 
 nav {
@@ -62,4 +89,9 @@ nav {
 
 #blog {
   grid-area: b;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  font-family: "Open Sans";
+  text-align: center;
 }

@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: hsl(0, 0%, 8%);
   margin: 0;
   padding: 10px;
   min-width: 320px;
@@ -54,6 +54,8 @@ footer {
 }
 
 .OneCard {
+  background-color: black;
+
   border-radius: 5px;
   border: 3px solid white;
   transition: all 0.2s linear;
@@ -109,4 +111,11 @@ nav {
   font-size: 14px;
   font-family: "Open Sans";
   text-align: center;
+}
+
+#blog a {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 5px;
 }

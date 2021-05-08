@@ -1,12 +1,17 @@
 {
   "private": true,
+  "devDependencies": {
+    "typescript": "^4.3.0-beta"
+  },
+  "scripts": {
+    "ts": "tsc",
+    "build": "tsc && zola build",
+    "serve": "concurrently --names TS,ZOLA \"tsc --outdir public/scripts --watch\" \"zola serve\""
+  },
   "prettier": {
     "printWidth": 140
   },
   "dependencies": {
-    "typescript": "^4.3.0-beta"
-  },
-  "scripts": {
-    "type": "tsc"
+    "concurrently": "^6.1.0"
   }
 }

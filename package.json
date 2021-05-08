@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "prettier": {
+    "printWidth": 140
+  },
+  "dependencies": {
+    "typescript": "^4.3.0-beta"
+  },
+  "scripts": {
+    "type": "tsc"
+  }
+}

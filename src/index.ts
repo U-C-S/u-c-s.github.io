@@ -5,15 +5,15 @@ fetch("svg-paths.json")
   .then((svg_paths) => {
     for (let id in svg_paths) {
       let draw = svg_paths[id];
-      document.getElementById(id).setAttribute("d", draw);
+      document.getElementById(id)!.setAttribute("d", draw);
     }
   });
 
-function OnOff(Id, spanId) {
-  document.getElementById(Id).onclick = function () {
+function OnOff(Id: string, spanId: string) {
+  document.getElementById(Id)!.onclick = function () {
     let x = document.getElementById(spanId);
-    if (x.innerHTML == "OFF") x.innerText = "ON";
-    else x.innerText = "OFF";
+    if (x!.innerHTML == "OFF") x!.innerText = "ON";
+    else x!.innerText = "OFF";
   };
 }
 

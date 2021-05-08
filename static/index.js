@@ -1,6 +1,6 @@
 console.log("version: 2.0.0-alpha");
 
-fetch("files/svg-paths.json")
+fetch("svg-paths.json")
   .then((res) => res.json())
   .then((svg_paths) => {
     for (let id in svg_paths) {

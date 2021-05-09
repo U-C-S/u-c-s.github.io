@@ -3,7 +3,7 @@ title = "It's Chanakya"
 description = "A Website about me, built by me!"
 default_language = "en"
 
-minify_html = true
+#minify_html = true
 compile_sass = true
 build_search_index = false
 

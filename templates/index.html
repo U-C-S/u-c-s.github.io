@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon.ico" />
-    <meta name="author" content="U-C-S" />
-    <meta name="description" content="What can I say, This is my website created by me." />
+    <meta name="author" content="{{ config.extra.author }}" />
+    <meta name="description" content="{{ config.extra.description }}" />
 
     <meta name="google-site-verification" content="qho6LUTU0hTe7r6Slj67fZhj2aTZ7MvQ4N-PQ2X_u0U" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
 
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="common.css" />
@@ -59,13 +59,25 @@
       </div>
 
       <section id="about" class="OneCard"></section>
-      <section id="datame" class="OneCard"></section>
-      <section id="blog" class="OneCard">
+      <section id="datame" class="OneCard">
         <p>Construction Work going on here. For the finished product, please visit in the near future.</p>
         <a href="https://github.com/U-C-S/u-c-s.github.io" rel="noreferrer" target="_blank">v2-alpha</a>
       </section>
-    </main>
 
-    <footer class="OneCard"></footer>
+      <footer id="blog" class="OneCard">
+        <div class="all_social_links">
+          <h3>All Social Links</h3>
+          <hr />
+          <a>GitHub</a>
+          <a href="">Instagram</a>
+          <a href="">Reddit</a>
+          <a>Facebook</a>
+          <a href="">Discord</a>
+          <a href="">Twitter</a>
+        </div>
+
+        <div class="footer-of-footer">Made with ♥ and Zola by Chanakya</div>
+      </footer>
+    </main>
   </body>
 </html>

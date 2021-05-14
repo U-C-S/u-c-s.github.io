@@ -1,6 +1,5 @@
-import RandomNumber from "./exports.js";
+import { OnOff } from "./exports.js";
 
-console.log(RandomNumber());
 console.log("version: 2.0.0-alpha");
 
 fetch("svg-paths.json")
@@ -11,14 +10,6 @@ fetch("svg-paths.json")
       document.getElementById(id)!.setAttribute("d", draw);
     }
   });
-
-function OnOff(Id: string, spanId: string) {
-  document.getElementById(Id)!.onclick = () => {
-    let x = document.getElementById(spanId);
-    if (x!.innerHTML == "OFF") x!.innerText = "ON";
-    else x!.innerText = "OFF";
-  };
-}
 
 OnOff("The-Pro-Button", "Pro-status");
 OnOff("The-Theme-Button", "Theme-status");

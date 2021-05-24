@@ -1,7 +1,8 @@
 {
+  "type": "module",
   "private": true,
   "scripts": {
-    "serve": "concurrently --names 'tsc,zola' \"tsc --outdir public/scripts --watch\" \"zola serve\"",
+    "serve": "concurrently --names 'tsc,zola' \"tsc --watch\" \"zola serve\"",
     "build": "tsc && zola build",
     "ts": "tsc"
   },

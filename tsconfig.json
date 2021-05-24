@@ -10,6 +10,6 @@
     "strict": true
   },
 
-  "include": ["src/typescript/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

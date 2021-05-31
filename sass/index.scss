@@ -7,8 +7,7 @@
 body {
   background-color: hsl(0, 0%, 8%);
   margin: 0;
-  padding: 10px;
-  min-width: 320px;
+  min-width: 372px;
 }
 
 hr {
@@ -17,10 +16,11 @@ hr {
 
 main {
   width: 100%;
-  height: clamp(500px, calc(100vh - 20px), 1000px);
+  padding: 10px;
+  height: clamp(500px, 100vh, 1000px);
   display: grid;
   grid-template-columns: 1fr minmax(180px, 1fr) 1fr;
-  grid-template-rows: 120px 80px minmax(140px, 1fr) minmax(240px, 1fr);
+  grid-template-rows: 120px 80px minmax(140px, 1fr) 256px;
   row-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
@@ -28,6 +28,17 @@ main {
     "d l a"
     "d i a"
     "b b a";
+}
+
+@media screen and (max-width: 888px) {
+  main {
+    display: grid;
+    grid-template-areas: "h" "l" "i" "d" "a" "b";
+    grid-template-rows: 120px 80px 140px minmax(250px, auto) minmax(250px, auto) 256px;
+    grid-template-columns: 1fr;
+    padding: 10px clamp(10px, 8%, 60px);
+    height: auto;
+  }
 }
 
 .OneCard {
@@ -160,12 +171,18 @@ nav {
 
 footer {
   grid-area: b;
-  padding: 10px;
+  padding: 10px 10px 30px;
   display: flex;
   flex-wrap: wrap;
 }
 
+.main-of-footer {
+  height: 100%;
+  width: 100%;
+}
+
 .all_social_links {
+  width: 140px;
   padding: 0px 10px;
   border: 1px solid white;
 
@@ -188,12 +205,11 @@ footer {
 }
 
 .footer-of-footer {
-  width: 100%;
-  padding-top: 5px;
-  display: block;
-  margin: 0;
+  margin: 0 auto;
+  position: relative;
+  top: 5px;
   color: rgb(150, 150, 150);
   font-family: "Open Sans";
   font-size: 12px;
-  text-align: center;
+  vertical-align: middle;
 }

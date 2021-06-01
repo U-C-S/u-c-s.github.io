@@ -21,6 +21,13 @@ a {
   text-decoration: none;
 }
 
+.highlight {
+  margin: 5px auto;
+  width: 75%;
+  height: 2px;
+  background-color: white;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }

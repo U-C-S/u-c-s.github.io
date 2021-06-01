@@ -6,8 +6,7 @@
   "scripts": {
     "serve": "concurrently --names 'zola,tsc' \"zola serve --port 3721\" \"tsc --watch\"",
     "zolaSer": "zola serve --port 3721",
-    "build": "tsc && zola build",
-    "ts": "tsc"
+    "build": "tsc && zola build"
   },
   "prettier": {
     "printWidth": 140,

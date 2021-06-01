@@ -10,6 +10,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accentColor: hsl(350, 100%, 57%); //slate red
+  --secColor: hsl(200, 100%, 70%);
+}
+
+body {
+  background-color: hsl(0, 0%, 8%);
+  margin: 0;
+  min-width: 350px;
+  padding: 10px;
+}
+
 button {
   border: none;
   outline: none;

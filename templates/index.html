@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% import "includes/post_list.html" as macros %}
+{% import "includes/macros.html" as macros %}
 
 <!--head-->
 {% block head -%}
@@ -12,11 +12,7 @@
 <!-- prettier-ignore -->
 {% block content %}
   <main>
-    <header class="OneCard">
-      <h1>Chanakya</h1>
-      <div class="highlight"></div>
-      <p>--- Website HomePage ---</p>
-    </header>
+    {{ macros::headerX(class="OneCard", page_name="Website Homepage") }}
     <nav class="OneCard">
       <ul>
         <li>
@@ -51,8 +47,11 @@
     </div>
 
     <section id="about" class="OneCard">
+      <div class="">
+
+      </div>
       <div class="recent-blogs">
-        <p>I write Stuff</p>
+        <p>Opinionated Blog</p>
         {% set posts_news = get_section(path="blog/_index.md") %}
         {% set pages_news = posts_news.pages | slice(end=3) %}
         {{ macros::post_list(posts=pages_news) }}

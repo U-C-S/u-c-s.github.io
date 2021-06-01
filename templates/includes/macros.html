@@ -1,4 +1,5 @@
 {% macro post_list(posts) %}
+
   {% if posts | length > 0 %}
     <ul class="blog-list">
       {% for post in posts %}
@@ -10,13 +11,21 @@
               {{ post.date | date(format=date_format) }}
             </p>
           {% endif %}
-
-          {% if config.extra.posts.show_summaries %}
-            <p>{{ post.description | default(value=post.content | striptags | trim | truncate(length=3) | safe) }}</p>
-          {% endif %}
         </li>
       {% endfor %}
     </ul>
     <a id="blog-read-more" href="{{ get_url(path="/blog") }}">....wanna read more?</a>
   {% endif %}
+
 {% endmacro post_list %}
+
+
+
+
+{% macro headerX(class, page_name) -%}
+  <header class="{{ class }}">
+    <h1>Chanakya</h1>
+    <div class="highlight"></div>
+    <p>--- {{ page_name }} ---</p>
+  </header>
+{% endmacro post_list -%}

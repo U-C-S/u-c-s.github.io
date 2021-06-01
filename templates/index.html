@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% import "includes/post_list.html" as macros %}
 
 <!--head-->
 {% block head -%}
     {{ super() }}
-    <link rel="stylesheet" href="index.css" />
-    <script defer type="module" src="scripts/index.js"></script>
+    <link rel="stylesheet" href="{{ get_url(path="index.css") }}" />
+    <script defer type="module" src="{{ get_url(path="scripts/index.js") }}"></script>
 {% endblock head -%}
 
 
@@ -50,9 +51,17 @@
     </div>
 
     <section id="about" class="OneCard">
-      <a href="/blog">
-        <h2>Blog</h2>
-      </a>
+      <div>
+        <a href="/blog">
+          <h2>Blog</h2>
+        </a>
+        <div>
+          {% set posts_news = get_section(path="blog/_index.md") %}
+          {% set pages_news = posts_news.pages | slice(end=3) %}
+          {{ macros::post_list(posts=pages_news, placeholder="None yet - stay tuned for updates and announcements!") }}
+        </div>
+      </div>
+      
     </section>
     <section id="datame" class="OneCard"></section>
 

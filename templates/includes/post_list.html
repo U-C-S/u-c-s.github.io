@@ -1,23 +1,22 @@
-{% macro post_list(posts, placeholder) %}
+{% macro post_list(posts) %}
   {% if posts | length > 0 %}
-    {% for post in posts %}
+    <ul class="blog-list">
+      {% for post in posts %}
+        <li class="blog-item">
+          <a class="post-link" href="{{ post.permalink }}">{{ post.title }}</a>
+          {% if post.date %}
+            {% set date_format = config.extra.date_format | default(value="%b %-d, %Y") %}
+            <p class="post-meta">
+              {{ post.date | date(format=date_format) }}
+            </p>
+          {% endif %}
 
-      <h3>
-        <a class="post-link" href="{{ post.permalink }}">
-          {{ post.title }}
-        </a>
-      </h3>
-      {% if post.date %}
-        {% set date_format = config.extra.date_format | default(value="%b %-d, %Y") %}
-        <span class="post-meta">{{ post.date | date(format=date_format) }}</span>
-      {% endif %}
-
-      {% if config.extra.posts.show_summaries %}
-        <p>{{ post.description | default(value=post.content | striptags | trim | truncate(length=3) | safe) }}</p>
-      {% endif %}
-    {% endfor %}
-
-    {% else %}
-      <p class="grey">{{ placeholder }}</p>
+          {% if config.extra.posts.show_summaries %}
+            <p>{{ post.description | default(value=post.content | striptags | trim | truncate(length=3) | safe) }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <a id="blog-read-more" href="{{ get_url(path="/blog") }}">....wanna read more?</a>
   {% endif %}
 {% endmacro post_list %}

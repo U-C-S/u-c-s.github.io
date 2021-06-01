@@ -51,15 +51,11 @@
     </div>
 
     <section id="about" class="OneCard">
-      <div>
-        <a href="/blog">
-          <h2>Blog</h2>
-        </a>
-        <div>
-          {% set posts_news = get_section(path="blog/_index.md") %}
-          {% set pages_news = posts_news.pages | slice(end=3) %}
-          {{ macros::post_list(posts=pages_news, placeholder="None yet - stay tuned for updates and announcements!") }}
-        </div>
+      <div class="recent-blogs">
+        <p>I write Stuff</p>
+        {% set posts_news = get_section(path="blog/_index.md") %}
+        {% set pages_news = posts_news.pages | slice(end=3) %}
+        {{ macros::post_list(posts=pages_news) }}
       </div>
       
     </section>

@@ -1,7 +1,8 @@
 @import "common";
 
 :root {
-  --accentColor: #ff1439;
+  --accentColor: hsl(350, 100%, 57%); //slate red
+  --secColor: hsl(200, 100%, 70%);
 }
 
 body {
@@ -45,13 +46,13 @@ main {
 
 .OneCard {
   background-color: black;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 3px solid white;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
 
   &:hover {
     border: 3px solid var(--accentColor);
-    box-shadow: 0 0 40px var(--accentColor);
+    box-shadow: 0 0 32px var(--accentColor);
   }
 }
 
@@ -108,7 +109,7 @@ nav {
       transition: fill 0.2s linear;
 
       &:hover {
-        fill: #ff1439;
+        fill: var(--accentColor);
         transform: scale(1.1);
       }
     }
@@ -118,9 +119,64 @@ nav {
 //---------------------------
 #about {
   grid-area: a;
+  padding: 5px;
   color: white;
 }
 
+.recent-blogs {
+  padding: 0 10px;
+
+  & > p {
+    display: block;
+    margin: 0;
+    width: 50%;
+    min-width: 200px;
+    font-family: "Open Sans";
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+  }
+}
+
+.blog-list {
+  padding-left: 25px;
+  margin: 0;
+}
+
+.blog-item {
+  margin: 10px 0;
+
+  a {
+    display: block;
+    font-size: 22px;
+    font-family: "Open Sans";
+    color: var(--secColor);
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  p {
+    font-size: 10px;
+    margin: 3px 0;
+    font-family: "Open Sans";
+  }
+}
+
+#blog-read-more {
+  float: right;
+  font-family: "Open Sans";
+  font-size: 12px;
+  color: white;
+
+  &:hover {
+    color: var(--accentColor);
+  }
+}
+
+//---------------------------
 #datame {
   grid-area: d;
   padding: 5px;
@@ -160,7 +216,7 @@ nav {
   }
 
   span {
-    color: #ff1439;
+    color: var(--accentColor);
   }
 }
 

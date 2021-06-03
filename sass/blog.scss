@@ -9,17 +9,23 @@ body {
 
 main {
   width: 70%;
-  padding: 10px;
-  min-width: 400px;
+  min-width: 370px;
+  height: 900px;
   border-left: 3px solid white;
   border-right: 3px solid white;
   background-color: black;
 }
 
+@media screen and (max-width: 700px) {
+  main {
+    width: 100%;
+  }
+}
+
 //---------------------------
 header {
-  width: clamp(180px, 33%, 500px);
-  margin: 0 auto;
+  width: clamp(300px, 33%, 500px);
+  margin: 10px auto;
   text-align: center;
   color: white;
   background-color: black;
@@ -28,14 +34,32 @@ header {
   transition: all 0.1s linear;
 
   h1 {
+    color: white;
     font-size: 54px;
     font-family: "Quicksand", monospace;
     margin: 0;
     color: var(--accentColor);
+    user-select: none;
   }
 
   p {
     font-family: monospace;
     font-size: 11px;
+  }
+}
+
+.articles-list {
+  border-top: 3px solid white;
+  padding: 10px;
+}
+
+.article-single {
+  border: 1px solid white;
+  margin: 5px 0;
+  padding: 5px;
+
+  a {
+    font-size: 24px;
+    color: var(--secColor);
   }
 }

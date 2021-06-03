@@ -13,14 +13,14 @@
 
 {% block content %}
   <main>
-    {{ macros::headerX(class="OneCard", page_name="Website Blog Page") }}
-    <h1 class="title">
-      {{ section.title }}
-    </h1>
-    <ul>
+    {{ macros::headerX(class="OneCard", page_name="Website BlogPage") }}
+    <div class="articles-list">
       {% for page in section.pages %}
-        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+        <div class="article-single">
+          <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
+
   </main>
 {% endblock content %}

@@ -10,7 +10,7 @@ main {
   padding: 10px;
   height: clamp(500px, 100vh, 1000px);
   display: grid;
-  grid-template-columns: 1fr minmax(180px, 1fr) 1fr;
+  grid-template-columns: 10fr minmax(290px, 7fr) 10fr;
   grid-template-rows: 118px 80px minmax(140px, 1fr) 256px;
   row-gap: 20px;
   column-gap: 20px;

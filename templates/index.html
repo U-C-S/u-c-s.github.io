@@ -47,16 +47,17 @@
     </div>
 
     <section id="about" class="OneCard">
-      <div class="about-navigation">
-          <p>Navigation:</p>
-          <table>
-            <tr>
-              <td><button class="activebtn">Blog</button></td>
-              <td><button>Interests</button></td>
-              <td><button>About</button></td>
-            </tr>
-          </table>
+      <div class="about-nav">
+        <div class="about-nav-btns">
+          <button id="tabblog" class="abouttab activetab">Blog</button>
+          <button id="tabintr" class="abouttab">Interests</button>
+          <button id="tababou" class="abouttab">About</button>
+        </div>
       </div>
+
+      <div id="about-content">
+      </div>
+      
       <div class="recent-blogs">
         <p>Opinionated Blog</p>
         {% set posts_news = get_section(path="blog/_index.md") %}
@@ -72,11 +73,8 @@
           <h3>Social Links</h3>
           <div class="highlight"></div>
           <div>
-            <a>GitHub</a>
             <a href="">Instagram</a>
-            <a href="">Reddit</a>
             <a>Facebook</a>
-            <a href="404.html">LinkedIn</a>
             <a href="">Discord</a>
             <a href="">Twitter</a>
           </div>

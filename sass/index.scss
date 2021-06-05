@@ -7,28 +7,28 @@
 
 main {
   width: 100%;
+  height: clamp(666px, 100vh, 1000px);
   padding: 10px;
-  height: clamp(500px, 100vh, 1000px);
   display: grid;
-  grid-template-columns: 10fr minmax(290px, 7fr) 10fr;
-  grid-template-rows: 118px 80px minmax(140px, 1fr) 256px;
-  row-gap: 20px;
-  column-gap: 20px;
   grid-template-areas:
     "d h a"
     "d l a"
     "d i a"
     "b b a";
+  grid-template-columns: 10fr minmax(290px, 7fr) 10fr;
+  grid-template-rows: 118px 80px minmax(140px, 1fr) 256px;
+  row-gap: 20px;
+  column-gap: 20px;
 }
 
 @media screen and (max-width: 888px) {
   main {
+    padding: 10px clamp(10px, 8%, 70px);
+    height: auto;
     display: grid;
     grid-template-areas: "h" "l" "i" "d" "a" "b";
     grid-template-rows: 118px 80px 140px minmax(250px, auto) minmax(250px, auto) auto;
     grid-template-columns: 1fr;
-    padding: 10px clamp(10px, 8%, 70px);
-    height: auto;
   }
 }
 
@@ -69,6 +69,8 @@ header {
     font-size: 11px;
   }
 }
+
+
 
 //---------------------------
 nav {

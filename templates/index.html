@@ -18,7 +18,7 @@
         {% set socialdata = load_data(path="content/social.json", format="json") %}
         {% for link in socialdata.data %}
           <li>
-            <a href="{{ link.link }}" title="{{ link.title }}" target="_blank">
+            <a href="{{ link.link }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
               <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
             </a>
           </li>
@@ -37,24 +37,33 @@
     <section id="about" class="OneCard">
       <div class="about-nav">
         <div class="about-nav-btns">
-          <button id="tab-blog" class="abouttab">Blog</button>
-          <button id="tab-intr" class="abouttab">Interests</button>
-          <button id="tab-abou" class="abouttab">About</button>
+          <button data-tempid="blog" class="abouttab">Blog</button>
+          <button data-tempid="abou" data-defopen=true class="abouttab">About</button>
+          <button data-tempid="skil" class="abouttab">Skills</button>
+          <button data-tempid="intr" class="abouttab">Interests</button>
         </div>
       </div>
 
       <div id="about-content"></div>
 
-      <template id="templ-blog">
-        <div class="recent-blogs">
-          <p>Opinionated Blog</p>
-          {% set posts_news = get_section(path="blog/_index.md") %}
-          {% set pages_news = posts_news.pages | slice(end=3) %}
-          {{ macros::post_list(posts=pages_news) }}
-        </div>
-      </template>
-      <template id="templ-intr"></template>
-      <template id="templ-about"></template>
+      <div class="zero-display">
+        <template id="templ-blog">
+          <div class="recent-blogs">
+            <p>Opinionated Blog</p>
+            {% set posts_news = get_section(path="blog/_index.md") %}
+            {% set pages_news = posts_news.pages | slice(end=3) %}
+            {{ macros::post_list(posts=pages_news) }}
+          </div>
+        </template>
+
+        <template id="templ-abou"></template>
+
+        <template id="templ-skil">
+          <p id="meowx">chakachaka</p>
+        </template>
+
+        <template id="templ-intr"></template>
+      </div>
     </section>
 
     <footer class="OneCard">

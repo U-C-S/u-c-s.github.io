@@ -1,5 +1,5 @@
 <h1 align="center">Chanakya's Website</h1>
-<p align="center">A Website made for me, by me</p>
+<p align="center">A Website about me, for me, built by me!</p>
 
 ### Links
 - https://thirsty-metal.netlify.app/ (new)

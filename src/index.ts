@@ -17,16 +17,19 @@ To-do list:
 
 const AboutTabs = document.getElementsByClassName("abouttab");
 const AboutContent = <HTMLDivElement>document.getElementById("about-content");
+const ACTIVE_TAB = "activetab";
 
 for (let i = 0; i < AboutTabs.length; i++) {
   const tab = <HTMLButtonElement>AboutTabs[i];
   const templ = <HTMLTemplateElement>document.getElementById(`templ-${tab.dataset.tempid}`);
 
   tab.addEventListener("click", () => {
-    change_active_tab_color(tab);
-    let x = templ.content.cloneNode(true);
-    AboutContent.innerHTML = "";
-    AboutContent.appendChild(x);
+    if (!tab.classList.contains(ACTIVE_TAB)) {
+      change_active_tab_color(tab);
+      let x = templ.content.cloneNode(true);
+      AboutContent.innerHTML = "";
+      AboutContent.appendChild(x);
+    }
   });
 
   if (tab.dataset.defopen) {
@@ -35,9 +38,7 @@ for (let i = 0; i < AboutTabs.length; i++) {
 }
 
 function change_active_tab_color(tab: HTMLButtonElement) {
-  const ACTIVE_TAB = "activetab";
-  let activeTabList = document.getElementsByClassName(ACTIVE_TAB);
-  if (activeTabList.length) activeTabList[0].classList.remove(ACTIVE_TAB);
+  document.getElementsByClassName(ACTIVE_TAB)[0]?.classList.remove(ACTIVE_TAB);
   tab.classList.add(ACTIVE_TAB);
 }
 

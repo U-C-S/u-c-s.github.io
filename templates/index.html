@@ -48,7 +48,7 @@
 
       <div class="zero-display">
         <template id="templ-blog">
-          <h2 class="tab-content-heading">Opinionated Blog</h2>
+          <h2 class="tab-content-heading">Blogs / Journals</h2>
           <div class="recent-blogs">
             {% set posts_news = get_section(path="blog/_index.md") %}
             {% set pages_news = posts_news.pages | slice(end=3) %}
@@ -67,7 +67,7 @@
         </template>
 
         <template id="templ-intr">
-          <h2 class="tab-content-heading">These got my Attention</h2>
+          <h2 class="tab-content-heading">. . . got my Curiosity</h2>
         </template>
       </div>
     </section>

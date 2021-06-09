@@ -1,10 +1,6 @@
 {% extends "base.html" %}
-{% import "includes/macros.html" as macros %}
-
-
 {% block title %}Blog | {% endblock title %}
 
-<!--head-->
 {% block head -%}
     {{ super() }}
     <link rel="stylesheet" href="{{ get_url(path="styles/blog.css") }}" />
@@ -13,7 +9,6 @@
 
 {% block content %}
   <main>
-    {{ macros::headerX(class="OneCard", page_name="Website BlogPage") }}
     <div class="articles-list">
       {% for page in section.pages %}
         <div class="article-single">
@@ -22,6 +17,5 @@
         </div>
       {% endfor %}
     </div>
-
   </main>
 {% endblock content %}

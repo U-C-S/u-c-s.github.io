@@ -26,11 +26,6 @@
     border-right: 2px solid white;
     border-radius: 0 5px 5px 0;
   }
-
-  &:hover {
-    background-color: var(--secColor);
-    color: black;
-  }
 }
 
 .activetab {
@@ -112,5 +107,16 @@
 
   &:hover {
     color: var(--accentColor);
+  }
+}
+
+@media screen and (max-width: 888px) {
+  .blog-item {
+    a {
+      font-size: 20px;
+    }
+    p {
+      font-size: 8px;
+    }
   }
 }

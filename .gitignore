@@ -1,5 +1,6 @@
 public
 node_modules
 static/scripts
+static/styles
 
 dump

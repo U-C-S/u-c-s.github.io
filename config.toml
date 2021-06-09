@@ -4,7 +4,7 @@ base_url = "https://thirsty-metal.netlify.app"
 # default_language = "en"
 # generate_feed = true
 # feed_filename = "rss.xml"
-compile_sass = true
+# compile_sass = false
 build_search_index = false
 #minify_html = true
 

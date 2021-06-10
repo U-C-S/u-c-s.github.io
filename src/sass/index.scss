@@ -6,8 +6,7 @@
   --secColor: hsl(200, 100%, 70%);
 }
 
-main {
-  width: 100%;
+body {
   height: clamp(666px, 100vh, 1000px);
   padding: 10px;
   display: grid;
@@ -34,7 +33,7 @@ main {
 }
 
 @media screen and (max-width: 888px) {
-  main {
+  body {
     padding: 10px clamp(10px, 8%, 70px);
     height: auto;
     display: grid;
@@ -51,7 +50,7 @@ main {
 }
 
 @media screen and (max-width: 560px) {
-  main {
+  body {
     padding: 10px;
     grid-template-columns: 1fr 60px;
   }
@@ -143,10 +142,11 @@ nav {
 }
 
 //--about--------------------
-#about {
+main {
   grid-area: a;
   padding: 5px;
   color: white;
+  min-height: 500px;
 }
 
 //---------------------------

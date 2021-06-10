@@ -3,89 +3,87 @@
 
 <!--head-->
 {% block head -%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ get_url(path="styles/index.css") }}" />
-    <script defer type="module" src="{{ get_url(path="scripts/index.js") }}"></script>
+  {{ super() }}
+  <link rel="stylesheet" href="{{ get_url(path="styles/index.css") }}" />
+  <script defer type="module" src="{{ get_url(path="scripts/index.js") }}"></script>
 {% endblock head -%}
 
 
 <!-- prettier-ignore -->
 {% block content %}
-  <main>
-    <header class="OneCard">
-      <h1>Chanakya</h1>
-      <div class="highlight"></div>
-      <p>--- Website Homepage ---</p>
-    </header>
+  <header class="OneCard">
+    <h1>Chanakya</h1>
+    <div class="highlight"></div>
+    <p>--- Website Homepage ---</p>
+  </header>
 
-    <nav class="OneCard">
-      <ul>
-        {% set socialdata = load_data(path="src/social_links.json", format="json") %}
-        {% for link in socialdata.data %}
-          <li>
-            <a class="social-link" href="{{ link.link }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
-              <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
+  <nav class="OneCard">
+    <ul>
+      {% set socialdata = load_data(path="src/social_links.json", format="json") %}
+      {% for link in socialdata.data %}
+        <li>
+          <a class="social-link" href="{{ link.link }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
+            <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
 
 
-    <div id="SettingsCard">
-      <button id="The-Pro-Button" class="TheButtons" title="On Activation, Shows Professional Info">
-        Pro Mode: <span id="Pro-status">OFF</span>
-      </button>
-      <button id="The-Theme-Button" class="TheButtons" title="Click to toggle between Dark/Light Themes">
-        Dark mode: <span id="Theme-status">OFF</span>
-      </button>
+  <div id="SettingsCard">
+    <button id="The-Pro-Button" class="TheButtons" title="On Activation, Shows Professional Info">
+      Pro Mode: <span id="Pro-status">OFF</span>
+    </button>
+    <button id="The-Theme-Button" class="TheButtons" title="Click to toggle between Dark/Light Themes">
+      Dark mode: <span id="Theme-status">OFF</span>
+    </button>
+  </div>
+
+
+  <main class="OneCard">
+    <div class="about-nav">
+      <div class="about-nav-btns">
+        <button data-tempid="blog" class="abouttab">Blog</button>
+        <button data-tempid="abou" data-defopen=true class="abouttab">About</button>
+        <button data-tempid="skil" class="abouttab">Skills</button>
+        <button data-tempid="intr" class="abouttab">Interests</button>
+      </div>
     </div>
 
+    <div id="main-content"></div>
 
-    <section id="about" class="OneCard">
-      <div class="about-nav">
-        <div class="about-nav-btns">
-          <button data-tempid="blog" class="abouttab">Blog</button>
-          <button data-tempid="abou" data-defopen=true class="abouttab">About</button>
-          <button data-tempid="skil" class="abouttab">Skills</button>
-          <button data-tempid="intr" class="abouttab">Interests</button>
+    <div class="zero-display">
+      <template id="templ-blog">
+        <h2 class="tab-content-heading">Blogs / Journals</h2>
+        <div class="recent-blogs">
+          {% set posts_news = get_section(path="blog/_index.md") %}
+          {% set pages_news = posts_news.pages | slice(end=5) %}
+          {{ macros::post_list(posts=pages_news) }}
         </div>
-      </div>
+      </template>
 
-      <div id="about-content"></div>
+      <template id="templ-abou">
+        <h2 class="tab-content-heading">About Me!!</h2>
+        <p>Page under Construction</p>
+      </template>
 
-      <div class="zero-display">
-        <template id="templ-blog">
-          <h2 class="tab-content-heading">Blogs / Journals</h2>
-          <div class="recent-blogs">
-            {% set posts_news = get_section(path="blog/_index.md") %}
-            {% set pages_news = posts_news.pages | slice(end=5) %}
-            {{ macros::post_list(posts=pages_news) }}
-          </div>
-        </template>
+      <template id="templ-skil">
+        <h2 class="tab-content-heading">Unlimited Skills</h2>
+        <p id="meowx">chakachaka</p>
+      </template>
 
-        <template id="templ-abou">
-          <h2 class="tab-content-heading">About Me!!</h2>
-          <p>Page under Construction</p>
-        </template>
-
-        <template id="templ-skil">
-          <h2 class="tab-content-heading">Unlimited Skills</h2>
-          <p id="meowx">chakachaka</p>
-        </template>
-
-        <template id="templ-intr">
-          <h2 class="tab-content-heading">. . . got my Curiosity</h2>
-        </template>
-      </div>
-    </section>
-
-
-    <footer class="OneCard">
-      <div class="main-of-footer"></div>
-      <div class="footer-of-footer">
-        <p>Made with ♥ and Zola by Chanakya</p>
-      </div>
-    </footer>
+      <template id="templ-intr">
+        <h2 class="tab-content-heading">. . . got my Curiosity</h2>
+      </template>
+    </div>
   </main>
+
+
+  <footer class="OneCard">
+    <div class="main-of-footer"></div>
+    <div class="footer-of-footer">
+      <p>Made with ♥ and Zola by Chanakya</p>
+    </div>
+  </footer>
 {% endblock content %}

@@ -2,23 +2,26 @@
 
 {% block title %}404 | {% endblock title %}
 {% block head -%}
-    {{ super() }}
-    <style>
-      body{
-        background-color: black;
-      }
-      p{
-        display: block;
-        color: white;
-        text-align: center;
-        font-family: monospace;
-      }
-      a{color: white;} 
-    </style>
+  {{ super() }}
+  <style>
+    body {
+      background-color: black;
+    }
+
+    p {
+      display: block;
+      color: white;
+      text-align: center;
+      font-family: monospace;
+    }
+
+    a {
+      color: white;
+    }
+  </style>
 {% endblock head -%}
 
 {% block content %}
   <p>Seems the Page you are trying to access doesn't Exist....</p>
   <p>Why not go <a href="/">home</a> ?</p>
 {% endblock content %}
-

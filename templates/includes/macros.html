@@ -1,20 +1,18 @@
 {% macro post_list(posts) %}
 
-  {% if posts | length > 0 %}
-    <ul class="blog-list">
-      {% for post in posts %}
-        <li class="blog-item">
-          <a class="post-link" href="{{ post.permalink }}">{{ post.title }}</a>
-          {% if post.date %}
-            {% set date_format = config.extra.date_format | default(value="%b %-d, %Y") %}
-            <p class="post-meta">
-              {{ post.date | date(format=date_format) }}
-            </p>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-    <a id="blog-read-more" href="{{ get_url(path="/blog") }}">....wanna read more?</a>
-  {% endif %}
+{% if posts | length > 0 %}
+  <ul class="blog-list">
+    {% for post in posts %}
+    <li class="blog-item">
+      <a class="post-link" href="{{ post.permalink }}">{{ post.title }}</a>
+      {% if post.date %}
+        {% set date_format = config.extra.date_format | default(value="%b %-d, %Y") %}
+        <p class="post-meta">{{ post.date | date(format=date_format) }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <a id="blog-read-more" href="{{ get_url(path="/blog") }}">....wanna read more?</a>
+{% endif %}
 
 {% endmacro post_list %}

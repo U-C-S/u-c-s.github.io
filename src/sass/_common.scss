@@ -20,6 +20,7 @@ body {
   background-color: hsl(0, 0%, 8%);
   margin: 0;
   min-width: 370px;
+  min-height: 300px;
 }
 
 button,
@@ -37,6 +38,7 @@ span {
 
 a {
   text-decoration: none;
+  outline: none;
 }
 
 button {

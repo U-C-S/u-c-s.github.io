@@ -45,3 +45,11 @@ To-do list:
 //   let fetchRes = await fetch(github_api_url.toString());
 //   let ResponseJson = await fetchRes.json();
 // })();
+
+const x = document.getElementById("The-Pro-Button");
+const thisPage = new URL(window.location.toString());
+
+x?.addEventListener("click", () => {
+  thisPage.searchParams.set("pro", "1");
+  window.history.pushState({}, "", thisPage.toString());
+});

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://thirsty-metal.netlify.app/</loc>
+    </url>
+    <url>
+        <loc>https://thirsty-metal.netlify.app/blog/</loc>
+    </url>
+    <url>
+        <loc>https://thirsty-metal.netlify.app/blog/art-of-doing/</loc>
+        <lastmod>2021-06-01</lastmod>
+    </url>
+    <url>
+        <loc>https://thirsty-metal.netlify.app/blog/this-month-i-learned/</loc>
+        <lastmod>2021-06-07</lastmod>
+    </url>
+    <url>
+        <loc>https://thirsty-metal.netlify.app/blog/understand-ui-important/</loc>
+        <lastmod>2021-05-24</lastmod>
+    </url>
+    <url>
+        <loc>https://thirsty-metal.netlify.app/blog/who-am-i/</loc>
+        <lastmod>2021-06-14</lastmod>
+    </url>
+    <url>
+        <loc>https://thirsty-metal.netlify.app/webcard/</loc>
+    </url>
+</urlset>

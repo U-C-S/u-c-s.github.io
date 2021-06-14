@@ -3,18 +3,20 @@ import { exec, execSync } from "child_process";
 
 console.log(`Current directory: ${process.cwd()}`);
 
+console.log("Clearing the previous build output for a new clean build....\n");
 let outdir = ["public", "static/styles", "static/scripts"];
 outdir.forEach((path) => {
   execSync(`rm -rf ${path}`);
 });
 
-console.log("Cleared the previous build output for a new clean build....");
-
+console.log("Starting a new clean build....\n");
 let buildCmds = ["tsc", "sass --no-source-map --style=compressed src/sass:static/styles", "zola build"];
 buildCmds.forEach((cmd) => {
-  console.log(`Executing Command: ${cmd}`);
-  let out = execSync(cmd);
-  console.log(out.toString());
+  console.log(`-> Executing Command: ${cmd}\n`);
+  let out = execSync(cmd).toString();
+  if (out) {
+    console.log(out);
+  }
 });
 
 // let x = ["aaa", "bbb", "ccc", "ddd"];

@@ -12,29 +12,48 @@ To-do list:
   const AboutTabs = document.getElementsByClassName("abouttab");
   const AboutContent = <HTMLDivElement>document.getElementById("main-content");
   const ACTIVE_TAB = "activetab";
+  let def_Tab;
+  let param_Tab;
 
+  let thisPage = new URL(window.location.toString());
+  let tabParam = thisPage.searchParams.get("tab");
+
+  //loop over all the tab buttons and give them the click event-listeners
   for (let i = 0; i < AboutTabs.length; i++) {
     const tab = <HTMLButtonElement>AboutTabs[i];
-    const templ = <HTMLTemplateElement>document.getElementById(`templ-${tab.dataset.tempid}`);
+    let temp_data = <string>tab.dataset.tempid;
+    const templ = <HTMLTemplateElement>document.getElementById(`templ-${temp_data}`);
 
     tab.addEventListener("click", () => {
       if (!tab.classList.contains(ACTIVE_TAB)) {
-        change_active_tab_color(tab);
+        //change btn color
+        document.getElementsByClassName(ACTIVE_TAB)[0]?.classList.remove(ACTIVE_TAB);
+        tab.classList.add(ACTIVE_TAB);
+
         let x = templ.content.cloneNode(true);
         AboutContent.innerHTML = "";
         AboutContent.appendChild(x);
+
+        thisPage.searchParams.set("tab", temp_data);
+        window.history.pushState({}, "", thisPage.toString()); //see more about this method params
       }
     });
 
-    if (tab.dataset.defopen) {
-      tab.click();
+    //we also check if the URLparam "tab" is equal to any of the tabs
+    //during if it is equal to any, we store it in param_Tab
+    if (tabParam == temp_data) {
+      param_Tab = tab;
+    }
+    //Also, if tab has a defopen data attr, we store it in def_Tab
+    else if (tab.dataset.defopen) {
+      def_Tab = tab;
     }
   }
 
-  function change_active_tab_color(tab: HTMLButtonElement) {
-    document.getElementsByClassName(ACTIVE_TAB)[0]?.classList.remove(ACTIVE_TAB);
-    tab.classList.add(ACTIVE_TAB);
-  }
+  //After the above looping, check if param_Tab existence and click on that if it is...
+  //else click on default tab button
+  if (param_Tab) param_Tab.click();
+  else def_Tab?.click();
 })();
 
 // (async () => {
@@ -46,10 +65,10 @@ To-do list:
 //   let ResponseJson = await fetchRes.json();
 // })();
 
-const x = document.getElementById("The-Pro-Button");
-const thisPage = new URL(window.location.toString());
+// const x = document.getElementById("The-Pro-Button");
+// const thisPage = new URL(window.location.toString());
 
-x?.addEventListener("click", () => {
-  thisPage.searchParams.set("pro", "1");
-  window.history.pushState({}, "", thisPage.toString());
-});
+// x?.addEventListener("click", () => {
+//   thisPage.searchParams.set("pro", "1");
+//   window.history.pushState({}, "", thisPage.toString());
+// });

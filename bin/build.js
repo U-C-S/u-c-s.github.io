@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 import { exec, execSync } from "child_process";
+import process from "process";
+
+let args = process.argv.slice(2).join(" ");
 
 console.log(`Current directory: ${process.cwd()}`);
 
@@ -10,7 +13,9 @@ outdir.forEach((path) => {
 });
 
 console.log("Starting a new clean build....\n");
-let buildCmds = ["tsc", "sass --no-source-map --style=compressed src/sass:static/styles", "zola build"];
+
+let zolaCmd = `zola build ${args}`;
+let buildCmds = ["tsc", "sass --no-source-map --style=compressed src/sass:static/styles", zolaCmd];
 buildCmds.forEach((cmd) => {
   console.log(`-> Executing Command: ${cmd}\n`);
   let out = execSync(cmd).toString();

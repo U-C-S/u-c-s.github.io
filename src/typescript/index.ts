@@ -8,15 +8,34 @@ To-do list:
 - check out lit / web components stuff
 */
 
+/**
+ * Simple API for updating the current URL with search queries
+ * 
+ * Uses BrowserAPIs URL: API and History API's replaceState method
+ */
+const URLparams = {
+  url: new URL(window.location.toString()),
+
+  add: function (key: string, value: string) {
+    let { url } = this;
+    url.searchParams.set(key, value);
+    window.history.replaceState({}, document.title, url.toString()); //see more about this method params
+  },
+
+  get: function (key: string) {
+    return this.url.searchParams.get(key);
+  },
+};
+
 (async () => {
   const AboutTabs = document.getElementsByClassName("abouttab");
-  const AboutContent = <HTMLDivElement>document.getElementById("main-content");
   const ACTIVE_TAB = "activetab";
+  const AboutContent = <HTMLDivElement>document.getElementById("main-content");
+
   let def_Tab;
   let param_Tab;
 
-  let thisPage = new URL(window.location.toString());
-  let tabParam = thisPage.searchParams.get("tab");
+  let tabParam = URLparams.get("tab");
 
   //loop over all the tab buttons and give them the click event-listeners
   for (let i = 0; i < AboutTabs.length; i++) {
@@ -30,12 +49,12 @@ To-do list:
         document.getElementsByClassName(ACTIVE_TAB)[0]?.classList.remove(ACTIVE_TAB);
         tab.classList.add(ACTIVE_TAB);
 
+        //copies the HTML template code to the main div
         let x = templ.content.cloneNode(true);
         AboutContent.innerHTML = "";
         AboutContent.appendChild(x);
 
-        thisPage.searchParams.set("tab", temp_data);
-        window.history.pushState({}, "", thisPage.toString()); //see more about this method params
+        URLparams.add("tab", temp_data);
       }
     });
 
@@ -54,8 +73,12 @@ To-do list:
   //else click on default tab button
   if (param_Tab) param_Tab.click();
   else def_Tab?.click();
+
+  //End of IIFE
 })();
 
+//
+//
 // (async () => {
 //   const username = "u-c-s";
 //   let github_api_url = new URL(`https://api.github.com/users/${username}/events/public`);

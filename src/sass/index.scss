@@ -13,17 +13,18 @@ ul {
 }
 
 body {
+  border: 3px solid white;
   height: clamp(666px, 100vh, 1000px);
-  padding: 20px;
   display: grid;
+  padding: 25px;
+  row-gap: 25px;
+  column-gap: 25px;
   grid-template-areas:
     "l h a"
     "l i a"
     "b b a";
-  grid-template-columns: 75px minmax(290px, 4fr) 5fr;
+  grid-template-columns: 75px minmax(290px, 5fr) 7fr;
   grid-template-rows: 118px minmax(140px, 1fr) 256px;
-  row-gap: 20px;
-  column-gap: 20px;
 }
 
 .OneCard {
@@ -40,6 +41,7 @@ body {
 
 @media screen and (max-width: 888px) {
   body {
+    border: none;
     padding: 10px clamp(10px, 8%, 70px);
     height: auto;
     display: grid;
@@ -81,7 +83,6 @@ header {
 
   h1 {
     font-size: 54px;
-    font-family: "Quicksand", monospace;
     margin: 0;
     color: var(--accentColor);
     user-select: none;
@@ -96,6 +97,7 @@ header {
 @media screen and (max-width: 888px) {
   header {
     width: 100%;
+    min-width: none;
   }
 }
 
@@ -155,27 +157,35 @@ main {
 //---------------------------
 #SettingsCard {
   grid-area: i;
+  margin: 10px;
+  background-image: url("../images/64664.png");
+  background-position: center;
+  background-size: 360px;
+  background-repeat: no-repeat;
+}
+
+.settings-contain {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .TheButtons {
   width: 125px;
-  margin: auto;
   border-radius: 5px;
   border: 2px solid white;
   padding: 5px;
   transition: all 0.2s linear;
-  font-family: "Open Sans";
-  color: white;
-
-  &:hover {
-    border-color: var(--accentColor) !important;
-    box-shadow: 0px 2px 20px var(--accentColor);
-  }
 
   span {
     color: var(--accentColor);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  #SettingsCard {
+    margin: 0px;
+    background-position: center -10px;
+    background-size: 300px;
   }
 }
 
@@ -214,7 +224,6 @@ footer {
   p {
     margin: 0;
     color: rgb(150, 150, 150);
-    font-family: "Open Sans";
     font-size: 12px;
   }
 }

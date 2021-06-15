@@ -32,12 +32,14 @@
 
 
   <div id="SettingsCard">
-    <button id="The-Pro-Button" class="TheButtons" title="On Activation, Shows Professional Info">
-      Pro Mode: <span id="Pro-status">OFF</span>
-    </button>
-    <button id="The-Theme-Button" class="TheButtons" title="Click to toggle between Dark/Light Themes">
-      Dark mode: <span id="Theme-status">OFF</span>
-    </button>
+    <div class="settings-contain">
+      <button id="The-Pro-Button" class="TheButtons" title="On Activation, Shows Professional Info">
+        Pro Mode: <span id="Pro-status">OFF</span>
+      </button>
+      <button id="The-Theme-Button" class="TheButtons" title="Click to toggle between Dark/Light Themes">
+        Dark mode: <span id="Theme-status">OFF</span>
+      </button>
+    </div>
   </div>
 
 
@@ -52,7 +54,7 @@
     </div>
 
     <div id="main-content"></div>
-
+    {# Add Pinned Posts feature #}
     <div class="zero-display">
       <template id="templ-blog">
         <h2 class="tab-content-heading">Blogs / Journals</h2>

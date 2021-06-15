@@ -11,7 +11,7 @@
 .abouttab {
   padding: 7px 25px;
   font-size: 18px;
-  border: 2px solid white;
+  border: 2px solid var(--text);
   border-right: 0px;
   will-change: padding, font-size;
   transition-duration: 0.5s;
@@ -21,7 +21,7 @@
   }
 
   &:last-of-type {
-    border-right: 2px solid white;
+    border-right: 2px solid var(--text);
     border-radius: 0 5px 5px 0;
   }
 }
@@ -46,7 +46,7 @@
 //----main-content----------
 #main-content {
   padding: 0 10px;
-  color: white;
+  color: var(--text);
   transition: height 0.3s linear;
 }
 
@@ -55,11 +55,11 @@
   margin: 0;
   width: 70%;
   min-width: 200px;
-  color: white;
+  color: var(--text);
   text-align: end;
   font-size: 24px;
   padding-bottom: 5px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--text);
 }
 
 @media screen and (max-width: 560px) {

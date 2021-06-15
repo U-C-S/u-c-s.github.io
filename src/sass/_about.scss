@@ -14,7 +14,7 @@
   border: 2px solid var(--text);
   border-right: 0px;
   will-change: padding, font-size;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
 
   &:first-of-type {
     border-radius: 5px 0 0 5px;
@@ -47,7 +47,6 @@
 #main-content {
   padding: 0 10px;
   color: var(--text);
-  transition: height 0.3s linear;
 }
 
 .tab-content-heading {

@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  border: 3px solid white;
+  border: 3px solid var(--text);
   border-radius: 8px;
   width: clamp(370px, 80%, 420px);
   padding: 20px;
@@ -43,13 +43,13 @@ li {
 }
 
 svg {
-  fill: white;
+  fill: var(--text);
   width: 100%;
   height: 100%;
   transition: all 0.2s linear;
 
   &:hover {
-    fill: #ff1439;
+    fill: var(--accentColor);
   }
 }
 
@@ -57,7 +57,7 @@ svg {
   position: relative;
   bottom: 18px;
   padding: 5px 15px;
-  background-color: hsl(0, 0%, 8%);
+  background-color: var(--back);
   &:hover {
     color: var(--accentColor);
   }

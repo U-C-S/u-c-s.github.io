@@ -19,7 +19,7 @@ body {
     "l i a"
     "b b a";
   grid-template-columns: 75px minmax(290px, 5fr) 7fr;
-  grid-template-rows: 118px minmax(140px, 1fr) 256px;
+  grid-template-rows: 118px minmax(140px, 1fr) 206px;
 }
 
 .OneCard {
@@ -162,7 +162,7 @@ main {
 .settings-contain {
   filter: var(--logo-only);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .TheButtons {

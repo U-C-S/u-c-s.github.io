@@ -1,13 +1,23 @@
 "use strict";
-console.log("version: 2.0.0-alpha");
+console.log("version: 2.0.0-beta");
+const URLparams = {
+    url: new URL(window.location.toString()),
+    add: function (key, value) {
+        let { url } = this;
+        url.searchParams.set(key, value);
+        window.history.replaceState({}, document.title, url.toString());
+    },
+    get: function (key) {
+        return this.url.searchParams.get(key);
+    },
+};
 (async () => {
     const AboutTabs = document.getElementsByClassName("abouttab");
-    const AboutContent = document.getElementById("main-content");
     const ACTIVE_TAB = "activetab";
+    const AboutContent = document.getElementById("main-content");
     let def_Tab;
     let param_Tab;
-    let thisPage = new URL(window.location.toString());
-    let tabParam = thisPage.searchParams.get("tab");
+    let tabParam = URLparams.get("tab");
     for (let i = 0; i < AboutTabs.length; i++) {
         const tab = AboutTabs[i];
         let temp_data = tab.dataset.tempid;
@@ -20,8 +30,7 @@ console.log("version: 2.0.0-alpha");
                 let x = templ.content.cloneNode(true);
                 AboutContent.innerHTML = "";
                 AboutContent.appendChild(x);
-                thisPage.searchParams.set("tab", temp_data);
-                window.history.pushState({}, "", thisPage.toString());
+                URLparams.add("tab", temp_data);
             }
         });
         if (tabParam == temp_data) {

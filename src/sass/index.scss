@@ -8,7 +8,7 @@ ul {
 }
 
 body {
-  border: 3px solid var(--text);
+  border: 3px solid var(--same-white);
   height: clamp(666px, 100vh, 1000px);
   display: grid;
   padding: 25px;
@@ -198,6 +198,8 @@ footer {
 }
 
 .other-links {
+  text-align: center;
+
   h4 {
     margin: 0;
     border-bottom: 1px solid var(--text);

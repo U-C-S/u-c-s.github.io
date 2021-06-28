@@ -1,27 +1,21 @@
 {% extends "_base.html" %}
+{% import "includes/blog-macros.html" as macros %}
 {% block title %}{{ page.title }} | {% endblock title %}
 
 {% block head -%}
-{{ super() }}
-<link rel="stylesheet" href="{{ get_url(path="styles/article.css") }}" />
+  {{ super() }}
+  <link rel="stylesheet" href="{{ get_url(path="styles/article.css") }}" />
 {% endblock head -%}
 
 {% block content %}
-<header>
-  <a href="/blog">
-    <span>&larr;</span>
-    <span>Blog</span>
-  </a>
-  <h1>Chanakya</h1>
-  <button></button>
-</header>
+  {{ macros::blog_header(backlink="/blog", backbtn="Blog") }}
 
-<article>
-  <div class="article-head">
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.date }}</p>
-  </div>
+  <article>
+    <div class="article-head">
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.date }}</p>
+    </div>
 
-  {{ page.content | safe }}
-</article>
+    {{ page.content | safe }}
+  </article>
 {% endblock content %}

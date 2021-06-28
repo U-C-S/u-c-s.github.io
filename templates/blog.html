@@ -1,4 +1,5 @@
 {% extends "_base.html" %}
+{% import "includes/blog-macros.html" as macros %}
 {% block title %}Blog | {% endblock title %}
 
 {% block head -%}
@@ -7,14 +8,7 @@
 {% endblock head -%}
 
 {% block content %}
-  <header>
-    <a href="/">
-      <span>&larr;</span>
-      <span>Home</span>
-    </a>
-    <h1>Chanakya</h1>
-    <button></button>
-  </header>
+  {{ macros::blog_header(backlink="/", backbtn="home") }}
 
   <div class="articles-list">
     {% for page in section.pages %}

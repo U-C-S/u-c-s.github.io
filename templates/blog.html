@@ -11,11 +11,16 @@
   {{ macros::blog_header(backlink="/", backbtn="home") }}
 
   <div class="articles-list">
-    {% for page in section.pages %}
-    <div class="article-single">
-      <a href="{{ page.permalink }}">{{ page.title }}</a>
-      <p class="article-meta">- {{ page.date | date(format="%Y-%b-%d") }}</p>
-    </div>
+    {% for subpaths in section.subsections %}
+    {% set subsection = get_section(path=subpaths) %}
+      <h2>{{ subsection.title }}</h2>
+      <div class="pline"></div>
+      {% for page in subsection.pages %}
+        <div class="article-single">
+          <a href="{{ page.permalink }}">- {{ page.title }}</a>
+          <p class="article-meta">{{ page.date | date(format="%Y-%b-%d") }}</p>
+        </div>
+      {% endfor %}
     {% endfor %}
   </div>
 {% endblock content %}

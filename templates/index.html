@@ -13,7 +13,7 @@
 {% block content %}
   <header class="OneCard">
     <h1>Chanakya</h1>
-    <div class="highlight"></div>
+    <div class="pline pline-center"></div>
     <p>--- Website Homepage ---</p>
   </header>
 
@@ -56,9 +56,15 @@
       <template id="templ-blog">
         <h2 class="tab-content-heading">Blogs / Journals</h2>
         <div class="recent-blogs">
-          {% set posts_news = get_section(path="blog/_index.md") %}
-          {% set pages_news = posts_news.pages | slice(end=5) %}
-          {{ macros::post_list(posts=pages_news) }}
+          {% set allpages = [] %}
+          {% set articles = get_section(path="blog/_index.md") %}
+          {% for p in articles.subsections %}
+            {% set subsection = get_section(path=p) %}
+            {% set subpages = subsection.pages %}
+            {% set_global allpages = allpages | concat(with=subpages) %}
+          {% endfor %}
+          {% set recentones = allpages | slice(end=5) %}
+          {{ macros::post_list(posts=recentones) }}
         </div>
       </template>
 

@@ -7,6 +7,8 @@ To-do list:
 - check out lit / web components stuff
 - Check for fonts - at max 2 imported
 - Add a NoJS page
+
+Done:
 - Fix: flash of incorrect theme
 */
 

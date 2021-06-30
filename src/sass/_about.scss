@@ -29,17 +29,17 @@
 .activetab {
   padding: 7px 12px;
   background-color: var(--accentColor);
-  color: black;
 }
 
 @media screen and (max-width: 560px) {
   .abouttab {
     font-size: 16px;
-    padding: 7px 20px;
+    padding: 10px 20px;
+    border-radius: 0px !important; //sc
   }
 
   .activetab {
-    padding: 7px 10px;
+    padding: 10px;
   }
 }
 

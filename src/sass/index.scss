@@ -55,13 +55,16 @@ body {
   body {
     padding: 10px;
     grid-template-columns: 1fr 60px;
+    row-gap: 0px; //sc
+    column-gap: 0px;
   }
 
   .OneCard {
+    border-radius: 0px; //sc
     border: 2px solid var(--text);
 
     &:hover {
-      box-shadow: 0 0 20px var(--accentColor);
+      box-shadow: none; //sc
     }
   }
 }
@@ -91,7 +94,6 @@ header {
 @media screen and (max-width: 888px) {
   header {
     width: 100%;
-    min-width: none;
   }
 }
 
@@ -178,6 +180,7 @@ main {
 @media screen and (max-width: 560px) {
   #SettingsCard {
     margin: 0px;
+    padding: 10px; //sc
     background-position: center -10px;
     background-size: 300px;
   }
@@ -197,8 +200,6 @@ footer {
 }
 
 .other-links {
-  text-align: center;
-
   h4 {
     margin: 0;
     border-bottom: 1px solid var(--text);
@@ -221,5 +222,18 @@ footer {
     margin: 0;
     color: hsl(0, 0%, 50%);
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  //sc
+  header {
+    border-right: none !important;
+  }
+  nav {
+    border-bottom: none !important;
+  }
+  footer {
+    border-top: none !important;
   }
 }

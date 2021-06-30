@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 import concurrently from "concurrently";
+import { cleanPreviousOutput } from "./_clean.js";
+
+cleanPreviousOutput();
 
 console.log("Getting the tools ready for local development...");
 let developCmds = [

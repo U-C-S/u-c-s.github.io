@@ -1,6 +1,7 @@
 +++
 title= "Who am I?"
 date= 2021-06-14
+slug= "who_am_i"
 
 [extra]
 hidden= true

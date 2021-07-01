@@ -10,7 +10,7 @@ fetch("svg-paths.json")
   });
 
 function OnOff(Id: string, spanId: string) {
-  document.getElementById(Id)!.onclick = () => {
+  document.getElementById(Id)!.onclick = function () {
     let x = document.getElementById(spanId);
     if (x!.innerHTML == "OFF") x!.innerText = "ON";
     else x!.innerText = "OFF";

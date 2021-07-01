@@ -1,5 +1,5 @@
 {% extends "_base.html" %}
-{% import "includes/blog-macros.html" as macros %}
+{% import "includes/blog-macros.html" as blog %}
 {% block title %}{{ page.title }} | {% endblock title %}
 
 {% block head -%}
@@ -8,14 +8,16 @@
 {% endblock head -%}
 
 {% block content %}
-  {{ macros::blog_header(backlink="/blog", backbtn="Blog") }}
+  {{ blog::header(backlink="/blog", backbtn="Blog") }}
 
-  <article>
+  <main>
     <div class="the-head">
       <h1>{{ page.title }}</h1>
       <p>{{ page.date }}</p>
     </div>
+    <article>{{ page.content | safe }}</article>
+  </main>
 
-    <div class="the-content">{{ page.content | safe }}</div>
-  </article>
+  {{ blog::footer() }}
+
 {% endblock content %}

@@ -1,14 +1,10 @@
-@use "_blogheader";
-
-article {
-  padding: 0 15px;
-}
+@use "_blogs";
 
 .the-head {
   h1 {
     text-align: center;
     font-size: 36px;
-    margin: 15px;
+    margin: 0 15px;
   }
 
   p {
@@ -17,12 +13,19 @@ article {
   }
 }
 
-.the-content {
+article {
   p {
-    font-family: 'Segoe UI', Verdana, sans-serif;
+    line-height: 36px;
+    font-size: 22px;
+    font-family: "Segoe UI", Verdana, sans-serif;
   }
+
   a {
     color: var(--secColor);
     text-decoration: underline;
+
+    &:hover {
+      color: var(--accentColor);
+    }
   }
 }

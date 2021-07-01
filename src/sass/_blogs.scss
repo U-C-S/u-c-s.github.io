@@ -1,22 +1,30 @@
 body {
+  background-color: hsl(0, 0%, 8%);
   margin: 0 auto;
-  height: 900px;
   width: 75%;
   min-width: 550px;
-  border: 2px solid var(--text);
-  border-top: none;
+  border-width: 0 2px;
 }
-//seperate header html into a macro
+
+body,
+header,
+header h1,
+footer {
+  border-style: solid;
+  border-color: var(--text);
+}
+
 header {
   position: sticky;
   top: 0;
   background-color: var(--main-back);
   display: flex;
-  border-bottom: 2px solid var(--text);
+
+  border-width: 0 0 2px;
+  box-shadow: 0 0 20px black;
 
   a {
     text-align: center;
-    border-right: 2px solid var(--text);
     padding: 2px 10px 8px;
     min-width: 100px;
 
@@ -28,10 +36,9 @@ header {
   }
 
   h1 {
-    display: block;
+    width: 100%;
     margin: 0;
-    width: 60%;
-    margin: 0 auto;
+    border-width: 0 2px;
     text-align: center;
     font-size: 50px;
     color: var(--accentColor);
@@ -40,16 +47,31 @@ header {
   button {
     font-family: monospace;
     font-size: 36px;
-    border-left: 2px solid var(--text);
-    width: 100px;
+    min-width: 100px;
+  }
+}
+
+main {
+  background-color: var(--back);
+  min-height: 92vh;
+  padding: 15px;
+}
+
+footer {
+  padding: 10px;
+  border-width: 2px 0 0;
+  background-color: var(--back);
+  p {
+    margin: 0;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 560px) {
   body {
-    border: 0px;
     width: 100%;
     min-width: 380px;
+    border-width: 0px;
   }
 
   header {
@@ -68,7 +90,7 @@ header {
     }
 
     button {
-      width: 82px;
+      min-width: 80px;
     }
   }
 }

@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "develop": "node bin/develop.js",
-    "build": "node bin/build.js"
+    "build": "sass --no-source-map --style=compressed src/sass:static/styles && tsc && zola build",
+    "buildwhat": "node bin/build.js"
   },
   "dependencies": {
     "concurrently": "^6.2.0",
@@ -13,6 +14,7 @@
     "typescript": "^4.3.2"
   },
   "prettier": {
-    "printWidth": 140
+    "printWidth": 140,
+    "tabWidth": 2
   }
 }

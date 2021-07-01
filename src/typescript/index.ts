@@ -1,4 +1,10 @@
+import { OnOff } from "./exports.js";
+
 console.log("version: 2.0.0-alpha");
+
+OnOff("The-Pro-Button", "Pro-status");
+OnOff("The-Theme-Button", "Theme-status");
+
 /*
 colors: #39ff14 , #ff1439 , hsl(51, 100%, 59%)
 
@@ -6,6 +12,7 @@ To-do list:
 - Add a Hover Tips popup at a fixed position
 - Ability for users to change the accent color (Maybe)
 - check out lit / web components stuff
+
 */
 
 const AboutTabs = document.getElementsByClassName("abouttab");

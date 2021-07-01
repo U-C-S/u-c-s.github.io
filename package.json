@@ -4,17 +4,19 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "develop": "node bin/develop.js",
+    "develop": "concurrently -n 'zola,tsc,sass' \"npm run zola\" \"npm run tsc\" \" npm run sass\"",
     "build": "sass --no-source-map --style=compressed src/sass:static/styles && tsc && zola build",
-    "buildwhat": "node bin/build.js"
+    "zola": "zola serve --port 7321",
+    "tsc": "tsc --watch",
+    "sass": "sass --watch --no-source-map src/sass:static/styles"
+  },
+  "prettier": {
+    "printWidth": 140,
+    "tabWidth": 2
   },
   "dependencies": {
     "concurrently": "^6.2.0",
     "sass": "^1.34.1",
     "typescript": "^4.3.2"
-  },
-  "prettier": {
-    "printWidth": 140,
-    "tabWidth": 2
   }
 }

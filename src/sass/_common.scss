@@ -11,26 +11,13 @@
   //transition: all 0.2s linear;
 }
 
-[data-theme="dark"] {
-  --back: hsl(0, 0%, 8%);
-  --back2: hsla(0, 0%, 100%, 0.2);
-  --main-back: black;
-  --text: white;
-  --secColor: hsl(200, 100%, 70%);
+:root {
   --accentColor: hsl(350, 100%, 57%); //slate red
-}
-
-[data-theme="light"] {
-  --back: hsl(0, 0%, 92%);
-  --back2: hsla(0, 0%, 0%, 0.2);
-  --main-back: white;
-  --text: black;
-  --secColor: hsl(200, 100%, 54%);
-  --accentColor: hsl(350, 90%, 57%); //slate red
+  --secColor: hsl(200, 100%, 70%);
 }
 
 body {
-  background-color: var(--back);
+  background-color: hsl(0, 0%, 8%);
   margin: 0;
   min-width: 370px;
   min-height: 300px;
@@ -46,7 +33,7 @@ h4,
 li,
 span {
   font-family: "Quicksand";
-  color: var(--text);
+  color: white;
 }
 
 a {
@@ -65,7 +52,7 @@ button {
   margin: 5px auto;
   width: 70%;
   height: 2px;
-  background-color: var(--text);
+  background-color: white;
 }
 
 .zero-display {
@@ -77,9 +64,9 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--back2);
+  background: hsla(0, 0%, 100%, 0.2);
+}
 
-  &:hover {
-    background: var(--accentColor);
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #ff1439;
 }

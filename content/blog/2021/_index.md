@@ -3,5 +3,4 @@
   weight = 2021
   sort_by = "date"
   page_template = "article.html"
-  redirect_to = "blog"
 +++

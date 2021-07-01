@@ -1,14 +1,15 @@
-@use "_blogs";
+@use "_blogheader";
 
 //---------------------------
-main {
+.articles-list {
+  padding: 10px;
   h2 {
     font-size: 36px;
     margin: 5px;
   }
 }
 
-article {
+.article-single {
   margin: 5px 0;
   padding: 5px 5px 5px 40px;
 
@@ -20,22 +21,12 @@ article {
       text-decoration: underline;
     }
   }
-
-  p {
-    font-family: monospace;
-    font-size: 12px;
-    color: var(--text);
-    padding: 3px 10px;
-    margin: 0px;
-  }
 }
 
-@media screen and (max-width: 560px) {
-  article {
-    padding: 5px;
-
-    a {
-      font-size: 22px;
-    }
-  }
+.article-meta {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--text);
+  padding: 3px 10px;
+  margin: 0px;
 }

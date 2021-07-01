@@ -1,18 +1,12 @@
-{% macro header(backlink,backbtn) %}
-  <header>
-    <a href="{{ backlink }}">
-      <span>&larr;</span>
-      <span>{{ backbtn }}</span>
-    </a>
-    <h1>Chanakya</h1>
-    <button id="The-Theme-Btn">◐︁</button>
-  </header>
-{% endmacro header %}
+{% macro blog_header(backlink,backbtn) %}
 
+<header>
+  <a href="{{ backlink }}">
+    <span>&larr;</span>
+    <span>{{ backbtn }}</span>
+  </a>
+  <h1>Chanakya</h1>
+  <button id="The-Theme-Btn">◐︁</button>
+</header>
 
-
-{% macro footer() %}
-  <footer>
-    <p>A Article by Chanakya</p>
-  </footer>
-{% endmacro header %}
+{% endmacro post_list %}

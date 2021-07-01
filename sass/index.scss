@@ -19,8 +19,8 @@ main {
   width: 100%;
   height: clamp(500px, calc(100vh - 20px), 1000px);
   display: grid;
-  grid-template-columns: 1fr minmax(180px, 1fr) 1fr;
-  grid-template-rows: 120px 80px minmax(140px, 1fr) minmax(240px, 1fr);
+  grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
+  grid-template-rows: 120px 80px minmax(140px, 1fr) 1fr;
   row-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
@@ -152,12 +152,6 @@ nav {
 }
 
 //---------------------------
-%all-text {
-  color: white;
-  font-family: "Open Sans";
-  margin: 5px;
-}
-
 footer {
   grid-area: b;
   padding: 10px;
@@ -172,6 +166,7 @@ footer {
   h3 {
     @extend %all-text;
     font-size: 14px;
+    margin: 5px;
   }
 
   hr {
@@ -182,9 +177,15 @@ footer {
   a {
     @extend %all-text;
     display: block;
+    margin: 5px;
     font-size: 12px;
     text-align: center;
   }
+}
+
+%all-text {
+  color: white;
+  font-family: "Open Sans";
 }
 
 .footer-of-footer {

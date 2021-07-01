@@ -6,12 +6,6 @@
   --secColor: hsl(200, 100%, 70%);
 }
 
-ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-}
-
 body {
   height: clamp(666px, 100vh, 1000px);
   padding: 10px;
@@ -106,6 +100,9 @@ nav {
   ul {
     width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -190,20 +187,6 @@ footer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-}
-
-.other-links {
-  h4 {
-    margin: 0;
-    border-bottom: 1px solid white;
-    padding: 5px;
-  }
-  li {
-    padding: 5px 10px;
-  }
-  a {
-    font-size: 14px;
-  }
 }
 
 .footer-of-footer {

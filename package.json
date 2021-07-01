@@ -1,11 +1,8 @@
 {
-  "name": "chanakya-website",
-  "version": "2.0.0-alpha",
   "type": "module",
   "private": true,
   "scripts": {
-    "serve": "concurrently --names 'zola,tsc' \"zola serve --port 3721\" \"tsc --watch\"",
-    "zolaSer": "zola serve --port 3721",
+    "serve": "concurrently --names 'tsc,zola' \"tsc --watch\" \"zola serve\"",
     "build": "tsc && zola build",
     "ts": "tsc"
   },
@@ -14,7 +11,7 @@
     "tabWidth": 2
   },
   "dependencies": {
-    "concurrently": "^6.2.0",
-    "typescript": "^4.3.2"
+    "concurrently": "^6.1.0",
+    "typescript": "^4.2.4"
   }
 }

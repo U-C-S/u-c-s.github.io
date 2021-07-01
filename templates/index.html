@@ -1,14 +1,20 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Chanakya's Webpage</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="author" content="{{ config.extra.author }}" />
+    <meta name="description" content="{{ config.extra.description }}" />
 
-<!--head-->
-{% block head -%}
-    {{ super() }}
+    <meta name="google-site-verification" content="qho6LUTU0hTe7r6Slj67fZhj2aTZ7MvQ4N-PQ2X_u0U" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+
     <link rel="stylesheet" href="index.css" />
-    <script defer type="module" src="scripts/index.js"></script>
-{% endblock head -%}
 
-<!--content-->
-{% block content %}
+    <script defer type="module" src="scripts/index.js"></script>
+  </head>
   <body>
     <main>
       <header class="OneCard">
@@ -16,6 +22,7 @@
         <hr />
         <p>--- Website HomePage ---</p>
       </header>
+
       <nav class="OneCard">
         <ul>
           <li>
@@ -40,6 +47,7 @@
           </li>
         </ul>
       </nav>
+
       <div id="SettingsCard">
         <button id="The-Pro-Button" class="TheButtons" title="On Activation, Shows Professional Info">
           Pro Mode: <span id="Pro-status">OFF</span>
@@ -51,7 +59,8 @@
 
       <section id="about" class="OneCard"></section>
       <section id="datame" class="OneCard">
-          {{section.content}}
+        <p>Construction Work going on here. For the finished product, please visit in the near future.</p>
+        <a href="https://github.com/U-C-S/u-c-s.github.io" rel="noreferrer" target="_blank">v2-alpha</a>
       </section>
 
       <footer class="OneCard">
@@ -73,4 +82,4 @@
       </footer>
     </main>
   </body>
-{% endblock content %}
+</html>

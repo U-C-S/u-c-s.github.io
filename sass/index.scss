@@ -1,6 +1,4 @@
 @import "common";
-//{% block title %}Meoww | {% endblock title %}
-
 
 :root {
   --accentColor: #ff1439;
@@ -38,14 +36,8 @@ main {
     grid-template-areas: "h" "l" "i" "d" "a" "b";
     grid-template-rows: 120px 80px 140px minmax(250px, auto) minmax(250px, auto) 256px;
     grid-template-columns: 1fr;
-    padding: 10px clamp(10px, 8%, 70px);
+    padding: 10px clamp(10px, 8%, 60px);
     height: auto;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  main {
-    padding: 10px;
   }
 }
 

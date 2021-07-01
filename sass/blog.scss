@@ -1,41 +1,5 @@
 @import "common";
 
-body {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-
-main {
-  width: 70%;
-  padding: 10px;
-  min-width: 400px;
-  border-left: 3px solid white;
-  border-right: 3px solid white;
-  background-color: black;
-}
-
-//---------------------------
-header {
-  width: clamp(180px, 33%, 500px);
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  background-color: black;
-  border-radius: 12px;
-  border: 3px solid white;
-  transition: all 0.1s linear;
-
-  h1 {
-    font-size: 54px;
-    font-family: "Quicksand", monospace;
-    margin: 0;
-    color: var(--accentColor);
-  }
-
-  p {
-    font-family: monospace;
-    font-size: 11px;
-  }
+h1 {
+  color: rebeccapurple;
 }

@@ -8,7 +8,7 @@
 
 * {
   box-sizing: border-box;
-  transition: all 0s linear;
+  //transition: all 0.2s linear;
 }
 
 [data-theme="dark"] {
@@ -18,8 +18,6 @@
   --text: white;
   --secColor: hsl(200, 100%, 70%);
   --accentColor: hsl(350, 100%, 57%); //slate red
-
-  --logo-only: invert(0);
 }
 
 [data-theme="light"] {
@@ -29,8 +27,6 @@
   --text: black;
   --secColor: hsl(200, 100%, 54%);
   --accentColor: hsl(350, 90%, 57%); //slate red
-
-  --logo-only: invert(1);
 }
 
 body {

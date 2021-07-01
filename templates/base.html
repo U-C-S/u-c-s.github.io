@@ -2,22 +2,16 @@
 <html lang="en" data-theme="dark">
   <head>
     {% block head -%}
-      <title>{% block title -%}{% endblock title -%}The Chanakya's Website</title>
-
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="author" content="{{ config.extra.author }}" />
-      <meta name="description" content="{{ config.extra.description }}" />
-      <meta name="theme-color" content="#FF1439" />
-      <meta name="google-site-verification" content="qho6LUTU0hTe7r6Slj67fZhj2aTZ7MvQ4N-PQ2X_u0U" />
-
-      <link rel="preconnect" href="https://fonts.gstatic.com/" />
-      <link rel="icon" href="{{ get_url(path="favicon.ico") }}" />
-
-      <script defer src="{{ get_url(path="scripts/common.js")}}"></script>
-      <script>
-        
-      </script>
+    <title>{% block title -%}{% endblock title -%}The Chanakya's Website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="{{ config.extra.author }}" />
+    <meta name="description" content="{{ config.extra.description }}" />
+    <meta name="theme-color" content="#FF1439" />
+    <meta name="google-site-verification" content="qho6LUTU0hTe7r6Slj67fZhj2aTZ7MvQ4N-PQ2X_u0U" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link rel="icon" href="{{ get_url(path="favicon.ico") }}" />
+    <script defer src="{{ get_url(path="scripts/common.js")}}"></script>
     {% endblock head -%}
   </head>
   <body>

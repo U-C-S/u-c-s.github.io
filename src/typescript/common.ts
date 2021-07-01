@@ -1,16 +1,18 @@
-(() => {
-  const currentThemeItem = localStorage.getItem("theme");
+(async () => {
   const htmlElem = document.documentElement;
-
-  if (currentThemeItem) {
-    //htmlElem.setAttribute("data-theme", currentThemeItem);
-    htmlElem.dataset.theme = currentThemeItem;
+  const toggleThemeBtn = document.getElementById("The-Theme-Btn");
+  const currentThemeCokie = localStorage.getItem("theme");
+  if (currentThemeCokie) {
+    document.documentElement.setAttribute("data-theme", currentThemeCokie);
   }
 
-  document.getElementById("The-Theme-Btn")?.addEventListener("click", () => {
-    let themeX = htmlElem.dataset.theme == "light" ? "dark" : "light";
-    //console.log(themeX);
-    htmlElem.dataset.theme = themeX;
-    localStorage.setItem("theme", themeX);
+  toggleThemeBtn?.addEventListener("click", () => {
+    if (htmlElem.dataset.theme === "dark") {
+      htmlElem.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    } else {
+      htmlElem.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    }
   });
 })();

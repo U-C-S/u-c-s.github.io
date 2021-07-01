@@ -20,7 +20,7 @@ body {
     "l h a"
     "l i a"
     "b b a";
-  grid-template-columns: 75px minmax(290px, 4fr) 5fr;
+  grid-template-columns: 75px minmax(290px, 1fr) 1fr;
   grid-template-rows: 118px minmax(140px, 1fr) 256px;
   row-gap: 20px;
   column-gap: 20px;

@@ -41,3 +41,10 @@ function change_active_tab_color(tab: HTMLButtonElement) {
   document.getElementsByClassName(ACTIVE_TAB)[0]?.classList.remove(ACTIVE_TAB);
   tab.classList.add(ACTIVE_TAB);
 }
+
+//......
+//testing whether I can call a elem with id which is in a template tag
+
+let meow = document.getElementById("meowx");
+console.log(meow?.innerHTML);
+//looks like we cannot

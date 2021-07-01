@@ -1,5 +1,4 @@
-@use "_common";
-@use "_about";
+@import "_common";
 
 :root {
   --accentColor: hsl(350, 100%, 57%); //slate red
@@ -148,6 +147,8 @@ nav {
   padding: 5px;
   color: white;
 }
+
+@import "index/_about";
 
 //---------------------------
 #SettingsCard {

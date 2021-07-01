@@ -8,26 +8,14 @@
 {% endblock head -%}
 
 {% block content %}
-<main>
-  <header>
-    <a href="/">
-      <p>&larr;</p>
-      <p>Home</p>
-    </a>
-    <div class="heading">
-      <h1>Chanakya</h1>
-      <div class="highlight"></div>
-      <p>--- Blogs and Journals Page ---</p>
+  <main>
+    <div class="articles-list">
+      {% for page in section.pages %}
+        <div class="article-single">
+          <a href="{{ page.permalink }}">{{ page.title }}</a>
+          <p class="article-meta">- {{ page.date | date(format="%Y-%b-%d") }}</p>
+        </div>
+      {% endfor %}
     </div>
-    <button></button>
-  </header>
-  <div class="articles-list">
-    {% for page in section.pages %}
-      <div class="article-single">
-        <a href="{{ page.permalink }}">{{ page.title }}</a>
-        <p class="article-meta">- {{ page.date | date(format="%Y-%b-%d") }}</p>
-      </div>
-    {% endfor %}
-  </div>
-</main>
+  </main>
 {% endblock content %}

@@ -1,64 +1,29 @@
-@use "common";
+@import "common";
 
 body {
   display: flex;
   justify-content: center;
-  height: 900px;
+  padding: 0;
 }
 
 main {
   width: 70%;
-  min-width: 400px;
-  border: 2px solid white;
+  height: 900px;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
   background-color: black;
 }
 
-header {
-  background-color: black;
-  display: flex;
-  border-bottom: 2px solid white;
-
-  a {
-    text-align: center;
-    border-right: 2px solid white;
-    padding: 15px 10px;
-    min-width: 100px;
-
-    p {
-      display: block;
-      margin: 0;
-      font-size: 24px;
-    }
-  }
-
-  button {
-    border-left: 2px solid white;
-    width: 100px;
-  }
-}
-
-.heading {
-  margin: 0 auto;
-  width: 60%;
-  padding: 0px 10px 10px;
-
-  h1,
-  p {
-    margin: 0;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 50px;
-    color: #ff1439;
-  }
-  p {
-    font-size: 12px;
+@media screen and (max-width: 888px) {
+  main {
+    margin: 0 10px;
+    width: 100%;
   }
 }
 
 //---------------------------
 .articles-list {
+  border-top: 3px solid white;
   padding: 10px;
 }
 

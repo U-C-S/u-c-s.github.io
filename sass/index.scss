@@ -7,7 +7,6 @@
 
 main {
   width: 100%;
-  padding: 10px;
   height: clamp(500px, 100vh, 1000px);
   display: grid;
   grid-template-columns: 1fr minmax(180px, 1fr) 1fr;
@@ -148,7 +147,7 @@ nav {
     font-family: "Open Sans";
     color: var(--secColor);
 
-    &:hover {
+    &:hover{
       text-decoration: underline;
     }
   }

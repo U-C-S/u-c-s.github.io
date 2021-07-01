@@ -1,3 +1,3 @@
 +++
-  template = "index.html"
+  template = "webcard.html"
 +++

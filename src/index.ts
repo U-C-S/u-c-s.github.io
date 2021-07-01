@@ -1,6 +1,3 @@
-import RandomNumber from "./exports.js";
-
-console.log(RandomNumber());
 console.log("version: 2.0.0-alpha");
 
 fetch("svg-paths.json")

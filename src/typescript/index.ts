@@ -16,7 +16,7 @@ To-do list:
 */
 
 const AboutTabs = document.getElementsByClassName("abouttab");
-const AboutContent = <HTMLDivElement>document.getElementById("main-content");
+const AboutContent = <HTMLDivElement>document.getElementById("about-content");
 const ACTIVE_TAB = "activetab";
 
 for (let i = 0; i < AboutTabs.length; i++) {

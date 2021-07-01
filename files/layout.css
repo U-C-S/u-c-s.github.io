@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format("woff2");
+}
+
+:root {
+  --accentColor: #ff1439;
+}
+
+body {
+  background-color: hsl(0, 0%, 8%);
+  margin: 0;
+  padding: 10px;
+  min-width: 320px;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+hr {
+  width: 75%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  display: grid;
+  margin-bottom: 20px;
+  grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
+  grid-template-rows: 120px 80px 140px 300px;
+  row-gap: 20px;
+  column-gap: 20px;
+  grid-template-areas:
+    "d h a"
+    "d l a"
+    "d i a"
+    "b b a";
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+}
+
+.OneCard {
+  background-color: black;
+
+  border-radius: 5px;
+  border: 3px solid white;
+  transition: all 0.2s linear;
+}
+
+.OneCard:hover {
+  border: 3px solid var(--accentColor) !important;
+  box-shadow: 0px 2px 40px var(--accentColor);
+}
+
+/*----main child ---------------*/
+header {
+  grid-area: h;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 340%;
+  font-family: "Quicksand", monospace;
+  margin: 0;
+  user-select: none;
+  color: var(--accentColor);
+}
+
+header p {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+nav {
+  grid-area: l;
+  display: flex;
+  align-items: center;
+}
+
+.social_media_links {
+  width: 100%;
+}
+
+#about {
+  grid-area: a;
+}
+
+#datame {
+  grid-area: d;
+}
+
+#blog {
+  grid-area: b;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  font-family: "Open Sans";
+  text-align: center;
+}
+
+#blog a {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 5px;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "u-c-s.github.io",
+  "description": "The UCS webpage",
+  "private": true,
+  "author": {
+    "name": "U-C-S",
+    "email": "uchanakyasrinivas@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/U-C-S/u-c-s.github.io.git"
+  },
+  "version": "2.0.0-alpha",
+  "homepage": "https://u-c-s.github.io",
+  "license": "MIT",
+  "prettier": {
+    "printWidth": 150
+  }
+}

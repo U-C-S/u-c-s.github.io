@@ -1,9 +1,0 @@
-base_url = "https://u-c-s.github.io"
-
-compile_sass = true
-build_search_index = false
-
-[markdown]
-highlight_code = true
-
-[extra]

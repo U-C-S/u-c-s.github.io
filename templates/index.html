@@ -15,14 +15,26 @@
     {{ macros::headerX(class="OneCard", page_name="Website Homepage") }}
     <nav class="OneCard">
       <ul>
-        {% set socialdata = load_data(path="content/social.json", format="json") %}
-        {% for link in socialdata.data %}
-          <li>
-            <a href="{{ link.link }}" title="{{ link.title }}" target="_blank">
-              <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
-            </a>
-          </li>
-        {% endfor %}
+        <li>
+          <a href="https://github.com/U-C-S" title="GitHub">
+            <svg viewBox="0 0 496 512"><path id="svg1-gh" /></svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:uchanakyasrinvas@gmail.com?subject=Hello%20UCS&body=From%20your%20blog%2C" title="Mail me!">
+            <svg viewBox="0 0 512 512"><path id="svg2-mail" /></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/chanakya-srinivas" title="linkedin">
+            <svg viewBox="0 0 448 512"><path id="svg3-in" /></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.reddit.com/user/NewFolderdotexe" title="Reddit">
+            <svg viewBox="0 0 512 512"><path id="svg4-rdt" /></svg>
+          </a>
+        </li>
       </ul>
     </nav>
     <div id="SettingsCard">
@@ -37,24 +49,22 @@
     <section id="about" class="OneCard">
       <div class="about-nav">
         <div class="about-nav-btns">
-          <button id="tab-blog" class="abouttab">Blog</button>
-          <button id="tab-intr" class="abouttab">Interests</button>
-          <button id="tab-abou" class="abouttab">About</button>
+          <button id="tabblog" class="abouttab activetab">Blog</button>
+          <button id="tabintr" class="abouttab">Interests</button>
+          <button id="tababou" class="abouttab">About</button>
         </div>
       </div>
 
-      <div id="about-content"></div>
-
-      <template id="templ-blog">
-        <div class="recent-blogs">
-          <p>Opinionated Blog</p>
-          {% set posts_news = get_section(path="blog/_index.md") %}
-          {% set pages_news = posts_news.pages | slice(end=3) %}
-          {{ macros::post_list(posts=pages_news) }}
-        </div>
-      </template>
-      <template id="templ-intr"></template>
-      <template id="templ-about"></template>
+      <div id="about-content">
+      </div>
+      
+      <div class="recent-blogs">
+        <p>Opinionated Blog</p>
+        {% set posts_news = get_section(path="blog/_index.md") %}
+        {% set pages_news = posts_news.pages | slice(end=3) %}
+        {{ macros::post_list(posts=pages_news) }}
+      </div>
+      
     </section>
 
     <footer class="OneCard">
@@ -64,8 +74,9 @@
           <div class="highlight"></div>
           <div>
             <a href="">Instagram</a>
-            <a>Facebook ignore</a>
+            <a>Facebook</a>
             <a href="">Discord</a>
+            <a href="">Twitter</a>
           </div>
         </div>
       </div>

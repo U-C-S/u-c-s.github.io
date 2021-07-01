@@ -2,6 +2,15 @@ import { OnOff } from "./exports.js";
 
 console.log("version: 2.0.0-alpha");
 
+fetch("svg-paths.json")
+  .then((res) => res.json())
+  .then((svg_paths) => {
+    for (let id in svg_paths) {
+      let draw = svg_paths[id];
+      document.getElementById(id)!.setAttribute("d", draw);
+    }
+  });
+
 OnOff("The-Pro-Button", "Pro-status");
 OnOff("The-Theme-Button", "Theme-status");
 
@@ -14,20 +23,3 @@ To-do list:
 - check out lit / web components stuff
 
 */
-
-const aboutContent = <HTMLDivElement>document.getElementById("about-content");
-let about_tabs: [string, string][] = [
-  ["tab-blog", "templ-blog"],
-  ["tab-intr", "templ-intr"],
-  ["tab-abou", "templ-abou"],
-];
-
-const tabblog = <HTMLButtonElement>document.getElementById("tab-blog");
-const templb = <HTMLTemplateElement>document.getElementById("templ-blog");
-
-tabblog?.addEventListener("click", () => {
-  let x = templb.content.cloneNode(true);
-  aboutContent.appendChild(x);
-});
-
-tabblog.click();

@@ -1,4 +1,15 @@
 console.log("version: 2.0.0-beta");
+/*
+colors: #39ff14 , #ff1439 , hsl(51, 100%, 59%)
+
+To-do list:
+- Add a Hover Tips popup at a fixed position
+- Ability for users to change the accent color (Maybe)
+- check out lit / web components stuff
+- Check for fonts - at max 2 imported
+- Add a NoJS page
+- Fix: flash of incorrect theme
+*/
 
 /**
  * Simple API for updating the current URL with search queries

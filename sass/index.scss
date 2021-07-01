@@ -15,10 +15,10 @@ hr {
 
 main {
   width: 100%;
-  height: clamp(500px, calc(100vh - 20px), 1000px);
   display: grid;
+  margin-bottom: 20px;
   grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
-  grid-template-rows: 120px 80px minmax(140px, 1fr) 1fr;
+  grid-template-rows: 120px 80px 140px 300px;
   row-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
@@ -40,7 +40,7 @@ main {
   }
 }
 
-//---------------------------
+/*----main child ---------------*/
 header {
   grid-area: h;
   text-align: center;
@@ -57,6 +57,30 @@ header {
   p {
     font-family: monospace;
     font-size: 11px;
+  }
+}
+
+#about {
+  grid-area: a;
+}
+
+#datame {
+  grid-area: d;
+}
+
+#blog {
+  grid-area: b;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  font-family: "Open Sans";
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 5px;
   }
 }
 
@@ -102,27 +126,6 @@ nav {
 }
 
 //---------------------------
-#about {
-  grid-area: a;
-}
-
-#datame {
-  grid-area: d;
-  padding: 5px;
-  color: white;
-  font-size: 14px;
-  font-family: "Open Sans";
-  text-align: center;
-
-  a {
-    color: white;
-    text-decoration: none;
-    border: 2px solid white;
-    padding: 5px;
-  }
-}
-
-//---------------------------
 #SettingsCard {
   grid-area: i;
   display: flex;
@@ -137,7 +140,6 @@ nav {
   padding: 5px;
   transition: all 0.2s linear;
   font-family: "Open Sans";
-  color: white;
 
   &:hover {
     border: 3px solid var(--accentColor) !important;
@@ -149,50 +151,7 @@ nav {
   }
 }
 
-//---------------------------
 footer {
-  grid-area: b;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.all_social_links {
-  padding: 0px 10px;
-  border: 1px solid white;
-
-  h3 {
-    @extend %all-text;
-    font-size: 14px;
-    margin: 5px;
-  }
-
-  hr {
-    margin: 0;
-    width: 100%;
-  }
-
-  a {
-    @extend %all-text;
-    display: block;
-    margin: 5px;
-    font-size: 12px;
-    text-align: center;
-  }
-}
-
-%all-text {
-  color: white;
-  font-family: "Open Sans";
-}
-
-.footer-of-footer {
   width: 100%;
-  padding-top: 5px;
-  display: block;
-  margin: 0;
-  color: rgb(150, 150, 150);
-  font-family: "Open Sans";
-  font-size: 12px;
-  text-align: center;
+  height: 300px;
 }

@@ -18,7 +18,7 @@
         {% set socialdata = load_data(path="content/social.json", format="json") %}
         {% for link in socialdata.data %}
           <li>
-            <a class="social-link" href="{{ link.link }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
+            <a href="{{ link.link }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
               <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
             </a>
           </li>
@@ -48,32 +48,36 @@
 
       <div class="zero-display">
         <template id="templ-blog">
-          <h2 class="tab-content-heading">Opinionated Blog</h2>
           <div class="recent-blogs">
+            <p>Opinionated Blog</p>
             {% set posts_news = get_section(path="blog/_index.md") %}
             {% set pages_news = posts_news.pages | slice(end=3) %}
             {{ macros::post_list(posts=pages_news) }}
           </div>
         </template>
 
-        <template id="templ-abou">
-          <h2 class="tab-content-heading">About Me!!</h2>
-          <p>Page under Construction</p>
-        </template>
+        <template id="templ-abou"></template>
 
         <template id="templ-skil">
-          <h2 class="tab-content-heading">Unlimited Skills</h2>
           <p id="meowx">chakachaka</p>
         </template>
 
-        <template id="templ-intr">
-          <h2 class="tab-content-heading">These got my Attention</h2>
-        </template>
+        <template id="templ-intr"></template>
       </div>
     </section>
 
     <footer class="OneCard">
-      <div class="main-of-footer"></div>
+      <div class="main-of-footer">
+        <div class="all_social_links">
+          <h3>Social Links</h3>
+          <div class="highlight"></div>
+          <div>
+            <a href="">Instagram</a>
+            <a>Facebook ignore</a>
+            <a href="">Discord</a>
+          </div>
+        </div>
+      </div>
 
       <div class="footer-of-footer">
         <p>Made with ♥ and Zola by Chanakya</p>

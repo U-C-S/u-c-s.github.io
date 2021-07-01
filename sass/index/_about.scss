@@ -15,7 +15,6 @@
   font-size: 16px;
   border: 2px solid white;
   border-right: 0px;
-  transition-duration: 0.5s;
 
   &:first-of-type {
     border-radius: 5px 0 0 5px;
@@ -37,25 +36,21 @@
 }
 
 //----about-content----------
-#about-content {
-  color: white;
-}
-
-.tab-content-heading {
-  display: block;
-  margin: 0;
-  width: 70%;
-  min-width: 200px;
-  color: white;
-  text-align: end;
-  font-size: 24px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid white;
-}
-
-//----about-blog-content-----
 .recent-blogs {
   padding: 0 10px;
+
+  & > p {
+    display: block;
+    margin: 0;
+    width: 50%;
+    min-width: 200px;
+    font-family: "Open Sans";
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+  }
 }
 
 .blog-list {

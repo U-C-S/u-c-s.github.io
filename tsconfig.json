@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "ES2019"],
+    "outDir": "static/scripts",
+    "lib": ["DOM", "ES2020"],
     "module": "ES6",
     "target": "ES2018",
-    "outDir": "static/scripts",
 
     "removeComments": true,
 

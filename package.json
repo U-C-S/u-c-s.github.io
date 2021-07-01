@@ -1,20 +1,16 @@
 {
   "name": "chanakya-website",
-  "version": "2.0.0-beta",
+  "version": "2.0.0-alpha",
   "type": "module",
   "private": true,
   "scripts": {
     "develop": "node bin/develop.js",
-    "build": "node bin/build.js",
-    "ghpages": "npm run build && gh-pages -d public"
+    "build": "node bin/build.js"
   },
   "dependencies": {
     "concurrently": "^6.2.0",
     "sass": "^1.34.1",
     "typescript": "^4.3.2"
-  },
-  "devDependencies": {
-    "gh-pages": "^3.2.0"
   },
   "prettier": {
     "printWidth": 140

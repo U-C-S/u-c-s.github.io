@@ -1,3 +1,4 @@
-# UCS-Website
-- https://thirsty-metal.netlify.app/ (new)
-- https://u-c-s.github.io (current)
+# UCS-Blog
+My simple WebCard....
+
+- https://u-c-s.github.io

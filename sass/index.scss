@@ -14,7 +14,7 @@ main {
     "l h a"
     "l i a"
     "b b a";
-  grid-template-columns: 75px minmax(290px, 1fr) 1fr;
+  grid-template-columns: 75px minmax(290px, 5fr) 4fr;
   grid-template-rows: 118px minmax(140px, 1fr) 256px;
   row-gap: 20px;
   column-gap: 20px;
@@ -25,8 +25,8 @@ main {
     padding: 10px clamp(10px, 8%, 70px);
     height: auto;
     display: grid;
-    grid-template-areas: "h" "l" "i" "a" "b";
-    grid-template-rows: 118px 80px 140px minmax(250px, auto) auto;
+    grid-template-areas: "h" "l" "i" "d" "a" "b";
+    grid-template-rows: 118px 80px 140px minmax(250px, auto) minmax(250px, auto) auto;
     grid-template-columns: 1fr;
   }
 }
@@ -44,14 +44,14 @@ main {
   transition: all 0.1s linear;
 
   &:hover {
-    border-color: var(--accentColor);
+    border: 3px solid var(--accentColor);
     box-shadow: 0 0 32px var(--accentColor);
   }
 }
 
 //---------------------------
 header {
-  margin: 0 18%;
+  margin: 0 200px;
   grid-area: h;
   text-align: center;
   color: white;
@@ -113,51 +113,35 @@ nav {
   }
 }
 
-//--about--------------------
+//---------------------------
 #about {
   grid-area: a;
   padding: 5px;
   color: white;
 }
 
-.about-nav {
-  margin: 10px 0 20px;
+.about-navigation {
   display: flex;
-  justify-content: center;
-}
+  width: 200px;
+  margin: 10px auto;
 
-.about-nav-btns {
-  display: flex;
-}
-
-.abouttab {
-  padding: 7px 18px;
-  color: white;
-  font-family: "Open Sans";
-  font-size: 16px;
-  border: 2px solid white;
-  border-right: 0px;
-
-  &:first-of-type {
-    border-radius: 5px 0 0 5px;
+  table {
+    border-radius: 20px;
+    border-collapse: collapse;
   }
 
-  &:last-of-type {
-    border-right: 2px solid white;
-    border-radius: 0 5px 5px 0;
-  }
-
-  &:hover {
-    background-color: var(--secColor);
-    color: black;
+  button {
+    padding: 2px 10px;
+    color: white;
+    font-family: "Open Sans";
+    font-size: 16px;
   }
 }
 
-.activetab {
+.activebtn {
   background-color: var(--accentColor);
 }
 
-//----about-content----------
 .recent-blogs {
   padding: 0 10px;
 
@@ -212,6 +196,23 @@ nav {
 }
 
 //---------------------------
+#datame {
+  grid-area: d;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  font-family: "Open Sans";
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 5px;
+  }
+}
+
+//---------------------------
 #SettingsCard {
   grid-area: i;
   display: flex;
@@ -238,7 +239,7 @@ nav {
   }
 }
 
-//-----footer----------------
+//---------------------------
 %all-text {
   color: white;
   font-family: "Open Sans";

@@ -1,3 +1,0 @@
-+++
-  template = "webcard.html"
-+++

@@ -2,7 +2,6 @@
 
 body {
   height: 85vh;
-  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +10,7 @@ body {
 
 main {
   border: 3px solid var(--text);
-  border-radius: 15px;
+  border-radius: 8px;
   width: clamp(370px, 80%, 420px);
   padding: 20px;
 }

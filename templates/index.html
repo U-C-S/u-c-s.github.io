@@ -9,66 +9,68 @@
 
 <!--content-->
 {% block content %}
-  <main>
-    <header class="OneCard">
-      <h1>Chanakya</h1>
-      <hr />
-      <p>--- Website HomePage ---</p>
-    </header>
-    <nav class="OneCard">
-      <ul>
-        <li>
-          <a href="https://github.com/U-C-S" title="GitHub">
-            <svg viewBox="0 0 496 512"><path id="svg1-gh" /></svg>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:uchanakyasrinvas@gmail.com?subject=Hello%20UCS&body=From%20your%20blog%2C" title="Mail me!">
-            <svg viewBox="0 0 512 512"><path id="svg2-mail" /></svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/chanakya-srinivas" title="linkedin">
-            <svg viewBox="0 0 448 512"><path id="svg3-in" /></svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.reddit.com/user/NewFolderdotexe" title="Reddit">
-            <svg viewBox="0 0 512 512"><path id="svg4-rdt" /></svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div id="SettingsCard">
-      <button id="The-Pro-Button" class="TheButtons" title="On Activation, Shows Professional Info">
-        Pro Mode: <span id="Pro-status">OFF</span>
-      </button>
-      <button id="The-Theme-Button" class="TheButtons" title="Click to toggle between Dark/Light Themes">
-        Dark mode: <span id="Theme-status">OFF</span>
-      </button>
-    </div>
-
-    <section id="about" class="OneCard">
-      <a href="/blog">Instagram</a>
-    </section>
-    <section id="datame" class="OneCard">{{section.content}}</section>
-
-    <footer class="OneCard">
-      <div class="main-of-footer">
-        <div class="all_social_links">
-          <h3>All Social Links</h3>
-          <hr />
-          <a>GitHub</a>
-          <a href="">Instagram</a>
-          <a href="">Reddit</a>
-          <a>Facebook</a>
-          <a href="404.html">LinkedIn</a>
-          <a href="">Discord</a>
-          <a href="">Twitter</a>
-        </div>
+  <body>
+    <main>
+      <header class="OneCard">
+        <h1>Chanakya</h1>
+        <hr />
+        <p>--- Website HomePage ---</p>
+      </header>
+      <nav class="OneCard">
+        <ul>
+          <li>
+            <a href="https://github.com/U-C-S" title="GitHub">
+              <svg viewBox="0 0 496 512"><path id="svg1-gh" /></svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:uchanakyasrinvas@gmail.com?subject=Hello%20UCS&body=From%20your%20blog%2C" title="Mail me!">
+              <svg viewBox="0 0 512 512"><path id="svg2-mail" /></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/chanakya-srinivas" title="linkedin">
+              <svg viewBox="0 0 448 512"><path id="svg3-in" /></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.reddit.com/user/NewFolderdotexe" title="Reddit">
+              <svg viewBox="0 0 512 512"><path id="svg4-rdt" /></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div id="SettingsCard">
+        <button id="The-Pro-Button" class="TheButtons" title="On Activation, Shows Professional Info">
+          Pro Mode: <span id="Pro-status">OFF</span>
+        </button>
+        <button id="The-Theme-Button" class="TheButtons" title="Click to toggle between Dark/Light Themes">
+          Dark mode: <span id="Theme-status">OFF</span>
+        </button>
       </div>
 
-      <div class="footer-of-footer">Made with ♥ and Zola by Chanakya</div>
-    </footer>
-  </main>
+      <section id="about" class="OneCard"></section>
+      <section id="datame" class="OneCard">
+          {{section.content}}
+      </section>
+
+      <footer class="OneCard">
+        <div class="main-of-footer">
+          <div class="all_social_links">
+            <h3>All Social Links</h3>
+            <hr />
+            <a>GitHub</a>
+            <a href="">Instagram</a>
+            <a href="">Reddit</a>
+            <a>Facebook</a>
+            <a href="">LinkedIn</a>
+            <a href="">Discord</a>
+            <a href="">Twitter</a>
+          </div>
+        </div>
+
+        <div class="footer-of-footer">Made with ♥ and Zola by Chanakya</div>
+      </footer>
+    </main>
+  </body>
 {% endblock content %}

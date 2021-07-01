@@ -4,9 +4,9 @@
     "typescript": "^4.3.0-beta"
   },
   "scripts": {
-    "serve": "concurrently --names 'tsc,zola' \"tsc --outdir public/scripts --watch\" \"zola serve\"",
+    "ts": "tsc",
     "build": "tsc && zola build",
-    "ts": "tsc"
+    "serve": "concurrently --names TS,ZOLA \"tsc --outdir public/scripts --watch\" \"zola serve\""
   },
   "prettier": {
     "printWidth": 140

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format("woff2");
+}
+
 :root {
   --accentColor: #ff1439;
 }
@@ -9,8 +17,20 @@ body {
   min-width: 320px;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
 hr {
   width: 75%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 main {
@@ -26,6 +46,11 @@ main {
     "d l a"
     "d i a"
     "b b a";
+}
+
+footer {
+  width: 100%;
+  height: 300px;
 }
 
 .OneCard {
@@ -84,7 +109,6 @@ header {
   }
 }
 
-//---------------------------
 nav {
   grid-area: l;
 
@@ -125,7 +149,6 @@ nav {
   }
 }
 
-//---------------------------
 #SettingsCard {
   grid-area: i;
   display: flex;
@@ -151,7 +174,17 @@ nav {
   }
 }
 
-footer {
-  width: 100%;
-  height: 300px;
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 100%, 20%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff1439;
 }

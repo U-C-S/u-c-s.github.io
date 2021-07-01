@@ -1,10 +1,7 @@
-:root {
-  --accentColor: #ff1439;
-}
-
 body {
   background-color: black;
   margin: 0;
+  min-width: 320px;
   padding: 10px;
 }
 
@@ -12,29 +9,43 @@ body {
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+hr {
+  width: 70%;
+}
+
 main {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr minmax(100px, 1fr) 1fr;
-  grid-template-rows: 80px 80px 140px 300px;
+  grid-template-rows: 80px 80px 140px 200px 100px;
   row-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
     "d h a"
     "d l a"
-    "d i a"
-    "b b a";
+    "d . a"
+    ". . ."
+    ". . .";
+  height: 100%;
 }
 
 .OneCard {
-  border-radius: 5px;
   border: 3px solid white;
   transition: all 0.2s linear;
 }
 
 .OneCard:hover {
-  border: 3px solid var(--accentColor) !important;
-  box-shadow: 0px 2px 20px var(--accentColor);
+  border-radius: 10px;
+  border: 3px solid #ff1439 !important;
+  box-shadow: 0 0 20px #ff1439;
 }
 
 /*----main child ---------------*/
@@ -58,8 +69,4 @@ nav {
 
 #datame {
   grid-area: d;
-}
-
-#blog {
-  grid-area: b;
 }

@@ -1,5 +1,5 @@
 {% extends "_base.html" %}
-{% import "includes/blog-macros.html" as macros %}
+{% import "includes/blog-macros.html" as blog %}
 {% block title %}Blog | {% endblock title %}
 
 {% block head -%}
@@ -8,19 +8,21 @@
 {% endblock head -%}
 
 {% block content %}
-  {{ macros::blog_header(backlink="/", backbtn="home") }}
+  {{ blog::header(backlink="/", backbtn="home") }}
 
-  <div class="articles-list">
+  <main>
     {% for subpaths in section.subsections %}
     {% set subsection = get_section(path=subpaths) %}
       <h2>{{ subsection.title }}</h2>
       <div class="pline"></div>
       {% for page in subsection.pages %}
-        <div class="article-single">
+        <article>
           <a href="{{ page.permalink }}">- {{ page.title }}</a>
-          <p class="article-meta">{{ page.date | date(format="%Y-%b-%d") }}</p>
-        </div>
+          <p>{{ page.date | date(format="%Y-%b-%d") }}</p>
+        </article>
       {% endfor %}
     {% endfor %}
-  </div>
+  </main>
+
+  {{ blog::footer() }}
 {% endblock content %}

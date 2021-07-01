@@ -67,16 +67,12 @@ button {
   cursor: pointer;
 }
 
-.pline {
-  margin: 5px;
+.highlight {
+  margin: 5px auto;
   width: 70%;
   height: 2px;
   background-color: var(--text);
 }
-.pline-center {
-  margin: 5px auto;
-}
-
 
 .zero-display {
   display: none;

@@ -4,7 +4,7 @@ article {
   padding: 0 15px;
 }
 
-.the-head {
+.article-head {
   h1 {
     text-align: center;
     font-size: 36px;
@@ -14,15 +14,5 @@ article {
   p {
     text-align: center;
     font-family: monospace;
-  }
-}
-
-.the-content {
-  p {
-    font-family: 'Segoe UI', Verdana, sans-serif;
-  }
-  a {
-    color: var(--secColor);
-    text-decoration: underline;
   }
 }

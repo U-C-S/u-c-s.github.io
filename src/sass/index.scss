@@ -9,8 +9,8 @@ ul {
 body {
   border: 3px solid var(--same-white);
   height: clamp(666px, 100vh, 1000px);
-  padding: 25px;
   display: grid;
+  padding: 25px;
   row-gap: 25px;
   column-gap: 25px;
   grid-template-areas:
@@ -33,7 +33,7 @@ body {
   }
 }
 
-@media screen and (max-width: 963px) {
+@media screen and (max-width: 888px) {
   body {
     border: none;
     padding: 10px clamp(10px, 8%, 70px);
@@ -73,7 +73,7 @@ body {
 header {
   margin: 0 auto;
   min-width: 280px;
-  width: 80%;
+  width: 70%;
   grid-area: h;
   text-align: center;
   color: var(--text);
@@ -91,7 +91,7 @@ header {
   }
 }
 
-@media screen and (max-width: 963px) {
+@media screen and (max-width: 888px) {
   header {
     width: 100%;
   }

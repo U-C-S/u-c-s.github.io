@@ -1,12 +1,16 @@
 #!/usr/bin/env node
-import { execSync } from "child_process";
-import { cleanPreviousOutput } from "./_clean.js";
+import { exec, execSync } from "child_process";
+import process from "process";
 
 let args = process.argv.slice(2).join(" ");
 
 console.log(`Current directory: ${process.cwd()}`);
 
-cleanPreviousOutput();
+console.log("Clearing the previous build output for a new clean build....\n");
+let outdir = ["public", "static/styles", "static/scripts"];
+outdir.forEach((path) => {
+  execSync(`rm -rf ${path}`);
+});
 
 console.log("Starting a new clean build....\n");
 

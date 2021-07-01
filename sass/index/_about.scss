@@ -9,13 +9,12 @@
 }
 
 .abouttab {
-  padding: 7px 25px;
+  padding: 7px 18px;
   color: white;
   font-family: "Open Sans";
-  font-size: 18px;
+  font-size: 16px;
   border: 2px solid white;
   border-right: 0px;
-  will-change: padding, font-size;
   transition-duration: 0.5s;
 
   &:first-of-type {
@@ -34,25 +33,12 @@
 }
 
 .activetab {
-  padding: 7px 12px;
   background-color: var(--accentColor);
-}
-
-@media screen and (max-width: 560px) {
-  .abouttab {
-    font-size: 16px;
-    padding: 7px 20px;
-  }
-
-  .activetab {
-    padding: 7px 10px;
-  }
 }
 
 //----about-content----------
 #about-content {
   color: white;
-  transition: height 0.3s linear;
 }
 
 .tab-content-heading {
@@ -65,12 +51,6 @@
   font-size: 24px;
   padding-bottom: 5px;
   border-bottom: 2px solid white;
-}
-
-@media screen and (max-width: 560px) {
-  .tab-content-heading {
-    font-size: 20px;
-  }
 }
 
 //----about-blog-content-----

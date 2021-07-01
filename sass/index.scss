@@ -24,7 +24,7 @@ main {
   background-color: black;
   border-radius: 8px;
   border: 3px solid white;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
 
   &:hover {
     border-color: var(--accentColor);
@@ -44,8 +44,8 @@ main {
       "b b";
     grid-template-rows: 118px 250px minmax(250px, auto) auto;
     grid-template-columns: 1fr 75px;
-    row-gap: 15px;
-    column-gap: 15px;
+    row-gap: 20px;
+    column-gap: 10px;
   }
 }
 
@@ -66,9 +66,7 @@ main {
 
 //---------------------------
 header {
-  margin: 0 auto;
-  min-width: 280px;
-  width: 70%;
+  margin: 0 18%;
   grid-area: h;
   text-align: center;
   color: white;
@@ -89,7 +87,7 @@ header {
 
 @media screen and (max-width: 888px) {
   header {
-    width: 100%;
+    margin: 0;
   }
 }
 

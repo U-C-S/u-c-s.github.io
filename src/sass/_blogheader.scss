@@ -1,18 +1,19 @@
 @use "common";
 
 body {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   height: 900px;
+}
+
+main {
   width: 75%;
   min-width: 550px;
   border: 2px solid white;
-  border-top: none;
-  transition: all 0.2s linear;
+  background-color: black;
 }
-//seperate header html into a macro
+
 header {
-  position: sticky;
-  top: 0;
   background-color: black;
   display: flex;
   border-bottom: 2px solid white;
@@ -47,7 +48,7 @@ header {
 }
 
 @media screen and (max-width: 560px) {
-  body {
+  main {
     border: 0px;
     width: 100%;
     min-width: 380px;

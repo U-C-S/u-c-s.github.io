@@ -8,6 +8,15 @@
     U+2215, U+FEFF, U+FFFD;
 }
 
+header h1 {
+  font-size: 350%;
+  font-family: "Quicksand", monospace;
+  text-align: center;
+  margin: 0;
+  user-select: none;
+  color: #ff1439;
+}
+
 nav ul {
   padding: 0;
   margin: 0;
@@ -39,8 +48,22 @@ nav svg:hover {
   transform: scale(1.1);
 }
 
-/*
+.para-img {
+  grid-area: i;
+  margin: auto;
+}
+.para-img img {
+  width: 150px;
+}
 
+/*
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
 
 .main-square {
   box-sizing: border-box;
@@ -88,15 +111,3 @@ nav svg:hover {
   }
 }
 */
-
-#The-R-Button {
-  grid-area: i;
-  border: 3px solid white;
-  margin: auto;
-  padding: 5px;
-  font-family: "Open Sans";
-}
-
-#The-R-Button span {
-  color: #ff1439;
-}

@@ -22,6 +22,31 @@ main {
 }
 
 //---------------------------
+header {
+  width: clamp(300px, 33%, 500px);
+  margin: 10px auto;
+  text-align: center;
+  color: white;
+  background-color: black;
+  border-radius: 12px;
+  border: 3px solid white;
+  transition: all 0.1s linear;
+
+  h1 {
+    color: white;
+    font-size: 54px;
+    font-family: "Quicksand", monospace;
+    margin: 0;
+    color: var(--accentColor);
+    user-select: none;
+  }
+
+  p {
+    font-family: monospace;
+    font-size: 11px;
+  }
+}
+
 .articles-list {
   border-top: 3px solid white;
   padding: 10px;
@@ -34,10 +59,6 @@ main {
   a {
     font-size: 26px;
     color: var(--secColor);
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 

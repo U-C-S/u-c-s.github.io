@@ -18,3 +18,14 @@
   {% endif %}
 
 {% endmacro post_list %}
+
+
+
+
+{% macro headerX(class, page_name) -%}
+  <header class="{{ class }}">
+    <h1>Chanakya</h1>
+    <div class="highlight"></div>
+    <p>--- {{ page_name }} ---</p>
+  </header>
+{% endmacro post_list -%}

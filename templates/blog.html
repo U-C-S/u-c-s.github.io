@@ -2,8 +2,8 @@
 {% block title %}Blog | {% endblock title %}
 
 {% block head -%}
-  {{ super() }}
-  <link rel="stylesheet" href="{{ get_url(path="styles/blog.css") }}" />
+    {{ super() }}
+    <link rel="stylesheet" href="{{ get_url(path="styles/blog.css") }}" />
 {% endblock head -%}
 
 {% block content %}
@@ -18,10 +18,10 @@
 
   <div class="articles-list">
     {% for page in section.pages %}
-    <div class="article-single">
-      <a href="{{ page.permalink }}">{{ page.title }}</a>
-      <p class="article-meta">- {{ page.date | date(format="%Y-%b-%d") }}</p>
-    </div>
+      <div class="article-single">
+        <a href="{{ page.permalink }}">{{ page.title }}</a>
+        <p class="article-meta">- {{ page.date | date(format="%Y-%b-%d") }}</p>
+      </div>
     {% endfor %}
   </div>
 {% endblock content %}

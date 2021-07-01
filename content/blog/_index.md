@@ -3,5 +3,5 @@
   description = "Blog posts by Chanakya"
   sort_by = "date"
   template = "blog.html"
-  page_template = "article.html"
+  page_template = "blog-page.html"
 +++

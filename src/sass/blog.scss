@@ -1,4 +1,92 @@
-@use "_blogheader";
+@use "common";
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 900px;
+}
+
+main {
+  width: 75%;
+  min-width: 550px;
+  border: 2px solid white;
+  background-color: black;
+}
+
+header {
+  background-color: black;
+  display: flex;
+  border-bottom: 2px solid white;
+
+  a {
+    text-align: center;
+    border-right: 2px solid white;
+    padding: 15px 10px;
+    min-width: 100px;
+
+    p {
+      display: block;
+      margin: 0;
+      font-size: 24px;
+    }
+  }
+
+  button {
+    border-left: 2px solid white;
+    width: 100px;
+  }
+}
+
+.heading {
+  margin: 0 auto;
+  width: 60%;
+  padding: 0 0 10px;
+
+  h1,
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 50px;
+    color: #ff1439;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  main {
+    border: 0px;
+    width: 100%;
+    min-width: 380px;
+  }
+
+  header {
+    a {
+      min-width: 80px;
+      padding: 15px 0px;
+
+      p {
+        font-size: 20px;
+      }
+    }
+    button {
+      width: 82px;
+    }
+  }
+
+  .heading {
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 10px;
+    }
+  }
+}
 
 //---------------------------
 .articles-list {

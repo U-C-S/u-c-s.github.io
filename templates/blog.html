@@ -4,16 +4,21 @@
 {% block head -%}
     {{ super() }}
     <link rel="stylesheet" href="{{ get_url(path="styles/blog.css") }}" />
+    <script defer type="module" src="{{ get_url(path="scripts/index.js") }}"></script>
 {% endblock head -%}
 
 {% block content %}
 <main>
   <header>
     <a href="/">
-      <span>&larr;</span>
-      <span>Home</span>
+      <p>&larr;</p>
+      <p>Home</p>
     </a>
-    <h1>Chanakya</h1>
+    <div class="heading">
+      <h1>Chanakya</h1>
+      <div class="highlight"></div>
+      <p>--- Blogs and Journals Page ---</p>
+    </div>
     <button></button>
   </header>
 

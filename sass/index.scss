@@ -11,11 +11,12 @@ main {
   padding: 10px;
   display: grid;
   grid-template-areas:
-    "l h a"
-    "l i a"
+    "d h a"
+    "d l a"
+    "d i a"
     "b b a";
-  grid-template-columns: 75px minmax(290px, 5fr) 4fr;
-  grid-template-rows: 118px minmax(140px, 1fr) 256px;
+  grid-template-columns: 10fr minmax(290px, 7fr) 10fr;
+  grid-template-rows: 118px 80px minmax(140px, 1fr) 256px;
   row-gap: 20px;
   column-gap: 20px;
 }
@@ -51,7 +52,6 @@ main {
 
 //---------------------------
 header {
-  margin: 0 200px;
   grid-area: h;
   text-align: center;
   color: white;
@@ -70,6 +70,8 @@ header {
   }
 }
 
+
+
 //---------------------------
 nav {
   grid-area: l;
@@ -81,8 +83,7 @@ nav {
     margin: 0;
     list-style-type: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     li {
@@ -104,8 +105,7 @@ nav {
       height: 100%;
       transition: fill 0.2s linear;
 
-      &:hover,
-      &:active {
+      &:hover {
         fill: var(--accentColor);
         transform: scale(1.1);
       }
@@ -118,28 +118,6 @@ nav {
   grid-area: a;
   padding: 5px;
   color: white;
-}
-
-.about-navigation {
-  display: flex;
-  width: 200px;
-  margin: 10px auto;
-
-  table {
-    border-radius: 20px;
-    border-collapse: collapse;
-  }
-
-  button {
-    padding: 2px 10px;
-    color: white;
-    font-family: "Open Sans";
-    font-size: 16px;
-  }
-}
-
-.activebtn {
-  background-color: var(--accentColor);
 }
 
 .recent-blogs {

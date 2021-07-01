@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
 nav ul {
   padding: 0;
   margin: 0;
@@ -8,6 +18,7 @@ nav ul {
 nav li {
   width: 40px;
   height: 40px;
+  margin: 5px 15px;
 }
 nav a {
   width: 100%;
@@ -28,44 +39,64 @@ nav svg:hover {
   transform: scale(1.1);
 }
 
-/*-----------------------*/
+/*
 
-#SettingsCard {
-  grid-area: i;
-  display: flex;
-  flex-wrap: wrap;
+
+.main-square {
+  box-sizing: border-box;
+  width: 60%;
+  max-width: 640px;
+  padding: 15px 15px 0;
+  color: white;
+  text-align: center;
+  transition: all 0.2s linear;
+  animation: Rounding 8s linear forwards;
 }
 
-.TheButtons {
-  width: 125px;
-  margin: auto;
-  border-radius: 5px;
+@keyframes Rounding {
+  from {
+    border-radius: 0px;
+  }
+  to {
+    border-radius: 37px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .main-square {
+    box-shadow: 0 0 30px white;
+    transition: all 0.3s ease-in-out;
+    border: 4px solid white;
+  }
+  .main-square:hover {
+    border: 4px solid #ff1439;
+    box-shadow: 0 0 60px #ff1439;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-square {
+    width: 97%;
+    border: 4px solid #ff1439;
+    box-shadow: 0 0 40px #ff1439;
+  }
+  .title-ucs h1 {
+    font-size: 60px;
+  }
+  nav li {
+    width: 36px;
+    height: 36px;
+  }
+}
+*/
+
+#The-R-Button {
+  grid-area: i;
   border: 3px solid white;
+  margin: auto;
   padding: 5px;
-  transition: all 0.2s linear;
   font-family: "Open Sans";
 }
 
-.TheButtons:hover {
-  border: 3px solid var(--accentColor) !important;
-  box-shadow: 0px 2px 20px var(--accentColor);
-}
-
-.TheButtons span {
+#The-R-Button span {
   color: #ff1439;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: hsla(0, 0%, 100%, 20%);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #ff1439;
 }

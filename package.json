@@ -4,11 +4,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "develop": "concurrently -n 'zola,tsc,sass' \"npm run zola\" \"npm run tsc\" \" npm run sass\"",
-    "build": "sass --no-source-map --style=compressed src/sass:static/styles && tsc && zola build",
-    "zola": "zola serve --port 7321",
-    "tsc": "tsc --watch",
-    "sass": "sass --watch --no-source-map src/sass:static/styles"
+    "serve": "concurrently --names 'zola,tsc' \"zola serve --port 3721\" \"tsc --watch\"",
+    "zolaSer": "zola serve --port 3721",
+    "build": "tsc && zola build"
   },
   "prettier": {
     "printWidth": 140,
@@ -16,7 +14,6 @@
   },
   "dependencies": {
     "concurrently": "^6.2.0",
-    "sass": "^1.34.1",
     "typescript": "^4.3.2"
   }
 }

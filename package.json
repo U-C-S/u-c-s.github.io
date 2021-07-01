@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "develop": "node bin/develop.js",
-    "build": "node bin/build.js --base-url https://thirsty-metal.netlify.app",
-    "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && gh-pages -d public"
+    "build": "node bin/build.js",
+    "ghpages": "npm run build && gh-pages -d public"
   },
   "dependencies": {
     "concurrently": "^6.2.0",

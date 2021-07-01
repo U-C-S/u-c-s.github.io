@@ -18,7 +18,7 @@
 body {
   background-color: hsl(0, 0%, 8%);
   margin: 0;
-  min-width: 370px;
+  min-width: 350px;
 }
 
 button {
@@ -39,10 +39,6 @@ a {
   width: 75%;
   height: 2px;
   background-color: white;
-}
-
-.zero-display {
-  display: none;
 }
 
 ::-webkit-scrollbar {

@@ -15,35 +15,19 @@ To-do list:
 
 */
 
-const AboutTabs = document.getElementsByClassName("abouttab");
-const AboutContent = <HTMLDivElement>document.getElementById("about-content");
+const aboutContent = <HTMLDivElement>document.getElementById("about-content");
+let about_tabs: [string, string][] = [
+  ["tab-blog", "templ-blog"],
+  ["tab-intr", "templ-intr"],
+  ["tab-abou", "templ-abou"],
+];
 
-for (let i = 0; i < AboutTabs.length; i++) {
-  const tab = <HTMLButtonElement>AboutTabs[i];
-  const templ = <HTMLTemplateElement>document.getElementById(`templ-${tab.dataset.tempid}`);
+const tabblog = <HTMLButtonElement>document.getElementById("tab-blog");
+const templb = <HTMLTemplateElement>document.getElementById("templ-blog");
 
-  tab.addEventListener("click", () => {
-    change_active_tab_color(tab);
-    let x = templ.content.cloneNode(true);
-    AboutContent.innerHTML = "";
-    AboutContent.appendChild(x);
-  });
+tabblog?.addEventListener("click", () => {
+  let x = templb.content.cloneNode(true);
+  aboutContent.appendChild(x);
+});
 
-  if (tab.dataset.defopen) {
-    tab.click();
-  }
-}
-
-function change_active_tab_color(tab: HTMLButtonElement) {
-  const ACTIVE_TAB = "activetab";
-  let activeTabList = document.getElementsByClassName(ACTIVE_TAB);
-  if (activeTabList.length) activeTabList[0].classList.remove(ACTIVE_TAB);
-  tab.classList.add(ACTIVE_TAB);
-}
-
-//......
-//testing whether I can call a elem with id which is in a template tag
-
-let meow = document.getElementById("meowx");
-console.log(meow?.innerHTML);
-//looks like we cannot
+tabblog.click();

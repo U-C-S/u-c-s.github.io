@@ -7,13 +7,12 @@
     <script defer type="module" src="scripts/index.js"></script>
 {% endblock head -%}
 
-
-<!-- prettier-ignore -->
+<!--content-->
 {% block content %}
   <main>
     <header class="OneCard">
       <h1>Chanakya</h1>
-      <div class="highlight"></div>
+      <hr />
       <p>--- Website HomePage ---</p>
     </header>
     <nav class="OneCard">
@@ -50,17 +49,15 @@
     </div>
 
     <section id="about" class="OneCard">
-      <a href="/blog">
-        <h2>Blog</h2>
-      </a>
+      <a href="/blog">Instagram</a>
     </section>
-    <section id="datame" class="OneCard"></section>
+    <section id="datame" class="OneCard">{{section.content}}</section>
 
     <footer class="OneCard">
       <div class="main-of-footer">
         <div class="all_social_links">
-          <h3>Social Links</h3>
-          <div class="highlight"></div>
+          <h3>All Social Links</h3>
+          <hr />
           <a>GitHub</a>
           <a href="">Instagram</a>
           <a href="">Reddit</a>
@@ -71,9 +68,7 @@
         </div>
       </div>
 
-      <div class="footer-of-footer">
-        <p>Made with ♥ and Zola by Chanakya</p>
-      </div>
+      <div class="footer-of-footer">Made with ♥ and Zola by Chanakya</div>
     </footer>
   </main>
 {% endblock content %}

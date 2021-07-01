@@ -1,4 +1,6 @@
 @import "common";
+//{% block title %}Meoww | {% endblock title %}
+
 
 :root {
   --accentColor: #ff1439;
@@ -7,9 +9,12 @@
 body {
   background-color: hsl(0, 0%, 8%);
   margin: 0;
-  min-width: 350px;
+  min-width: 372px;
 }
 
+hr {
+  width: 75%;
+}
 
 main {
   width: 100%;
@@ -17,7 +22,7 @@ main {
   height: clamp(500px, 100vh, 1000px);
   display: grid;
   grid-template-columns: 1fr minmax(180px, 1fr) 1fr;
-  grid-template-rows: 118px 80px minmax(140px, 1fr) 256px;
+  grid-template-rows: 120px 80px minmax(140px, 1fr) 256px;
   row-gap: 20px;
   column-gap: 20px;
   grid-template-areas:
@@ -31,7 +36,7 @@ main {
   main {
     display: grid;
     grid-template-areas: "h" "l" "i" "d" "a" "b";
-    grid-template-rows: 118px 80px 140px minmax(250px, auto) minmax(250px, auto) auto;
+    grid-template-rows: 120px 80px 140px minmax(250px, auto) minmax(250px, auto) 256px;
     grid-template-columns: 1fr;
     padding: 10px clamp(10px, 8%, 70px);
     height: auto;
@@ -46,13 +51,13 @@ main {
 
 .OneCard {
   background-color: black;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 3px solid white;
   transition: all 0.2s linear;
 
   &:hover {
-    border: 3px solid var(--accentColor);
-    box-shadow: 0 0 40px var(--accentColor);
+    border: 3px solid var(--accentColor) !important;
+    box-shadow: 0px 2px 40px var(--accentColor);
   }
 }
 
@@ -63,9 +68,10 @@ header {
   color: white;
 
   h1 {
-    font-size: 54px;
+    font-size: 340%;
     font-family: "Quicksand", monospace;
     margin: 0;
+    user-select: none;
     color: var(--accentColor);
   }
 
@@ -174,23 +180,23 @@ nav {
 footer {
   grid-area: b;
   padding: 10px 10px 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .main-of-footer {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .all_social_links {
   width: 140px;
   padding: 0px 10px;
-  text-align: center;
+  border: 1px solid white;
 
   h3 {
     @extend %all-text;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   hr {
@@ -207,14 +213,11 @@ footer {
 }
 
 .footer-of-footer {
+  margin: 0 auto;
   position: relative;
   top: 5px;
-  text-align: center;
-
-  p {
-    margin: 0;
-    color: rgb(150, 150, 150);
-    font-family: "Open Sans";
-    font-size: 12px;
-  }
+  color: rgb(150, 150, 150);
+  font-family: "Open Sans";
+  font-size: 12px;
+  vertical-align: middle;
 }

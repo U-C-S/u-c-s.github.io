@@ -20,8 +20,8 @@ const URLparams = {
 };
 
 (async () => {
-  const AboutTabs = document.getElementsByClassName("abouttab");
   const ACTIVE_TAB = "activetab";
+  const AboutTabs = document.getElementsByClassName("abouttab");
   const AboutContent = <HTMLDivElement>document.getElementById("main-content");
 
   let def_Tab;
@@ -52,11 +52,10 @@ const URLparams = {
 
     //we also check if the URLparam "tab" is equal to any of the tabs
     //during if it is equal to any, we store it in param_Tab
+    //else if tab has a defopen data attr, we store it in def_Tab
     if (tabParam == temp_data) {
       param_Tab = tab;
-    }
-    //Also, if tab has a defopen data attr, we store it in def_Tab
-    else if (tab.dataset.defopen) {
+    } else if (tab.dataset.defopen) {
       def_Tab = tab;
     }
   }
@@ -69,16 +68,15 @@ const URLparams = {
   //End of IIFE
 })();
 
-//
-//
-// (async () => {
-//   const username = "u-c-s";
-//   let github_api_url = new URL(`https://api.github.com/users/${username}/events/public`);
-//   github_api_url.searchParams.append("per_page", "5");
+(async () => {
+  const username = "u-c-s";
+  let github_api_url = new URL(`https://api.github.com/users/${username}/events/public`);
+  github_api_url.searchParams.append("per_page", "5");
 
-//   let fetchRes = await fetch(github_api_url.toString());
-//   let ResponseJson = await fetchRes.json();
-// })();
+  let fetchRes = await fetch(github_api_url.toString());
+  let ResponseJson = await fetchRes.json();
+  console.log(ResponseJson);
+})();
 
 // const x = document.getElementById("The-Pro-Button");
 // const thisPage = new URL(window.location.toString());

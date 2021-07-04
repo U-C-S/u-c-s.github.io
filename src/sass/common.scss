@@ -87,7 +87,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--back2);
+  background: hsla(0, 0%, 100%, 0.2);
 
   &:hover {
     background: var(--accentColor);

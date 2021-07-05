@@ -70,6 +70,7 @@ const URLparams = {
   //End of IIFE
 })();
 
+// For the showing a list of my recent Github public events
 (async () => {
   const listElement = <HTMLElement>document.getElementById("git-events");
   const username = "u-c-s";
@@ -79,13 +80,8 @@ const URLparams = {
 
   let fetchRes = await fetch(github_api_url.toString());
   let ResponseJson: ghEventApi[] = await fetchRes.json();
-  let out = "";
 
-  ResponseJson.forEach((x) => {
-    out += "<li>" + EventParse(x) + "</li>";
-  });
-
-  listElement.innerHTML = out;
+  ResponseJson.forEach((x) => (listElement.innerHTML += "<li>" + EventParse(x) + "</li>"));
 })();
 
 // const x = document.getElementById("The-Pro-Button");

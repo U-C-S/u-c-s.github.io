@@ -17,8 +17,8 @@ body {
     "l h a"
     "l i a"
     "b b a";
-  grid-template-columns: 75px minmax(290px, 5fr) 7fr;
-  grid-template-rows: 118px minmax(140px, 1fr) 226px;
+  grid-template-columns: 75px minmax(400px, 5fr) 7fr;
+  grid-template-rows: 118px minmax(140px, 1fr) 240px;
 }
 
 .OneCard {
@@ -199,42 +199,56 @@ footer {
   justify-content: space-between;
 
   h4 {
+    text-align: center;
     margin: 0;
     border-bottom: 1px solid var(--text);
     padding: 5px;
   }
-}
 
-.other-links {
+  ul {
+    padding: 5px;
+  }
+
   li {
     padding: 5px 10px;
-  }
-  a {
     font-size: 14px;
   }
-}
 
-#git-events {
-  padding: 5px 20px;
-
-  li {
-    font-size: 14px;
-    padding: 5px 0;
-  }
   a {
     color: var(--secColor);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 .footer-of-footer {
+  padding: 5px;
   position: relative;
-  top: 5px;
+  top: 0px;
   text-align: center;
 
   p {
     margin: 0;
     color: hsl(0, 0%, 50%);
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .main-of-footer {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    padding: 10px 0;
+  }
+  .other-links {
+    ul {
+      padding: 10px 0px;
+    }
+    li {
+      display: inline;
+    }
   }
 }
 

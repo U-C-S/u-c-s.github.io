@@ -5,7 +5,7 @@
 {% block head -%}
   {{ super() }}
   <link rel="stylesheet" href="{{ get_url(path="styles/index.css") }}" />
-  <script defer src="{{ get_url(path="scripts/index.js") }}"></script>
+  <script defer type="module" src="{{ get_url(path="scripts/index.js") }}"></script>
 {% endblock head -%}
 
 
@@ -86,7 +86,6 @@
 
   <footer class="OneCard">
     <div class="main-of-footer">
-      <div class="github-info"></div>
       <div class="other-links">
         <h4>Other Links</h4>
         <ul>
@@ -97,7 +96,12 @@
           <!-- <li><a href="/noscript">noscript Page</a></li> -->
         </ul>
       </div>
+      <div class="github-info">
+        <h4>Recent Github</h4>
+        <ul id="git-events"></ul>
+      </div>
     </div>
+
     <div class="footer-of-footer">
       <p>Made with ♥ and Zola by Chanakya</p>
     </div>

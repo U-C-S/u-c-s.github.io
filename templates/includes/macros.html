@@ -6,8 +6,7 @@
     <li class="blog-item">
       <a class="post-link" href="{{ post.permalink }}">{{ post.title }}</a>
       {% if post.date %}
-        {% set date_format = config.extra.date_format | default(value="%b %-d, %Y") %}
-        <p class="post-meta">{{ post.date | date(format=date_format) }}</p>
+        <p class="post-meta">{{ post.date | date(format="%b %-d, %Y") }}</p>
       {% endif %}
     </li>
     {% endfor %}

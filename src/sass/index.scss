@@ -1,11 +1,5 @@
 @use "_about";
 
-ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-}
-
 body {
   border: 3px solid var(--same-white);
   height: clamp(666px, 100vh, 1000px);
@@ -25,7 +19,6 @@ body {
   background-color: var(--main-back);
   border-radius: 8px;
   border: 3px solid var(--text);
-  transition: all 0.2s linear;
 
   &:hover {
     border-color: var(--accentColor);
@@ -69,6 +62,13 @@ body {
   }
 }
 
+main {
+  grid-area: a;
+  padding: 5px;
+  color: var(--text);
+  min-height: 500px;
+}
+
 //---------------------------
 header {
   margin: 0 auto;
@@ -102,7 +102,6 @@ nav {
   grid-area: l;
 
   ul {
-    width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -139,14 +138,6 @@ nav {
     width: 35px;
     height: 35px;
   }
-}
-
-//--about--------------------
-main {
-  grid-area: a;
-  padding: 5px;
-  color: var(--text);
-  min-height: 500px;
 }
 
 //---------------------------

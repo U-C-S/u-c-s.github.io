@@ -1,7 +1,5 @@
 @font-face {
   font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/quicksand/v22/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format("woff2");
 }
@@ -51,8 +49,14 @@ h3,
 h4,
 li,
 span {
-  font-family: "Quicksand";
+  font-family: "Quicksand", "Open Sans";
   color: var(--text);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 a {
@@ -77,7 +81,6 @@ button {
   margin: 5px auto;
 }
 
-
 .zero-display {
   display: none;
 }
@@ -87,7 +90,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsla(0, 0%, 100%, 0.2);
+  background: hsla(0, 0%, 50%, 0.5);
 
   &:hover {
     background: var(--accentColor);

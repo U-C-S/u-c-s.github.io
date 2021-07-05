@@ -1,3 +1,5 @@
+import { EventParse } from "./github-api.js";
+
 console.log("version: 2.0.0-beta");
 
 /**
@@ -69,13 +71,21 @@ const URLparams = {
 })();
 
 (async () => {
+  const listElement = <HTMLElement>document.getElementById("git-events");
   const username = "u-c-s";
+
   let github_api_url = new URL(`https://api.github.com/users/${username}/events/public`);
   github_api_url.searchParams.append("per_page", "5");
 
   let fetchRes = await fetch(github_api_url.toString());
-  let ResponseJson = await fetchRes.json();
-  console.log(ResponseJson);
+  let ResponseJson: ghEventApi[] = await fetchRes.json();
+  let out = "";
+
+  ResponseJson.forEach((x) => {
+    out += "<li>" + EventParse(x) + "</li>";
+  });
+
+  listElement.innerHTML = out;
 })();
 
 // const x = document.getElementById("The-Pro-Button");

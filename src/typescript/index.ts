@@ -5,7 +5,7 @@ console.log("version: 2.0.0-beta");
 /**
  * Simple API for updating the current URL with search queries
  *
- * Uses BrowserAPIs URL: API and History API's replaceState method
+ * Uses BrowserAPIs: URL API and History API's replaceState method
  */
 const URLparams = {
   url: new URL(window.location.toString()),

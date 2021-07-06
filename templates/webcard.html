@@ -9,17 +9,15 @@
 {% block content %}
     <main>
         <h1>Chanakya</h1>
-        <ul>
-        {% set socialdata = load_data(path="src/social_links.json", format="json") %}
-        {% set sociallimited = socialdata.data | slice(end=3) %}
-        {% for link in sociallimited %}
-        <li>
-            <a href="{{ link.link }}" title="{{ link.title }}">
-                <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
-            </a>
-        </li>
-        {% endfor %}
-        </ul>
+        <div>
+            {% set socialdata = load_data(path="src/social_links.json", format="json") %}
+            {% set sociallimited = socialdata.data | slice(end=3) %}
+            {% for link in sociallimited %}
+                <a href="{{ link.link }}" title="{{ link.title }}">
+                    <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
+                </a>
+            {% endfor %}
+        </div>
     </main>
     <a id="website" href="/">/</a>
 {% endblock content %}

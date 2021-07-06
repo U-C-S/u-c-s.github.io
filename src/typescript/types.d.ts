@@ -12,6 +12,7 @@ type payload = {
 };
 
 interface ghEventApi {
+  created_at: string;
   repo: { name: string; url: string };
   type: string;
   payload: payload;

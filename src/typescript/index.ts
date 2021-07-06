@@ -72,16 +72,23 @@ const URLparams = {
 
 // For the showing a list of my recent Github public events
 (async () => {
+  //In Future, Place this div somewhere. For Ex: (In a new Nav-Section: Updates) or (Bottom of About)
   const listElement = <HTMLElement>document.getElementById("git-events");
-  const username = "u-c-s";
+  const USER_NAME = "U-C-S";
+  const QUERY_NUM = "5";
 
-  let github_api_url = new URL(`https://api.github.com/users/${username}/events/public`);
-  github_api_url.searchParams.append("per_page", "5");
+  let github_api_url = new URL(`https://api.github.com/users/${USER_NAME}/events/public`);
+  github_api_url.searchParams.append("per_page", QUERY_NUM);
 
   let fetchRes = await fetch(github_api_url.toString());
   let ResponseJson: ghEventApi[] = await fetchRes.json();
+  let listElems = "";
 
-  ResponseJson.forEach((x) => (listElement.innerHTML += "<li>" + EventParse(x) + "</li>"));
+  ResponseJson.forEach((x) => (listElems += "<li>" + EventParse(x) + "</li>"));
+
+  listElement.innerHTML = listElems;
+
+  //End of IIFE
 })();
 
 // const x = document.getElementById("The-Pro-Button");

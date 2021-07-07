@@ -1,7 +1,7 @@
 @use "_about";
 
 body {
-  border: 3px solid var(--same-white);
+  border: 3px solid hsl(0, 0%, 92%);
   height: clamp(666px, 100vh, 1000px);
   padding: 25px;
   display: grid;

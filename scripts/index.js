@@ -1,4 +1,4 @@
-"use strict";
+import { EventParse } from "./github-api.js";
 console.log("version: 2.0.0-beta");
 const URLparams = {
     url: new URL(window.location.toString()),
@@ -12,8 +12,8 @@ const URLparams = {
     },
 };
 (async () => {
-    const AboutTabs = document.getElementsByClassName("abouttab");
     const ACTIVE_TAB = "activetab";
+    const AboutTabs = document.getElementsByClassName("abouttab");
     const AboutContent = document.getElementById("main-content");
     let def_Tab;
     let param_Tab;
@@ -44,4 +44,16 @@ const URLparams = {
         param_Tab.click();
     else
         def_Tab === null || def_Tab === void 0 ? void 0 : def_Tab.click();
+})();
+(async () => {
+    const listElement = document.getElementById("git-events");
+    const USER_NAME = "U-C-S";
+    const QUERY_NUM = "5";
+    let github_api_url = new URL(`https://api.github.com/users/${USER_NAME}/events/public`);
+    github_api_url.searchParams.append("per_page", QUERY_NUM);
+    let fetchRes = await fetch(github_api_url.toString());
+    let ResponseJson = await fetchRes.json();
+    let listElems = "";
+    ResponseJson.forEach((x) => (listElems += "<li>" + EventParse(x) + "</li>"));
+    listElement.innerHTML = listElems;
 })();

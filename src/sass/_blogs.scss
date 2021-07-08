@@ -1,7 +1,7 @@
 body {
   background-color: hsl(0, 0%, 8%);
   margin: 0 auto;
-  width: 75%;
+  width: 80%;
   min-width: 550px;
   border-width: 0 2px;
 }
@@ -54,13 +54,12 @@ header {
 main {
   background-color: var(--main-back);
   min-height: 92vh;
-  padding: 15px;
 }
 
 footer {
   padding: 10px;
   border-width: 2px 0 0;
-  background-color: var(--back);
+  background-color: var(--main-back);
   p {
     margin: 0;
     text-align: center;

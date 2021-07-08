@@ -15,10 +15,11 @@
     text-align: center;
     font-size: 36px;
     margin: 0;
-    padding: 5px 10px;
+    padding: 20px 10px;
   }
 
   p {
+    margin: 0;
     font-size: 14px;
     text-align: center;
   }
@@ -40,12 +41,12 @@ article {
   li,
   a,
   span {
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Roboto Mono";
   }
 
   p {
-    line-height: 36px;
+    line-height: 30px;
   }
 
   a {
@@ -54,6 +55,12 @@ article {
     &:hover {
       text-decoration: underline;
     }
+  }
+  img {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 10px;
   }
 
   ul {

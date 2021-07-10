@@ -141,39 +141,23 @@ nav {
 }
 
 //---------------------------
-#SettingsCard {
+#NothingCard {
   grid-area: i;
-  margin: 10px;
-  background-image: url("../images/64664.png");
-  filter: var(--logo-only);
-  background-position: center;
-  background-size: 320px;
-  background-repeat: no-repeat;
-}
-
-.settings-contain {
-  filter: var(--logo-only);
   display: flex;
   justify-content: center;
-}
+  align-items: center;
 
-.TheButtons {
-  width: 125px;
-  border-radius: 5px;
-  border: 2px solid var(--text);
-  padding: 5px;
-
-  span {
-    color: var(--accentColor);
+  svg {
+    fill: var(--text);
+    width: 240px;
+    height: 160px;
   }
 }
 
 @media screen and (max-width: 560px) {
-  #SettingsCard {
-    margin: 0px;
-    padding: 10px; //sc
-    background-position: center 0;
-    background-size: 300px;
+  #NothingCard svg{
+    width: 210px;
+    height: 140px;
   }
 }
 

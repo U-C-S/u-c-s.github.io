@@ -49,6 +49,30 @@
   color: var(--text);
 }
 
+.noscript {
+  padding: 5px;
+  background-color: var(--accentColor);
+  opacity: 0;
+  animation: slowUnhide 1s linear 2s forwards;
+
+  p {
+    text-align: center;
+    a {
+      background-color: black;
+      padding: 5px;
+    }
+  }
+}
+
+@keyframes slowUnhide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .tab-content-heading {
   display: block;
   margin: 0;

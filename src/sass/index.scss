@@ -155,7 +155,7 @@ nav {
 }
 
 @media screen and (max-width: 560px) {
-  #NothingCard svg{
+  #NothingCard svg {
     width: 210px;
     height: 140px;
   }
@@ -226,9 +226,12 @@ footer {
   .other-links {
     ul {
       padding: 10px 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
     li {
-      display: inline;
+      padding: 10px;
     }
   }
 }

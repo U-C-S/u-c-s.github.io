@@ -74,5 +74,5 @@ function EventTimeInfo(t: string) {
   if (todayCondition) return "Today";
   else if (!todayCondition && days < 2) return "Yesterday";
   else if (days > 60) return Math.floor(days / 30) + " Months ago";
-  else return days + " Days ago";
+  else return Math.floor(days) + " Days ago";
 }

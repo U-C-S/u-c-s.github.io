@@ -1,14 +1,14 @@
-.about-nav {
+.main-nav {
   margin: 10px 0 20px;
   display: flex;
   justify-content: center;
 }
 
-.about-nav-btns {
+.nav-btns {
   display: flex;
 }
 
-.abouttab {
+.tabs {
   padding: 7px 25px;
   font-size: 18px;
   border: 2px solid var(--text);
@@ -32,7 +32,7 @@
 }
 
 @media screen and (max-width: 560px) {
-  .abouttab {
+  .tabs {
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 0px !important; //sc
@@ -91,7 +91,7 @@
   }
 }
 
-//----about-blog-content-----
+//----blog-content-----
 .recent-blogs {
   padding: 0 10px;
 }
@@ -136,5 +136,18 @@
     p {
       font-size: 8px;
     }
+  }
+}
+
+//----about-content-----
+.about-container {
+  margin-top: 10px;
+  padding: 0px 10px;
+  border: 1px solid var(--text);
+
+  p {
+    margin: 15px 0;
+    font-family: "Roboto Mono";
+    font-size: 16px;
   }
 }

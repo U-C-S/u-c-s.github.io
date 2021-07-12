@@ -13,7 +13,7 @@
 {% block content %}
   <header class="OneCard">
     <h1>Chanakya</h1>
-    <div class="highlight"></div>
+    <div class="pline pline-center"></div>
     <p>--- Website Homepage ---</p>
   </header>
 
@@ -31,40 +31,56 @@
   </nav>
 
 
-  <div id="SettingsCard">
-    <div class="settings-contain">
-      <button id="The-Theme-Btn" class="TheButtons" title="Click to toggle between Dark/Light Themes">
-        Toggle Theme
-      </button>
-    </div>
+  <div id="NothingCard">
+    <svg viewBox="0 0 321 210" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 210L153 6V49L78 175H219L236 210H0Z" />
+      <path d="M142 163H100L196.629 0L321 210H266L196.5 73L142 163Z" />
+      <path d="M224 125H164.11L155 140L240 155L224 125Z" />
+    </svg>
   </div>
 
 
   <main class="OneCard">
-    <div class="about-nav">
-      <div class="about-nav-btns">
-        <button data-tempid="blog" class="abouttab">Blog</button>
-        <button data-tempid="about" data-defopen=true class="abouttab">About</button>
-        <button data-tempid="skill" class="abouttab">Skills</button>
-        <button data-tempid="likes" class="abouttab">Interests</button>
+    <div class="main-nav">
+      <div class="nav-btns">
+        <button data-tempid="blog" class="tabs">Blog</button>
+        <button data-tempid="about" data-defopen=true class="tabs">About</button>
+        <!-- <button data-tempid="skill" class="tabs">Skills</button>
+        <button data-tempid="likes" class="tabs">Interests</button> -->
       </div>
     </div>
 
-    <div id="main-content"></div>
+    <div id="main-content">
+      <div class="noscript">
+        <p>For (slow connections) or (No Javascript mode),</p>
+        <p>Use the <a href="/noscript">Alternate plain website</a></p>
+      </div>
+    </div>
+
     {# Add Pinned Posts feature #}
     <div class="zero-display">
       <template id="templ-blog">
         <h2 class="tab-content-heading">Blogs / Journals</h2>
         <div class="recent-blogs">
-          {% set posts_news = get_section(path="blog/_index.md") %}
-          {% set pages_news = posts_news.pages | slice(end=5) %}
-          {{ macros::post_list(posts=pages_news) }}
+          {% set allpages = [] %}
+          {% set articles = get_section(path="blog/_index.md") %}
+          {% for p in articles.subsections %}
+            {% set subsection = get_section(path=p) %}
+            {% set subpages = subsection.pages %}
+            {% set_global allpages = allpages | concat(with=subpages) %}
+          {% endfor %}
+          {% set recentones = allpages | slice(end=5) %}
+          {{ macros::post_list(posts=recentones) }}
         </div>
       </template>
 
       <template id="templ-about">
         <h2 class="tab-content-heading">About Me!!</h2>
-        <p>Page under Construction</p>
+        <div class="about-container">
+          <p>Hi! I'm a Curious and Quick-learner. I currently love Programming and Open Source stuff. I learn most of the coding stuff through Documentations and References. Also likes to cycle and explore the cities and my surrondings.</p>
+          <p>Currently, A Information Science Student at The National Institute of Engineering, Mysore (2023). </p>
+          <p>I actively use Reddit, Github and Wikipedia.</p>
+        </div>
       </template>
 
       <template id="templ-skill">
@@ -80,18 +96,22 @@
 
   <footer class="OneCard">
     <div class="main-of-footer">
-      <div class="github-info"></div>
       <div class="other-links">
         <h4>Other Links</h4>
         <ul>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="/blog">Blog Page</a></li>
           <li><a href="/webcard">WebCard</a></li>
-          <li><a href="/blog/who-am-i">About me!</a></li>
-          <li><a href="https://github.com/U-C-S/u-c-s.github.io">Site Source</a></li>
-          <!-- <li><a href="/noscript">noscript Page</a></li> -->
+          <li><a href="/noscript">Noscript Page</a></li>
+          <li><a href="https://github.com/U-C-S/u-c-s.github.io">Site-Source</a></li>
+          <li><a href="https://github.com/U-C-S/u-c-s.github.io/issues/new">Report an Issue</a></li>
         </ul>
       </div>
+      <div class="github-info">
+        <h4>Recent Github Events</h4>
+        <ul id="git-events"></ul>
+      </div>
     </div>
+
     <div class="footer-of-footer">
       <p>Made with ♥ and Zola by Chanakya</p>
     </div>

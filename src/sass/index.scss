@@ -1,32 +1,24 @@
-@use "_common";
 @use "_about";
 
-ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-}
-
 body {
-  border: 3px solid var(--text);
+  border: 3px solid hsl(0, 0%, 92%);
   height: clamp(666px, 100vh, 1000px);
-  display: grid;
   padding: 25px;
+  display: grid;
   row-gap: 25px;
   column-gap: 25px;
   grid-template-areas:
     "l h a"
     "l i a"
     "b b a";
-  grid-template-columns: 75px minmax(290px, 5fr) 7fr;
-  grid-template-rows: 118px minmax(140px, 1fr) 206px;
+  grid-template-columns: 75px minmax(400px, 5fr) 7fr;
+  grid-template-rows: 118px minmax(140px, 1fr) 240px;
 }
 
 .OneCard {
   background-color: var(--main-back);
   border-radius: 8px;
   border: 3px solid var(--text);
-  transition: all 0.2s linear;
 
   &:hover {
     border-color: var(--accentColor);
@@ -34,7 +26,7 @@ body {
   }
 }
 
-@media screen and (max-width: 888px) {
+@media screen and (max-width: 963px) {
   body {
     border: none;
     padding: 10px clamp(10px, 8%, 70px);
@@ -56,22 +48,32 @@ body {
   body {
     padding: 10px;
     grid-template-columns: 1fr 60px;
+    row-gap: 0px; //sc
+    column-gap: 0px;
   }
 
   .OneCard {
+    border-radius: 0px; //sc
     border: 2px solid var(--text);
 
     &:hover {
-      box-shadow: 0 0 20px var(--accentColor);
+      box-shadow: none; //sc
     }
   }
+}
+
+main {
+  grid-area: a;
+  padding: 5px;
+  color: var(--text);
+  min-height: 600px;
 }
 
 //---------------------------
 header {
   margin: 0 auto;
   min-width: 280px;
-  width: 70%;
+  width: 80%;
   grid-area: h;
   text-align: center;
   color: var(--text);
@@ -89,10 +91,9 @@ header {
   }
 }
 
-@media screen and (max-width: 888px) {
+@media screen and (max-width: 963px) {
   header {
     width: 100%;
-    min-width: none;
   }
 }
 
@@ -101,7 +102,6 @@ nav {
   grid-area: l;
 
   ul {
-    width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -140,47 +140,24 @@ nav {
   }
 }
 
-//--about--------------------
-main {
-  grid-area: a;
-  padding: 5px;
-  color: var(--text);
-  min-height: 500px;
-}
-
 //---------------------------
-#SettingsCard {
+#NothingCard {
   grid-area: i;
-  margin: 10px;
-  background-image: url("../images/64664.png");
-  filter: var(--logo-only);
-  background-position: center;
-  background-size: 360px;
-  background-repeat: no-repeat;
-}
-
-.settings-contain {
-  filter: var(--logo-only);
   display: flex;
   justify-content: center;
-}
+  align-items: center;
 
-.TheButtons {
-  width: 125px;
-  border-radius: 5px;
-  border: 2px solid var(--text);
-  padding: 5px;
-
-  span {
-    color: var(--accentColor);
+  svg {
+    fill: var(--text);
+    width: 240px;
+    height: 160px;
   }
 }
 
 @media screen and (max-width: 560px) {
-  #SettingsCard {
-    margin: 0px;
-    background-position: center -10px;
-    background-size: 300px;
+  #NothingCard svg {
+    width: 210px;
+    height: 140px;
   }
 }
 
@@ -194,31 +171,80 @@ footer {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-}
+  justify-content: space-between;
 
-.other-links {
   h4 {
+    text-align: center;
     margin: 0;
     border-bottom: 1px solid var(--text);
     padding: 5px;
   }
+
+  ul {
+    padding: 5px;
+  }
+
   li {
     padding: 5px 10px;
-  }
-  a {
     font-size: 14px;
+  }
+
+  a {
+    color: var(--secColor);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+#git-events {
+  span {
+    color: hsl(0, 0%, 50%);
+    font-size: 10px;
   }
 }
 
 .footer-of-footer {
+  padding: 5px;
   position: relative;
-  top: 5px;
+  top: 0px;
   text-align: center;
 
   p {
     margin: 0;
     color: hsl(0, 0%, 50%);
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .main-of-footer {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    padding: 10px 0;
+  }
+  .other-links {
+    ul {
+      padding: 10px 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    li {
+      padding: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  //sc
+  header {
+    border-right: none !important;
+  }
+  nav {
+    border-bottom: none !important;
+  }
+  footer {
+    border-top: none !important;
   }
 }

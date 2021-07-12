@@ -1,20 +1,11 @@
-console.log("version: 2.0.0-beta");
-/*
-colors: #39ff14 , #ff1439 , hsl(51, 100%, 59%)
+import { EventParse } from "./github-api.js";
 
-To-do list:
-- Add a Hover Tips popup at a fixed position
-- Ability for users to change the accent color (Maybe)
-- check out lit / web components stuff
-- Check for fonts - at max 2 imported
-- Add a NoJS page
-- Fix: flash of incorrect theme
-*/
+console.log("version: 2.0.0-beta");
 
 /**
  * Simple API for updating the current URL with search queries
  *
- * Uses BrowserAPIs URL: API and History API's replaceState method
+ * Uses BrowserAPIs: URL API and History API's replaceState method
  */
 const URLparams = {
   url: new URL(window.location.toString()),
@@ -31,8 +22,8 @@ const URLparams = {
 };
 
 (async () => {
-  const AboutTabs = document.getElementsByClassName("abouttab");
   const ACTIVE_TAB = "activetab";
+  const AboutTabs = document.getElementsByClassName("tabs");
   const AboutContent = <HTMLDivElement>document.getElementById("main-content");
 
   let def_Tab;
@@ -63,11 +54,10 @@ const URLparams = {
 
     //we also check if the URLparam "tab" is equal to any of the tabs
     //during if it is equal to any, we store it in param_Tab
+    //else if tab has a defopen data attr, we store it in def_Tab
     if (tabParam == temp_data) {
       param_Tab = tab;
-    }
-    //Also, if tab has a defopen data attr, we store it in def_Tab
-    else if (tab.dataset.defopen) {
+    } else if (tab.dataset.defopen) {
       def_Tab = tab;
     }
   }
@@ -80,16 +70,26 @@ const URLparams = {
   //End of IIFE
 })();
 
-//
-//
-// (async () => {
-//   const username = "u-c-s";
-//   let github_api_url = new URL(`https://api.github.com/users/${username}/events/public`);
-//   github_api_url.searchParams.append("per_page", "5");
+// For the showing a list of my recent Github public events
+(async () => {
+  //In Future, Place this div somewhere. For Ex: (In a new Nav-Section: Updates) or (Bottom of About)
+  const listElement = <HTMLElement>document.getElementById("git-events");
+  const USER_NAME = "U-C-S";
+  const QUERY_NUM = "5";
 
-//   let fetchRes = await fetch(github_api_url.toString());
-//   let ResponseJson = await fetchRes.json();
-// })();
+  let github_api_url = new URL(`https://api.github.com/users/${USER_NAME}/events/public`);
+  github_api_url.searchParams.append("per_page", QUERY_NUM);
+
+  let fetchRes = await fetch(github_api_url.toString());
+  let ResponseJson: ghEventApi[] = await fetchRes.json();
+  let listElems = "";
+
+  ResponseJson.forEach((x) => (listElems += "<li>" + EventParse(x) + "</li>"));
+
+  listElement.innerHTML = listElems;
+
+  //End of IIFE
+})();
 
 // const x = document.getElementById("The-Pro-Button");
 // const thisPage = new URL(window.location.toString());

@@ -11,10 +11,10 @@
   "dependencies": {
     "concurrently": "^6.2.0",
     "sass": "^1.35.1",
-    "typescript": "^4.3.3"
+    "typescript": "^4.3.5"
   },
   "devDependencies": {
-    "gh-pages": "^3.2.0"
+    "gh-pages": "^3.2.3"
   },
   "prettier": {
     "printWidth": 140

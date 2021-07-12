@@ -1,14 +1,14 @@
-.about-nav {
+.main-nav {
   margin: 10px 0 20px;
   display: flex;
   justify-content: center;
 }
 
-.about-nav-btns {
+.nav-btns {
   display: flex;
 }
 
-.abouttab {
+.tabs {
   padding: 7px 25px;
   font-size: 18px;
   border: 2px solid var(--text);
@@ -29,17 +29,17 @@
 .activetab {
   padding: 7px 12px;
   background-color: var(--accentColor);
-  color: black;
 }
 
 @media screen and (max-width: 560px) {
-  .abouttab {
+  .tabs {
     font-size: 16px;
-    padding: 7px 20px;
+    padding: 10px 20px;
+    border-radius: 0px !important; //sc
   }
 
   .activetab {
-    padding: 7px 10px;
+    padding: 10px;
   }
 }
 
@@ -47,6 +47,30 @@
 #main-content {
   padding: 0 10px;
   color: var(--text);
+}
+
+.noscript {
+  padding: 5px;
+  background-color: var(--accentColor);
+  opacity: 0;
+  animation: slowUnhide 1s linear 2s forwards;
+
+  p {
+    text-align: center;
+    a {
+      background-color: black;
+      padding: 5px;
+    }
+  }
+}
+
+@keyframes slowUnhide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .tab-content-heading {
@@ -67,7 +91,7 @@
   }
 }
 
-//----about-blog-content-----
+//----blog-content-----
 .recent-blogs {
   padding: 0 10px;
 }
@@ -104,7 +128,7 @@
   }
 }
 
-@media screen and (max-width: 888px) {
+@media screen and (max-width: 963px) {
   .blog-item {
     a {
       font-size: 20px;
@@ -112,5 +136,18 @@
     p {
       font-size: 8px;
     }
+  }
+}
+
+//----about-content-----
+.about-container {
+  margin-top: 10px;
+  padding: 0px 10px;
+  border: 1px solid var(--text);
+
+  p {
+    margin: 15px 0;
+    font-family: "Roboto Mono";
+    font-size: 16px;
   }
 }

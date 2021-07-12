@@ -13,7 +13,7 @@ const URLparams = {
 };
 (async () => {
     const ACTIVE_TAB = "activetab";
-    const AboutTabs = document.getElementsByClassName("abouttab");
+    const AboutTabs = document.getElementsByClassName("tabs");
     const AboutContent = document.getElementById("main-content");
     let def_Tab;
     let param_Tab;

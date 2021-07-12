@@ -53,5 +53,5 @@ function EventTimeInfo(t) {
     else if (days > 60)
         return Math.floor(days / 30) + " Months ago";
     else
-        return days + " Days ago";
+        return Math.floor(days) + " Days ago";
 }

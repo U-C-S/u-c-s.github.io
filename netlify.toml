@@ -1,7 +1,7 @@
 [build]
 base = "."
 publish = "public"
-command = "npm run develop"
+command = "npm run build"
 
 [build.environment]
 ZOLA_VERSION = "0.14.0"

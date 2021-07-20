@@ -1,0 +1,25 @@
+[build]
+base = "."
+publish = "public"
+command = "npm run develop"
+
+[build.environment]
+ZOLA_VERSION = "0.14.0"
+NODE_VERSION = "16"
+
+[build.processing]
+skip_processing = false
+
+[build.processing.css]
+bundle = true
+minify = true
+
+[build.processing.js]
+bundle = false
+minify = false
+
+[build.processing.html]
+pretty_urls = true
+
+[build.processing.images]
+compress = true

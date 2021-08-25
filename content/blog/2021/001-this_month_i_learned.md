@@ -1,8 +1,17 @@
 +++
 title= "This Month I learned...."
-date= 2021-07-06
+date= 2021-08-25
 slug= "this_month_i_learned"
 +++
+
+## August 2021 <!-- Aug 25 -->
+- C#, .NET 6 and .NET Framework 4.8
+- More desktop app development with UWP and WPF
+- Visual Studio 2022, Windows 11
+- Some ASP.NET Core 6 Basics
+- Java
+- Next.js, Styled-Components, Express.js, CORS
+- Some Experimenting with Tauri
 
 ## June 2021 <!-- Jul 06 -->
 

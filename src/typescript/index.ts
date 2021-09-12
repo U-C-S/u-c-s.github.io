@@ -1,6 +1,6 @@
 import { EventParse } from "./github-api.js";
 
-console.log("version: 2.0.0-beta");
+console.log("site-version: 2.0.0");
 
 /**
  * Simple API for updating the current URL with search queries

@@ -1,6 +1,6 @@
 {
   "name": "chanakya-website",
-  "version": "2.0.0-beta",
+  "version": "2.0.1",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,8 +9,8 @@
     "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && gh-pages -d public"
   },
   "dependencies": {
-    "concurrently": "^6.2.0",
-    "sass": "^1.35.1",
+    "concurrently": "^6.2.1",
+    "sass": "^1.38.1",
     "typescript": "^4.3.5"
   },
   "devDependencies": {

@@ -7,13 +7,14 @@ import { cleanPreviousOutput } from "./_clean.js";
 let args = process.argv.slice(2).join(" ");
 
 console.log(`Current directory: ${process.cwd()}`);
+console.log(execSync("zola --version").toString());
 
 cleanPreviousOutput();
 
 console.log("Starting a new clean build....\n");
 
 // execute the following commands
-// in the same order 
+// in the same order
 let buildCmds = ["tsc", "sass --no-source-map --style=compressed src/sass:static/styles", `zola build ${args}`];
 
 buildCmds.forEach((cmd) => {

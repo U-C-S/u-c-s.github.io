@@ -1,5 +1,5 @@
 import { EventParse } from "./github-api.js";
-console.log("version: 2.0.0-beta");
+console.log("site-version: 2.0.0");
 const URLparams = {
     url: new URL(window.location.toString()),
     add: function (key, value) {

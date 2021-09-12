@@ -2,6 +2,8 @@ import { EventParse } from "./github-api.js";
 
 console.log("site-version: 2.0.0");
 
+const USER_NAME = "U-C-S";
+
 /**
  * Simple API for updating the current URL with search queries
  *
@@ -74,7 +76,6 @@ const URLparams = {
 (async () => {
   //In Future, Place this div somewhere. For Ex: (In a new Nav-Section: Updates) or (Bottom of About)
   const listElement = <HTMLElement>document.getElementById("git-events");
-  const USER_NAME = "U-C-S";
   const QUERY_NUM = "5";
 
   let github_api_url = new URL(`https://api.github.com/users/${USER_NAME}/events/public`);
@@ -89,6 +90,26 @@ const URLparams = {
   listElement.innerHTML = listElems;
 
   //End of IIFE
+})();
+
+(async () => {
+  const StatusElement = <HTMLDivElement>document.getElementById("my-status");
+
+  let issueApi = await fetch(`https://api.github.com/repos/${USER_NAME}/${USER_NAME.toLowerCase()}.github.io/issues/10/comments`);
+  let resJson = await issueApi.json();
+  let status = resJson[0].body;
+
+  let markdownApi = await fetch(`https://api.github.com/markdown`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ text: status }),
+  });
+  let markdownRes = await markdownApi.json();
+
+  console.log(markdownRes);
+  StatusElement.innerHTML = markdownRes;
 })();
 
 // const x = document.getElementById("The-Pro-Button");

@@ -92,6 +92,7 @@ const URLparams = {
   //End of IIFE
 })();
 
+/*
 (async () => {
   const StatusElement = <HTMLDivElement>document.getElementById("my-status");
 
@@ -101,16 +102,14 @@ const URLparams = {
 
   let markdownApi = await fetch(`https://api.github.com/markdown`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
     body: JSON.stringify({ text: status }),
   });
-  let markdownRes = await markdownApi.json();
+  let markdownRes = await markdownApi.text();
 
   console.log(markdownRes);
   StatusElement.innerHTML = markdownRes;
 })();
+*/
 
 // const x = document.getElementById("The-Pro-Button");
 // const thisPage = new URL(window.location.toString());

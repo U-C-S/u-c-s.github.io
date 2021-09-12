@@ -3,16 +3,17 @@
 body {
   border: 3px solid hsl(0, 0%, 92%);
   height: clamp(666px, 100vh, 1000px);
-  padding: 25px;
+  padding: 25px 50px;
   display: grid;
   row-gap: 25px;
   column-gap: 25px;
   grid-template-areas:
     "l h a"
     "l i a"
-    "b b a";
-  grid-template-columns: 75px minmax(400px, 5fr) 7fr;
-  grid-template-rows: 118px minmax(140px, 1fr) 240px;
+    "b b a"
+    "f f f";
+  grid-template-columns: 75px 5fr 8fr;
+  grid-template-rows: 118px minmax(140px, 1fr) 220px 72px;
 }
 
 .OneCard {
@@ -36,8 +37,9 @@ body {
       "h l"
       "i l"
       "a a"
-      "b b";
-    grid-template-rows: 118px 250px minmax(250px, auto) auto;
+      "b b"
+      "f f";
+    grid-template-rows: 118px 250px minmax(250px, auto) auto auto;
     grid-template-columns: 1fr 75px;
     row-gap: 15px;
     column-gap: 15px;
@@ -71,9 +73,8 @@ main {
 
 //---------------------------
 header {
-  margin: 0 auto;
   min-width: 280px;
-  width: 80%;
+  width: 100%;
   grid-area: h;
   text-align: center;
   color: var(--text);
@@ -88,12 +89,6 @@ header {
   p {
     font-family: monospace;
     font-size: 11px;
-  }
-}
-
-@media screen and (max-width: 963px) {
-  header {
-    width: 100%;
   }
 }
 
@@ -161,23 +156,21 @@ nav {
   }
 }
 
-//-----footer----------------
-footer {
+//-----section----------------
+section {
   grid-area: b;
-  padding: 10px 10px 30px;
+  padding: 10px;
 }
 
-.main-of-footer {
-  height: 100%;
+.github-info {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 
   h4 {
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
+    width: 70%;
     border-bottom: 1px solid var(--text);
-    padding: 5px;
+    padding: 0 0 5px;
   }
 
   ul {
@@ -188,12 +181,6 @@ footer {
     padding: 5px 10px;
     font-size: 14px;
   }
-
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 #git-events {
   span {
@@ -202,10 +189,27 @@ footer {
   }
 }
 
+// ---------------------------
+footer {
+  grid-area: f;
+
+  ul {
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  li {
+    text-align: center;
+    padding: 5px 10px;
+  }
+}
+
 .footer-of-footer {
+  border-top: 1px solid hsl(0, 0%, 50%);
+  width: 340px;
+  margin: 0 auto;
   padding: 5px;
-  position: relative;
-  top: 0px;
   text-align: center;
 
   p {
@@ -215,21 +219,11 @@ footer {
   }
 }
 
-@media screen and (max-width: 560px) {
-  .main-of-footer {
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    padding: 10px 0;
-  }
-  .other-links {
-    ul {
-      padding: 10px 0px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-    li {
-      padding: 10px;
+section,
+footer {
+  a {
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
@@ -242,7 +236,16 @@ footer {
   nav {
     border-bottom: none !important;
   }
+  #NothingCard {
+    border-left: 2px solid var(--text);
+  }
+  section,
   footer {
     border-top: none !important;
+  }
+  footer {
+    ul {
+      flex-wrap: wrap;
+    }
   }
 }

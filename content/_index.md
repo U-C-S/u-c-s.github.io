@@ -1,10 +1,10 @@
 +++
 +++
 
-Hi! I'm a Curious and Quick-learner. I currently love Programming and Open Source stuff. I learn most of the coding stuff through Documentations and References. Also likes to cycle and explore the cities and my surrondings.
+Hello there! I'm Chanakya. I like to Program stuff and learnt it through reading Documentations. I also like to pedal and explore my surrondings.
 
-\- Currently, A Information Science Student at The National Institute of Engineering, Mysore (2023).
+\- Student at The National Institute of Engineering, Mysore (2023).
 
-\- My Home place is [Andhra Pradesh, India](https://www.google.com/maps/place/Narasaraopeta,+Andhra+Pradesh)
+\- My Home Town is in [Andhra Pradesh, India](https://www.google.com/maps/place/Narasaraopeta,+Andhra+Pradesh)
 
-\- I actively use Reddit, Github and Wikipedia.
+\- Active user of Reddit, Github and Wikipedia.

@@ -1,6 +1,6 @@
 import { EventParse } from "./github-api.js";
 
-console.log("site-version: 2.0.0");
+console.log("site-version: 2.1.0");
 
 const USER_NAME = "U-C-S";
 

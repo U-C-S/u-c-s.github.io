@@ -68,7 +68,7 @@ main {
   grid-area: a;
   padding: 5px;
   color: var(--text);
-  min-height: 600px;
+  min-height: 500px;
 }
 
 //---------------------------
@@ -198,8 +198,10 @@ footer {
     padding: 5px 10px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
   li {
+    width: 140px;
     text-align: center;
     padding: 5px 10px;
   }

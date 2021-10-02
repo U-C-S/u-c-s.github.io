@@ -1,5 +1,7 @@
 .main-nav {
-  margin: 10px 0 20px;
+  position: relative;
+  bottom: 28px;
+  margin: 0;
   display: flex;
   justify-content: center;
 }
@@ -15,6 +17,7 @@
   border-right: 0px;
   will-change: padding, font-size;
   transition-duration: 0.2s;
+  background-color: var(--back);
 
   &:first-of-type {
     border-radius: 5px 0 0 5px;
@@ -45,6 +48,7 @@
 
 //----main-content----------
 #main-content {
+  height: 75%;
   padding: 0 10px;
   color: var(--text);
 }
@@ -149,4 +153,10 @@
     font-family: "Roboto Mono";
     font-size: 16px;
   }
+}
+
+#my-status {
+  background-color: var(--accentColor);
+  padding: 5px;
+  margin: 0px 25px;
 }

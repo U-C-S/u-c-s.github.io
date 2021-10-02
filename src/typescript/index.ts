@@ -92,24 +92,22 @@ const URLparams = {
   //End of IIFE
 })();
 
-/*
 (async () => {
   const StatusElement = <HTMLDivElement>document.getElementById("my-status");
 
   let issueApi = await fetch(`https://api.github.com/repos/${USER_NAME}/${USER_NAME.toLowerCase()}.github.io/issues/10/comments`);
   let resJson = await issueApi.json();
-  let status = resJson[0].body;
+  let status = resJson[resJson.length - 1].body;
 
-  let markdownApi = await fetch(`https://api.github.com/markdown`, {
-    method: "POST",
-    body: JSON.stringify({ text: status }),
-  });
-  let markdownRes = await markdownApi.text();
+  // let markdownApi = await fetch(`https://api.github.com/markdown`, {
+  //   method: "POST",
+  //   body: JSON.stringify({ text: status }),
+  // });
+  // let markdownRes = await markdownApi.text();
 
-  console.log(markdownRes);
-  StatusElement.innerHTML = markdownRes;
+  console.log(status);
+  StatusElement.innerHTML = status;
 })();
-*/
 
 // const x = document.getElementById("The-Pro-Button");
 // const thisPage = new URL(window.location.toString());

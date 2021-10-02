@@ -17,9 +17,11 @@
 
 [data-theme="dark"] {
   --back: hsl(0, 0%, 5%);
+  --back-nochange: hsl(0, 0%, 10%);
   --main-back: black;
 
   --text: white;
+  --text-nochange: white;
 
   --secColor: hsl(200, 100%, 60%);
   --accentColor: hsl(350, 100%, 60%); //slate red
@@ -27,9 +29,11 @@
 
 [data-theme="light"] {
   --back: hsl(0, 0%, 95%);
+  --back-nochange: hsl(0, 0%, 10%);
   --main-back: white;
 
   --text: black;
+  --text-nochange: white;
 
   --secColor: hsl(220, 100%, 50%);
   --accentColor: hsl(350, 90%, 55%); //slate red

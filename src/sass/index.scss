@@ -19,11 +19,10 @@ body {
 .OneCard {
   background-color: var(--main-back);
   border-radius: 8px;
-  border: 3px solid var(--text);
+  border: 3px solid var(--accentColor);
 
   &:hover {
-    border-color: var(--accentColor);
-    box-shadow: 0 0 32px var(--accentColor);
+    box-shadow: 0 0 10px var(--accentColor);
   }
 }
 
@@ -66,8 +65,8 @@ body {
 
 main {
   grid-area: a;
-  padding: 5px;
-  color: var(--text);
+  background-color: var(--back-nochange) !important;
+  color: var(--text-nochange) !important;
   min-height: 500px;
 }
 

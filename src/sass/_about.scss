@@ -1,3 +1,21 @@
+.MainContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "nav" "sts";
+  grid-template-rows: 520px 1fr;
+}
+
+.NavContainer {
+  padding: 5px;
+}
+
+#my-status {
+  background-color: var(--accentColor);
+  padding: 0px;
+  margin: 0px;
+}
+
 .main-nav {
   position: relative;
   bottom: 28px;
@@ -48,9 +66,12 @@
 
 //----main-content----------
 #main-content {
-  height: 75%;
   padding: 0 10px;
-  color: var(--text);
+  color: var(--text-nochange);
+
+  p {
+    color: var(--text-nochange);
+  }
 }
 
 .noscript {
@@ -81,11 +102,11 @@
   display: block;
   margin: 0 80px;
   min-width: 200px;
-  color: var(--text);
+  color: var(--text-nochange);
   text-align: center;
   font-size: 24px;
   padding-bottom: 5px;
-  border-bottom: 2px solid var(--text);
+  border-bottom: 2px solid var(--text-nochange);
 }
 
 @media screen and (max-width: 560px) {
@@ -153,10 +174,4 @@
     font-family: "Roboto Mono";
     font-size: 16px;
   }
-}
-
-#my-status {
-  background-color: var(--accentColor);
-  padding: 5px;
-  margin: 0px 25px;
 }

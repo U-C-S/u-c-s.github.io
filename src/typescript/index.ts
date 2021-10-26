@@ -23,6 +23,8 @@ const URLparams = {
   },
 };
 
+
+// Tab implementation
 (async () => {
   const ACTIVE_TAB = "activetab";
   const AboutTabs = document.getElementsByClassName("tabs");

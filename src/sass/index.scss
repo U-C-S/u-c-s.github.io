@@ -65,9 +65,13 @@ body {
 
 main {
   grid-area: a;
-  background-color: var(--back-nochange) !important;
   color: var(--text-nochange) !important;
   min-height: 500px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "nav" "sts";
+  grid-template-rows: 1fr auto;
 }
 
 //---------------------------

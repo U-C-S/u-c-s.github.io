@@ -4,23 +4,27 @@
 ### Built with:
 
 - [Zola](https://github.com/getzola/zola) - A Static Site Generator, built with Rust
-- [TypeScript](https://www.typescriptlang.org/) - Modern JavaScript with Static Typing 
+- [TypeScript](https://www.typescriptlang.org/) - Modern JavaScript with Static Typing
+- [esbuild](https://esbuild.github.io/) - An extremely fast JavaScript bundler
 - [SCSS](https://sass-lang.com) - CSS Preprocessor
 
-### For Setting Up Local Environment to test the code:
+### Local Environment Setup:
 
-- You need Git and Node.js version 14+
-- Also, Zola Binary ([Installation Ref.](https://www.getzola.org/documentation/getting-started/installation/)) and make sure it's available with `zola` cmd
-- Clone / Download this Repo
-- Install the NPM Dependencies with `npm install`
-- use `node bin/develop.js` to start a local Dev Server which opens the site directly in the browser
+- You need to install
+    - **Node.js v16+** (IMPORTANT)
+    - **Zola** v0.13+ (IMPORTANT | [installation process](https://www.getzola.org/documentation/getting-started/installation/) | make sure it's available with `zola` command)
+    - Git (to clone the repo)
+    - VS Code (for editing the code)
+- Then, clone this Repository into your PC and Open it in VS Code
+- `npm install` - To install all the dependencies
+- `npm run develop` - To start a local Dev Server which opens the site directly in the browser
 
 ### Directory Structure
 
-| Directory | What it does                                                                            |
+| Directory | What it contains                                                                        |
 | --------- | --------------------------------------------------------------------------------------- |
 | bin       | DevOps - local development server & build and deploy                                    |
-| content   | Content Markdown files used by the templates                                            |
+| content   | Content Markdown files used by the tera templates                                       |
 | src \*    | Json, Sass and TypeScript files that will be sent to static folder during build process |
 | static    | These are directly copied to output folder during the build process                     |
 | templates | Contains the Tera template files                                                        |

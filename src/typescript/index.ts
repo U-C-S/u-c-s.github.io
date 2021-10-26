@@ -1,4 +1,4 @@
-import { EventParse } from "./github-api.js";
+import { EventParse } from "./utils/github-api.js";
 
 console.log("site-version: 2.1.0");
 

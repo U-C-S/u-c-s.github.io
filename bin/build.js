@@ -15,7 +15,7 @@ console.log("Starting a new clean build....\n");
 
 // execute the following commands
 // in the same order
-let buildCmds = ["tsc", "sass --no-source-map --style=compressed src/sass:static/styles", `zola build ${args}`];
+let buildCmds = ["node bin/bundle.js", "sass --no-source-map --style=compressed src/sass:static/styles", `zola build ${args}`];
 
 buildCmds.forEach((cmd) => {
   console.log(`-> Executing Command: ${cmd}\n`);

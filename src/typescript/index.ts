@@ -23,7 +23,6 @@ const URLparams = {
   },
 };
 
-
 // Tab implementation
 (async () => {
   const ACTIVE_TAB = "activetab";
@@ -39,7 +38,7 @@ const URLparams = {
   for (let i = 0; i < AboutTabs.length; i++) {
     const tab = <HTMLButtonElement>AboutTabs[i];
     let temp_data = <string>tab.dataset.tempid;
-    const templ = <HTMLTemplateElement>document.getElementById(`templ-${temp_data}`);
+    const templ = <HTMLDivElement>document.getElementById(`templ-${temp_data}`);
 
     tab.addEventListener("click", () => {
       if (!tab.classList.contains(ACTIVE_TAB)) {
@@ -48,7 +47,7 @@ const URLparams = {
         tab.classList.add(ACTIVE_TAB);
 
         //copies the HTML template code to the main div
-        let x = templ.content.cloneNode(true);
+        let x = templ.cloneNode(true);
         AboutContent.innerHTML = "";
         AboutContent.appendChild(x);
 

@@ -10,14 +10,9 @@ export function EventParse(activity: ghEventApi) {
 
   let action = activity.payload.action?.charAt(0).toUpperCase() + activity.payload.action?.slice(1);
 
-  //Source: https://github.com/thelittlewonder/gitstalk/blob/master/src/components/Profile.vue#L324
+  // https://github.com/thelittlewonder/gitstalk/blob/master/src/components/Profile.vue#L324
+  // Ordered according to https://docs.github.com/en/developers/webhooks-and-events/events/github-event-types
   switch (activity.type) {
-    case "PushEvent":
-      return `Commits in ${post_Info}`;
-
-    case "WatchEvent":
-      return `Starred ${post_Info}`;
-
     case "CreateEvent": {
       let output = "Created a " + activity.payload.ref_type + " ";
 
@@ -36,20 +31,32 @@ export function EventParse(activity: ghEventApi) {
     case "ForkEvent":
       return `Forked ${Ahref(activity.payload.forkee.html_url, activity.payload.forkee.full_name)} from ${post_Info}`;
 
+    case "IssueCommentEvent":
+      return `${action} ${Ahref(activity.payload.comment.html_url, "comment")} on an issue in ${post_Info}`;
+
+    case "IssuesEvent":
+      return `${action} ${Ahref(activity.payload.issue.html_url, "issue")} in ${post_Info}`;
+
+    case "PublicEvent":
+      return `${post_Info} is made public`;
+
     case "PullRequestEvent":
       return `${action} ${Ahref(activity.payload.pull_request.html_url, "pull request")} in ${post_Info}`;
 
     case "PullRequestReviewCommentEvent":
       return `${action} ${Ahref(activity.payload.comment.html_url, "comment")} on a pull request in ${post_Info}`;
 
-    case "IssuesEvent":
-      return `${action} ${Ahref(activity.payload.issue.html_url, "issue")} in ${post_Info}`;
+    case "PushEvent":
+      return `Commits in ${post_Info}`;
 
-    case "IssueCommentEvent":
-      return `${action} ${Ahref(activity.payload.comment.html_url, "comment")} on an issue in ${post_Info}`;
+    case "ReleaseEvent":
+      return `Released ${activity.payload.release.tag_name} in ${post_Info}`;
+
+    case "WatchEvent":
+      return `Starred ${post_Info}`;
 
     default:
-      return `Unknown Event at ${post_Info}`;
+      return `Some event at ${post_Info}`;
   }
 }
 

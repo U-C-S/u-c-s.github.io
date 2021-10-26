@@ -63,7 +63,7 @@
 
     {# Add Pinned Posts feature #}
     <div class="zero-display">
-      <template id="templ-blog">
+      <div id="templ-blog">
         <h2 class="tab-content-heading">Blogs / Journals</h2>
         <div class="recent-blogs">
           {% set allpages = [] %}
@@ -76,22 +76,22 @@
           {% set recentones = allpages | slice(end=5) %}
           {{ macros::post_list(posts=recentones) }}
         </div>
-      </template>
+      </div>
 
-      <template id="templ-about">
+      <div id="templ-about">
         <h2 class="tab-content-heading">About Me!!</h2>
         <div class="about-container">
           {{ section.content | safe }}
         </div>
-      </template>
+      </div>
 
-      <template id="templ-skill">
+      <div id="templ-skill">
         <h2 class="tab-content-heading">Unlimited Skills</h2>
-      </template>
+      </div>
 
-      <template id="templ-likes">
+      <div id="templ-likes">
         <h2 class="tab-content-heading">. . . got my Curiosity</h2>
-      </template>
+      </div>
     </div>
   </main>
 

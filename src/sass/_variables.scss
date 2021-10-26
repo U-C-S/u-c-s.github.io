@@ -1,0 +1,27 @@
+[data-theme="dark"] {
+  --back: hsl(0, 0%, 5%);
+  --back-nochange: hsl(0, 0%, 10%);
+  --main-back: black;
+
+  --text: white;
+  --text-nochange: white;
+
+  --secColor: hsl(200, 100%, 60%);
+  --accentColor: hsl(350, 100%, 60%); //slate red
+}
+
+[data-theme="light"] {
+  --back: hsl(0, 0%, 95%);
+  --back-nochange: hsl(0, 0%, 10%);
+  --main-back: white;
+
+  --text: black;
+  --text-nochange: white;
+
+  --secColor: hsl(220, 100%, 60%);
+  --accentColor: hsl(350, 90%, 60%); //slate red
+
+  //later TODO: add more colors
+  --ac-red: hsl(350, 90%, 60%);
+  --ac-blue: hsl(200, 100%, 60%);
+}

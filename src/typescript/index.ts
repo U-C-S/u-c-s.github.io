@@ -1,8 +1,6 @@
-import { EventParse } from "./utils/github-api.js";
+import "./utils/github-api";
 
 console.log("site-version: 2.1.0");
-
-const USER_NAME = "U-C-S";
 
 /**
  * Simple API for updating the current URL with search queries
@@ -71,43 +69,6 @@ const URLparams = {
   else def_Tab?.click();
 
   //End of IIFE
-})();
-
-// For the showing a list of my recent Github public events
-(async () => {
-  //In Future, Place this div somewhere. For Ex: (In a new Nav-Section: Updates) or (Bottom of About)
-  const listElement = <HTMLElement>document.getElementById("git-events");
-  const QUERY_NUM = "5";
-
-  let github_api_url = new URL(`https://api.github.com/users/${USER_NAME}/events/public`);
-  github_api_url.searchParams.append("per_page", QUERY_NUM);
-
-  let fetchRes = await fetch(github_api_url.toString());
-  let ResponseJson: ghEventApi[] = await fetchRes.json();
-  let listElems = "";
-
-  ResponseJson.forEach((x) => (listElems += "<li>" + EventParse(x) + "</li>"));
-
-  listElement.innerHTML = listElems;
-
-  //End of IIFE
-})();
-
-(async () => {
-  const StatusElement = <HTMLDivElement>document.getElementById("my-status");
-
-  let issueApi = await fetch(`https://api.github.com/repos/${USER_NAME}/${USER_NAME.toLowerCase()}.github.io/issues/10/comments`);
-  let resJson = await issueApi.json();
-  let status = resJson[resJson.length - 1].body;
-
-  // let markdownApi = await fetch(`https://api.github.com/markdown`, {
-  //   method: "POST",
-  //   body: JSON.stringify({ text: status }),
-  // });
-  // let markdownRes = await markdownApi.text();
-
-  console.log(status);
-  StatusElement.innerHTML = status;
 })();
 
 // const x = document.getElementById("The-Pro-Button");

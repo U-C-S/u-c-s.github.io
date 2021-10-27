@@ -1,10 +1,9 @@
+#!/usr/bin/env node
+
 import { build } from "esbuild";
 import { readdirSync } from "fs";
 
-if (process.argv.length <= 3) {
-  var IsWatch = process.argv[2] === "--watch";
-  console.log("esbuild in watch mode");
-}
+var IsWatch = process.argv.at(2) === "--watch";
 
 // get array of files loacted in the "./src/typescript" directory
 const rawfiles = readdirSync("./src/typescript", { withFileTypes: true });

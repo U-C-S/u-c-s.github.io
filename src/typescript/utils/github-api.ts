@@ -1,9 +1,49 @@
+const USER_NAME = "U-C-S";
+
+// For the showing a list of my recent Github public events
+(async () => {
+  //In Future, Place this div somewhere. For Ex: (In a new Nav-Section: Updates) or (Bottom of About)
+  const listElement = <HTMLElement>document.getElementById("git-events");
+  const QUERY_NUM = "5";
+
+  let github_api_url = new URL(`https://api.github.com/users/${USER_NAME}/events/public`);
+  github_api_url.searchParams.append("per_page", QUERY_NUM);
+
+  let fetchRes = await fetch(github_api_url.toString());
+  let ResponseJson: ghEventApi[] = await fetchRes.json();
+  let listElems = "";
+
+  ResponseJson.forEach((x) => (listElems += "<li>" + EventParse(x) + "</li>"));
+
+  listElement.innerHTML = listElems;
+
+  //End of IIFE
+})();
+
+// Status Feature
+(async () => {
+  const StatusElement = <HTMLDivElement>document.getElementById("my-status");
+
+  let issueApi = await fetch(`https://api.github.com/repos/${USER_NAME}/${USER_NAME.toLowerCase()}.github.io/issues/10/comments`);
+  let resJson = await issueApi.json();
+  let status = resJson[resJson.length - 1].body;
+
+  // let markdownApi = await fetch(`https://api.github.com/markdown`, {
+  //   method: "POST",
+  //   body: JSON.stringify({ text: status }),
+  // });
+  // let markdownRes = await markdownApi.text();
+
+  console.log(status);
+  StatusElement.innerHTML = status;
+})();
+
 /**
  * For Parsing the Github REST API's list of user public Events
  * @param activity A Event Object from the list
  * @returns The Event in a sentence
  */
-export function EventParse(activity: ghEventApi) {
+function EventParse(activity: ghEventApi) {
   let dayOfEvent = ` <span>(${EventTimeInfo(activity.created_at)})<span>`;
   let repoURL = activity.repo.url.replace("api", "www").replace("/repos", "");
   let post_Info = Ahref(repoURL, activity.repo.name) + dayOfEvent;

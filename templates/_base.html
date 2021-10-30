@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     {% block head %}
       <title>{% block title %}{% endblock title %}The Chanakya's Website</title>
@@ -15,8 +15,6 @@
       <link rel="preconnect" href="https://fonts.gstatic.com/" />
       
       <link rel="stylesheet" href="{{ get_url(path="styles/common.css")}}" />
-      <script src="{{ get_url(path="scripts/preload.js")}}"></script>
-      <script defer src="{{ get_url(path="scripts/common.js")}}"></script>
     {% endblock head %}
   </head>
   <body>

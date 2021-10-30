@@ -1,0 +1,48 @@
+@use "../variables/colors";
+
+footer {
+  grid-area: f;
+  transform: rotate(1deg);
+  border-color: colors.$fg-text !important;
+
+  ul {
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  li {
+    width: 140px;
+    text-align: center;
+    padding: 5px 10px;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-of-footer {
+  border-top: 1px solid hsl(0, 0%, 50%);
+  width: 340px;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    color: hsl(0, 0%, 50%);
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  footer {
+    ul {
+      flex-wrap: wrap;
+    }
+  }
+}

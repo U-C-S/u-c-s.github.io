@@ -1,17 +1,18 @@
 {
   "name": "chanakya-website",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "type": "module",
   "private": true,
   "scripts": {
     "develop": "node bin/develop.js",
-    "build": "node bin/build.js --base-url https://thirsty-metal.netlify.app",
+    "build": "node bin/build.js --base-url https://chanakya3721.netlify.app",
     "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && gh-pages -d public"
   },
   "dependencies": {
-    "concurrently": "^6.2.1",
-    "sass": "^1.38.1",
-    "typescript": "^4.3.5"
+    "concurrently": "^6.3.0",
+    "esbuild": "^0.13.11",
+    "sass": "^1.43.4",
+    "typescript": "^4.4.4"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"

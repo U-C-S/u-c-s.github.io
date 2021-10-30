@@ -30,7 +30,6 @@
     </ul>
   </nav>
 
-
   <div id="NothingCard">
     <svg viewBox="0 0 321 210" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 210L153 6V49L78 175H219L236 210H0Z" />
@@ -39,27 +38,35 @@
     </svg>
   </div>
 
-
   <main class="OneCard">
-    <div class="main-nav">
-      <div class="nav-btns">
-        <button data-tempid="blog" class="tabs">Blog</button>
-        <button data-tempid="about" data-defopen=true class="tabs">About</button>
-        <!-- <button data-tempid="skill" class="tabs">Skills</button>
-        <button data-tempid="likes" class="tabs">Interests</button> -->
-      </div>
-    </div>
+      <div class="NavContainer">
+        <div class="main-nav">
+          <div class="nav-btns-container">
+            <div class="nav-btns">
+              <button data-tempid="blog" class="tabs">Blog</button>
+              <button data-tempid="about" data-defopen=true class="tabs">About</button>
+              <!-- <button data-tempid="skill" class="tabs">Skills</button>
+              <button data-tempid="likes" class="tabs">Interests</button> -->
+            </div>
+          </div>
+        </div>
 
-    <div id="main-content">
-      <div class="noscript">
-        <p>For (slow connections) or (No Javascript mode),</p>
-        <p>Use the <a href="/noscript">Alternate plain website</a></p>
+        <div class="em1"></div>
+        <div class="em2"></div>
+
+        <div id="main-content">
+          <div class="noscript">
+            <p>For (slow connections) or (No Javascript mode),</p>
+            <p>Use the <a href="/noscript">Alternate plain website</a></p>
+          </div>
+        </div>
+        <div id="my-status"></div>
       </div>
-    </div>
+
 
     {# Add Pinned Posts feature #}
     <div class="zero-display">
-      <template id="templ-blog">
+      <div id="templ-blog">
         <h2 class="tab-content-heading">Blogs / Journals</h2>
         <div class="recent-blogs">
           {% set allpages = [] %}
@@ -72,44 +79,40 @@
           {% set recentones = allpages | slice(end=5) %}
           {{ macros::post_list(posts=recentones) }}
         </div>
-      </template>
+      </div>
 
-      <template id="templ-about">
+      <div id="templ-about">
         <h2 class="tab-content-heading">About Me!!</h2>
         <div class="about-container">
           {{ section.content | safe }}
         </div>
-      </template>
+      </div>
 
-      <template id="templ-skill">
+      <div id="templ-skill">
         <h2 class="tab-content-heading">Unlimited Skills</h2>
-      </template>
+      </div>
 
-      <template id="templ-likes">
+      <div id="templ-likes">
         <h2 class="tab-content-heading">. . . got my Curiosity</h2>
-      </template>
+      </div>
     </div>
   </main>
 
+  <section class="OneCard">
+    <div class="github-info">
+      <h3>Recent Github Events</h3>
+      <ul id="git-events"></ul>
+    </div>
+  </section>
 
   <footer class="OneCard">
-    <div class="main-of-footer">
-      <div class="other-links">
-        <h4>Other Links</h4>
-        <ul>
-          <li><a href="/blog">Blog Page</a></li>
-          <li><a href="/webcard">WebCard</a></li>
-          <li><a href="/noscript">Noscript Page</a></li>
-          <li><a href="https://github.com/U-C-S/u-c-s.github.io">Site-Source</a></li>
-          <li><a href="https://github.com/U-C-S/u-c-s.github.io/issues/new">Report an Issue</a></li>
-        </ul>
-      </div>
-      <div class="github-info">
-        <h4>Recent Github Events</h4>
-        <ul id="git-events"></ul>
-      </div>
-    </div>
-
+    <ul>
+      <li><a href="/blog">Blog Page</a></li>
+      <li><a href="/webcard">WebCard</a></li>
+      <li><a href="/noscript">Noscript Page</a></li>
+      <li><a href="https://github.com/U-C-S/u-c-s.github.io">Site-Source</a></li>
+      <li><a href="https://github.com/U-C-S/u-c-s.github.io/issues/new">Report an Issue</a></li>
+    </ul>
     <div class="footer-of-footer">
       <p>Made with ♥ and Zola by Chanakya</p>
     </div>

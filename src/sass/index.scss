@@ -1,29 +1,27 @@
-@use "_about";
+@use "./variables/colors";
+@use "indexpage/about";
+@use "indexpage/footer";
 
 body {
-  border: 3px solid hsl(0, 0%, 92%);
+  background: linear-gradient(143deg, hsl(340, 30%, 75%), hsl(260, 30%, 75%));
   height: clamp(666px, 100vh, 1000px);
-  padding: 25px;
+  padding: 25px 50px;
   display: grid;
   row-gap: 25px;
   column-gap: 25px;
   grid-template-areas:
     "l h a"
     "l i a"
-    "b b a";
-  grid-template-columns: 75px minmax(400px, 5fr) 7fr;
-  grid-template-rows: 118px minmax(140px, 1fr) 240px;
+    "b b a"
+    "f f f";
+  grid-template-columns: 75px 5fr 8fr;
+  grid-template-rows: 118px minmax(140px, 1fr) 220px 72px;
 }
 
 .OneCard {
-  background-color: var(--main-back);
-  border-radius: 8px;
-  border: 3px solid var(--text);
-
-  &:hover {
-    border-color: var(--accentColor);
-    box-shadow: 0 0 32px var(--accentColor);
-  }
+  border-radius: 10px;
+  background-color: colors.$bg-card;
+  box-shadow: 0 0 8px hsl(0, 0%, 60%);
 }
 
 @media screen and (max-width: 963px) {
@@ -36,8 +34,9 @@ body {
       "h l"
       "i l"
       "a a"
-      "b b";
-    grid-template-rows: 118px 250px minmax(250px, auto) auto;
+      "b b"
+      "f f";
+    grid-template-rows: 118px 250px minmax(250px, auto) auto auto;
     grid-template-columns: 1fr 75px;
     row-gap: 15px;
     column-gap: 15px;
@@ -48,40 +47,29 @@ body {
   body {
     padding: 10px;
     grid-template-columns: 1fr 60px;
-    row-gap: 0px; //sc
-    column-gap: 0px;
+    row-gap: 15px; //sc
+    column-gap: 5px;
   }
 
   .OneCard {
     border-radius: 0px; //sc
-    border: 2px solid var(--text);
-
-    &:hover {
-      box-shadow: none; //sc
-    }
   }
-}
-
-main {
-  grid-area: a;
-  padding: 5px;
-  color: var(--text);
-  min-height: 600px;
 }
 
 //---------------------------
 header {
-  margin: 0 auto;
   min-width: 280px;
-  width: 80%;
+  width: 100%;
   grid-area: h;
   text-align: center;
-  color: var(--text);
+  color: colors.$fg-text;
+  transform: rotate(-1deg);
 
   h1 {
+    filter: drop-shadow(0 0 2px colors.$ac1);
+    color: colors.$ac1;
     font-size: 54px;
     margin: 0;
-    color: var(--accentColor);
     user-select: none;
   }
 
@@ -91,15 +79,10 @@ header {
   }
 }
 
-@media screen and (max-width: 963px) {
-  header {
-    width: 100%;
-  }
-}
-
 //---------------------------
 nav {
   grid-area: l;
+  transform: skewX(-1deg);
 
   ul {
     height: 100%;
@@ -121,13 +104,13 @@ nav {
   display: block;
 
   svg {
-    fill: var(--text);
+    fill: colors.$fg-text;
     width: 100%;
     height: 100%;
+    filter: drop-shadow(0 0 1px colors.$fg-text);
 
     &:hover,
     &:active {
-      fill: var(--accentColor);
       transform: scale(1.1);
     }
   }
@@ -148,9 +131,10 @@ nav {
   align-items: center;
 
   svg {
-    fill: var(--text);
+    fill: colors.$fg-text;
     width: 240px;
     height: 160px;
+    filter: drop-shadow(0 0 3px colors.$fg-text);
   }
 }
 
@@ -161,88 +145,39 @@ nav {
   }
 }
 
-//-----footer----------------
-footer {
+//-----section----------------
+section {
   grid-area: b;
-  padding: 10px 10px 30px;
+  padding: 10px;
 }
 
-.main-of-footer {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  h4 {
+.github-info {
+  h3 {
     text-align: center;
-    margin: 0;
-    border-bottom: 1px solid var(--text);
-    padding: 5px;
+    margin: 0 auto;
+    width: 70%;
+    border-bottom: 1px solid colors.$fg-text;
+    padding: 0 0 5px;
   }
+}
 
-  ul {
-    padding: 5px;
-  }
+#git-events {
+  padding: 5px 5px 5px 25px;
+  list-style-type: disc;
 
   li {
     padding: 5px 10px;
     font-size: 14px;
   }
 
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-#git-events {
   span {
     color: hsl(0, 0%, 50%);
     font-size: 10px;
   }
-}
 
-.footer-of-footer {
-  padding: 5px;
-  position: relative;
-  top: 0px;
-  text-align: center;
-
-  p {
-    margin: 0;
-    color: hsl(0, 0%, 50%);
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 560px) {
-  .main-of-footer {
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    padding: 10px 0;
-  }
-  .other-links {
-    ul {
-      padding: 10px 0px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+  a {
+    &:hover {
+      text-decoration: underline;
     }
-    li {
-      padding: 10px;
-    }
-  }
-}
-
-@media screen and (max-width: 560px) {
-  //sc
-  header {
-    border-right: none !important;
-  }
-  nav {
-    border-bottom: none !important;
-  }
-  footer {
-    border-top: none !important;
   }
 }

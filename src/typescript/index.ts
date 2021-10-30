@@ -1,6 +1,6 @@
-import { EventParse } from "./github-api.js";
+import "./utils/github-api";
 
-console.log("site-version: 2.0.0");
+console.log("site-version: 2.1.0");
 
 /**
  * Simple API for updating the current URL with search queries
@@ -21,6 +21,7 @@ const URLparams = {
   },
 };
 
+// Tab implementation
 (async () => {
   const ACTIVE_TAB = "activetab";
   const AboutTabs = document.getElementsByClassName("tabs");
@@ -35,7 +36,7 @@ const URLparams = {
   for (let i = 0; i < AboutTabs.length; i++) {
     const tab = <HTMLButtonElement>AboutTabs[i];
     let temp_data = <string>tab.dataset.tempid;
-    const templ = <HTMLTemplateElement>document.getElementById(`templ-${temp_data}`);
+    const templ = <HTMLDivElement>document.getElementById(`templ-${temp_data}`);
 
     tab.addEventListener("click", () => {
       if (!tab.classList.contains(ACTIVE_TAB)) {
@@ -44,7 +45,7 @@ const URLparams = {
         tab.classList.add(ACTIVE_TAB);
 
         //copies the HTML template code to the main div
-        let x = templ.content.cloneNode(true);
+        let x = templ.cloneNode(true);
         AboutContent.innerHTML = "";
         AboutContent.appendChild(x);
 
@@ -66,27 +67,6 @@ const URLparams = {
   //else click on default tab button
   if (param_Tab) param_Tab.click();
   else def_Tab?.click();
-
-  //End of IIFE
-})();
-
-// For the showing a list of my recent Github public events
-(async () => {
-  //In Future, Place this div somewhere. For Ex: (In a new Nav-Section: Updates) or (Bottom of About)
-  const listElement = <HTMLElement>document.getElementById("git-events");
-  const USER_NAME = "U-C-S";
-  const QUERY_NUM = "5";
-
-  let github_api_url = new URL(`https://api.github.com/users/${USER_NAME}/events/public`);
-  github_api_url.searchParams.append("per_page", QUERY_NUM);
-
-  let fetchRes = await fetch(github_api_url.toString());
-  let ResponseJson: ghEventApi[] = await fetchRes.json();
-  let listElems = "";
-
-  ResponseJson.forEach((x) => (listElems += "<li>" + EventParse(x) + "</li>"));
-
-  listElement.innerHTML = listElems;
 
   //End of IIFE
 })();

@@ -2,11 +2,9 @@
   "compilerOptions": {
     "lib": ["DOM", "ES2019"],
     "module": "ES6",
-    "target": "ES2018",
-    "outDir": "static/scripts",
-
+    "target": "ES2019",
+    "noEmit": true,
     "removeComments": true,
-
     "strict": true
   },
 

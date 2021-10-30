@@ -9,6 +9,7 @@ type payload = {
   issue: { html_url: string };
   comment: { html_url: string };
   pull_request: { html_url: string };
+  release: { tag_name: string };
 };
 
 interface ghEventApi {

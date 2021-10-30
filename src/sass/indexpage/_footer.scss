@@ -2,6 +2,7 @@
 
 footer {
   grid-area: f;
+  transform: rotate(1deg);
   border-color: colors.$fg-text !important;
 
   ul {

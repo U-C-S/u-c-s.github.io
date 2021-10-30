@@ -3,6 +3,7 @@
 @use "indexpage/footer";
 
 body {
+  background: linear-gradient(143deg, hsl(340, 30%, 75%), hsl(260, 30%, 75%));
   height: clamp(666px, 100vh, 1000px);
   padding: 25px 50px;
   display: grid;
@@ -20,7 +21,7 @@ body {
 .OneCard {
   border-radius: 10px;
   background-color: colors.$bg-card;
-  box-shadow: 0 0 5px hsl(0, 0%, 60%);
+  box-shadow: 0 0 8px hsl(0, 0%, 60%);
 }
 
 @media screen and (max-width: 963px) {
@@ -46,13 +47,12 @@ body {
   body {
     padding: 10px;
     grid-template-columns: 1fr 60px;
-    row-gap: 0px; //sc
-    column-gap: 0px;
+    row-gap: 15px; //sc
+    column-gap: 5px;
   }
 
   .OneCard {
     border-radius: 0px; //sc
-    border-width: 2px;
   }
 }
 
@@ -63,6 +63,7 @@ header {
   grid-area: h;
   text-align: center;
   color: colors.$fg-text;
+  transform: rotate(-1deg);
 
   h1 {
     filter: drop-shadow(0 0 2px colors.$ac1);
@@ -81,6 +82,7 @@ header {
 //---------------------------
 nav {
   grid-area: l;
+  transform: skewX(-1deg);
 
   ul {
     height: 100%;

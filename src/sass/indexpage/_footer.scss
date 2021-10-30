@@ -1,6 +1,8 @@
+@use "../variables/colors";
+
 footer {
   grid-area: f;
-  border-color: var(--text) !important;
+  border-color: colors.$fg-text !important;
 
   ul {
     width: 100%;
@@ -13,6 +15,12 @@ footer {
     width: 140px;
     text-align: center;
     padding: 5px 10px;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -30,10 +38,10 @@ footer {
   }
 }
 
-footer {
-  a {
-    &:hover {
-      text-decoration: underline;
+@media screen and (max-width: 560px) {
+  footer {
+    ul {
+      flex-wrap: wrap;
     }
   }
 }

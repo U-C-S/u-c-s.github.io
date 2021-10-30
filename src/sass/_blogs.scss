@@ -1,3 +1,5 @@
+@use "./variables/colors";
+
 body {
   background-color: hsl(0, 0%, 8%);
   margin: 0 auto;
@@ -11,13 +13,13 @@ header,
 header h1,
 footer {
   border-style: solid;
-  border-color: var(--text);
+  border-color: colors.$fg-text;
 }
 
 header {
   position: sticky;
   top: 0;
-  background-color: var(--main-back);
+  background-color: white;
   display: flex;
 
   border-width: 0 0 2px;
@@ -41,7 +43,7 @@ header {
     border-width: 0 2px;
     text-align: center;
     font-size: 50px;
-    color: var(--accentColor);
+    color: colors.$ac1;
   }
 
   button {
@@ -52,14 +54,14 @@ header {
 }
 
 main {
-  background-color: var(--back);
+  background-color: colors.$bg-page;
   min-height: 92vh;
 }
 
 footer {
   padding: 10px;
   border-width: 2px 0 0;
-  background-color: var(--main-back);
+  background-color: white;
   p {
     margin: 0;
     text-align: center;

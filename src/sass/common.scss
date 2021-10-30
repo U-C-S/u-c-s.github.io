@@ -1,4 +1,4 @@
-@use "_variables";
+@use "./variables/colors";
 
 @font-face {
   font-family: "Quicksand";
@@ -18,7 +18,7 @@
 }
 
 body {
-  background-color: var(--back);
+  background-color: colors.$bg-page;
   margin: 0;
   min-width: 370px;
   min-height: 300px;
@@ -34,7 +34,7 @@ h4,
 li,
 span {
   font-family: "Quicksand", "Open Sans", sans-serif;
-  color: var(--text);
+  color: colors.$fg-text;
 }
 
 ul {
@@ -44,7 +44,7 @@ ul {
 }
 
 a {
-  color: var(--secColor);
+  color: colors.$fg-links;
   text-decoration: none;
   outline: none;
 }
@@ -60,7 +60,7 @@ button {
   margin: 5px;
   width: 70%;
   height: 2px;
-  background-color: var(--text);
+  background-color: colors.$fg-text;
 }
 .pline-center {
   margin: 5px auto;
@@ -78,6 +78,6 @@ button {
   background: hsla(0, 0%, 50%, 0.5);
 
   &:hover {
-    background: var(--accentColor);
+    background: colors.$ac1;
   }
 }

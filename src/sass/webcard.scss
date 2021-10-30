@@ -1,3 +1,5 @@
+@use "./variables/colors";
+
 body {
   height: 85vh;
   min-height: 500px;
@@ -8,7 +10,7 @@ body {
 }
 
 main {
-  border: 3px solid var(--text);
+  border: 3px solid colors.$fg-text;
   border-radius: 15px;
   width: clamp(370px, 80%, 420px);
   padding: 20px;
@@ -16,7 +18,7 @@ main {
 
 h1 {
   font-size: 60px;
-  color: var(--accentColor);
+  color: colors.$ac1;
   text-align: center;
   margin: 0;
   user-select: none;
@@ -31,11 +33,11 @@ div {
     width: 40px;
     height: 40px;
     margin: 5px 15px;
-    fill: var(--text);
+    fill: colors.$fg-text;
 
     &:hover {
-      transform: scale(1.2);
-      fill: var(--accentColor);
+      transform: scale(1.1);
+      fill: colors.$fg-links;
     }
   }
 }
@@ -49,11 +51,11 @@ svg {
   position: relative;
   bottom: 18px;
   padding: 5px 15px;
-  background-color: var(--back);
+  background-color: colors.$bg-page;
   user-select: none;
 
   &:hover {
     padding: 5px 25px;
-    color: var(--accentColor);
+    color: colors.$ac1;
   }
 }

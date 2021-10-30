@@ -1,8 +1,8 @@
+@use "./variables/colors";
 @use "indexpage/about";
 @use "indexpage/footer";
 
 body {
-  border: 3px solid hsl(0, 0%, 92%);
   height: clamp(666px, 100vh, 1000px);
   padding: 25px 50px;
   display: grid;
@@ -18,10 +18,9 @@ body {
 }
 
 .OneCard {
-  border-radius: 8px;
-  border-width: 3px;
-  border-style: solid;
-  border-color: var(--accentColor);
+  border-radius: 10px;
+  background-color: colors.$bg-card;
+  box-shadow: 0 0 5px hsl(0, 0%, 60%);
 }
 
 @media screen and (max-width: 963px) {
@@ -63,14 +62,13 @@ header {
   width: 100%;
   grid-area: h;
   text-align: center;
-  color: var(--text);
-  background: inherit !important;
+  color: colors.$fg-text;
 
   h1 {
+    filter: drop-shadow(0 0 2px colors.$ac1);
+    color: colors.$ac1;
     font-size: 54px;
     margin: 0;
-    color: var(--accentColor);
-    filter: drop-shadow(0 0 2px var(--accentColor));
     user-select: none;
   }
 
@@ -83,7 +81,6 @@ header {
 //---------------------------
 nav {
   grid-area: l;
-  border-color: hsl(225, 82%, 55%) !important;
 
   ul {
     height: 100%;
@@ -105,10 +102,10 @@ nav {
   display: block;
 
   svg {
-    fill: var(--text);
+    fill: colors.$fg-text;
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 1px var(--text));
+    filter: drop-shadow(0 0 1px colors.$fg-text);
 
     &:hover,
     &:active {
@@ -132,10 +129,10 @@ nav {
   align-items: center;
 
   svg {
-    fill: var(--text);
+    fill: colors.$fg-text;
     width: 240px;
     height: 160px;
-    filter: drop-shadow(0 0 3px var(--text));
+    filter: drop-shadow(0 0 3px colors.$fg-text);
   }
 }
 
@@ -153,60 +150,32 @@ section {
 }
 
 .github-info {
-  width: 100%;
-
-  h4 {
+  h3 {
     text-align: center;
     margin: 0 auto;
     width: 70%;
-    border-bottom: 1px solid var(--text);
+    border-bottom: 1px solid colors.$fg-text;
     padding: 0 0 5px;
   }
+}
 
-  ul {
-    padding: 5px;
-  }
+#git-events {
+  padding: 5px 5px 5px 25px;
+  list-style-type: disc;
 
   li {
     padding: 5px 10px;
     font-size: 14px;
   }
-}
-#git-events {
+
   span {
     color: hsl(0, 0%, 50%);
     font-size: 10px;
   }
-}
 
-// ---------------------------
-
-section {
   a {
     &:hover {
       text-decoration: underline;
-    }
-  }
-}
-
-@media screen and (max-width: 560px) {
-  //sc
-  header {
-    border-right: none !important;
-  }
-  nav {
-    border-bottom: none !important;
-  }
-  #NothingCard {
-    border-left: 2px solid var(--text);
-  }
-  section,
-  footer {
-    border-top: none !important;
-  }
-  footer {
-    ul {
-      flex-wrap: wrap;
     }
   }
 }

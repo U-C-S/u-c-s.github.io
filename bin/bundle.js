@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { build } from "esbuild";
+import { solidPlugin } from "esbuild-plugin-solid";
 import { readdirSync } from "fs";
 
 var IsWatch = process.argv.at(2) === "--watch";
@@ -18,14 +19,16 @@ rawfiles.forEach((i) => {
 });
 
 build({
+  platform: "browser",
   entryPoints: Files,
+  format: "esm",
   outdir: "./static/scripts",
   target: "es2019",
-  platform: "browser",
   watch: IsWatch,
   bundle: true,
-  minify: false,
+  minify: !IsWatch,
   sourcemap: false,
   tsconfig: "./tsconfig.json",
-  logLevel: "debug",
+  logLevel: "info",
+  plugins: [solidPlugin()],
 });

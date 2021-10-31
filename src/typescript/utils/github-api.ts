@@ -20,24 +20,6 @@ const USER_NAME = "U-C-S";
   //End of IIFE
 })();
 
-// Status Feature
-(async () => {
-  const StatusElement = <HTMLDivElement>document.getElementById("my-status");
-
-  let issueApi = await fetch(`https://api.github.com/repos/${USER_NAME}/${USER_NAME.toLowerCase()}.github.io/issues/10/comments`);
-  let resJson = await issueApi.json();
-  let status = resJson[resJson.length - 1].body;
-
-  // let markdownApi = await fetch(`https://api.github.com/markdown`, {
-  //   method: "POST",
-  //   body: JSON.stringify({ text: status }),
-  // });
-  // let markdownRes = await markdownApi.text();
-
-  console.log(status);
-  StatusElement.innerHTML = status;
-})();
-
 /**
  * For Parsing the Github REST API's list of user public Events
  * @param activity A Event Object from the list

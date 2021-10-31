@@ -1,17 +1,18 @@
 @use "_blogs";
 @use "./variables/colors";
+@use "./variables/fonts";
 
 .the-head {
   h1 {
     text-align: center;
     font-size: 36px;
     margin: 0;
-    padding: 20px 10px;
+    padding: 10px;
   }
 
   p {
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
   }
 }
@@ -22,10 +23,11 @@ article {
   h2,
   h3,
   h4 {
+    font-family: fonts.$text-reg;
     color: colors.$ac-blue;
     width: 60%;
     padding: 10px;
-    border-bottom: 1px solid colors.$fg-text;
+    border-bottom: 2px solid colors.$fg-text;
   }
 
   p,
@@ -33,7 +35,7 @@ article {
   a,
   span {
     font-size: 16px;
-    font-family: "Roboto Mono";
+    font-family: fonts.$text-reg;
   }
 
   p {

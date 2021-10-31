@@ -3,7 +3,7 @@
 @use "indexpage/footer";
 
 body {
-  background: linear-gradient(143deg, hsl(340, 30%, 75%), hsl(260, 30%, 75%));
+  background: colors.$bg-page-gradient;
   height: clamp(666px, 100vh, 1000px);
   padding: 25px 50px;
   display: grid;
@@ -74,8 +74,7 @@ header {
   }
 
   p {
-    font-family: monospace;
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 

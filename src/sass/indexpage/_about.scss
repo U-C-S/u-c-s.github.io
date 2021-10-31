@@ -1,4 +1,5 @@
 @use "../variables/colors";
+@use "../variables/fonts";
 
 main {
   grid-area: a;
@@ -190,7 +191,7 @@ main {
 
   p {
     margin: 15px 0;
-    font-family: "Roboto Mono";
+    font-family: fonts.$text-reg;
     font-size: 16px;
   }
 }
@@ -201,7 +202,7 @@ main {
   background-color: colors.$ac1;
   padding: 0px;
   margin: 0px 5px 5px;
-  border-radius: 3px;
+  border-radius: 6px;
 
   p {
     text-align: center;

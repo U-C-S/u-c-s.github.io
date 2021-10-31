@@ -1,0 +1,34 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+
+//----status----------
+#dynamic-status {
+  grid-area: s;
+  background-color: colors.$ac1;
+  padding: 0px;
+  margin-left: 40px;
+}
+
+.status-meta {
+  border-top: 1px solid #000;
+  padding: 5px;
+  margin: auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+
+  a,
+  p {
+    margin: 0;
+    font-size: 10px;
+    font-family: fonts.$text-reg;
+    color: #000;
+  }
+}
+
+.status-content {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  color: aliceblue;
+}

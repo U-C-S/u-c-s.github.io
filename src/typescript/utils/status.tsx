@@ -30,4 +30,4 @@ const App = () => {
   );
 };
 
-render(App, document.getElementById("my-status") as HTMLElement);
+render(App, document.getElementById("dynamic-status") as HTMLElement);

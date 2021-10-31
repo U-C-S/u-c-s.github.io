@@ -21,10 +21,9 @@ main {
   display: grid;
   grid-template-areas:
     "em1 nav em2"
-    "con con con"
-    "sts sts sts";
+    "con con con";
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: 60px 1fr auto;
+  grid-template-rows: 60px 1fr;
 }
 
 //----main-nav-tabs----------
@@ -194,37 +193,4 @@ main {
     font-family: fonts.$text-reg;
     font-size: 16px;
   }
-}
-
-//----status----------
-#my-status {
-  grid-area: sts;
-  background-color: colors.$ac1;
-  padding: 0px;
-  margin: 0px 5px 5px;
-  border-radius: 6px;
-}
-
-.status-meta {
-  border-top: 1px solid #000;
-  padding: 5px;
-  margin: auto;
-  width: 70%;
-  display: flex;
-  justify-content: space-around;
-
-  a,
-  p {
-    margin: 0;
-    font-size: 10px;
-    font-family: fonts.$text-reg;
-    color: #000;
-  }
-}
-
-.status-content {
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  color: aliceblue;
 }

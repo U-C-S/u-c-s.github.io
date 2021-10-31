@@ -1,6 +1,7 @@
 @use "./variables/colors";
 @use "indexpage/about";
 @use "indexpage/footer";
+@use "indexpage/status";
 
 body {
   background: colors.$bg-page-gradient;
@@ -13,9 +14,10 @@ body {
     "l h a"
     "l i a"
     "b b a"
+    "b b s"
     "f f f";
   grid-template-columns: 75px 5fr 8fr;
-  grid-template-rows: 118px minmax(140px, 1fr) 220px 72px;
+  grid-template-rows: 118px minmax(140px, 1fr) auto auto 72px;
 }
 
 .OneCard {

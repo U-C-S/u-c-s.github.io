@@ -65,7 +65,7 @@ header {
   grid-area: h;
   text-align: center;
   color: colors.$fg-text;
-  transform: rotate(-1deg);
+  transform: skewX(1deg);
 
   h1 {
     filter: drop-shadow(0 0 2px colors.$ac1);

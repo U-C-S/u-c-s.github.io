@@ -39,34 +39,26 @@
   </div>
 
   <main class="OneCard">
-      <div class="NavContainer">
-        <div class="main-nav">
-          <div class="nav-btns-container">
-            <div class="nav-btns">
-              <button data-tempid="blog" class="tabs">Blog</button>
-              <button data-tempid="about" data-defopen=true class="tabs">About</button>
-              <!-- <button data-tempid="skill" class="tabs">Skills</button>
-              <button data-tempid="likes" class="tabs">Interests</button> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="em1"></div>
-        <div class="em2"></div>
-
-        <div id="main-content">
-          <div class="noscript">
-            <p>For (slow connections) or (No Javascript mode),</p>
-            <p>Use the <a href="/noscript">Alternate plain website</a></p>
-          </div>
-        </div>
+    <div class="MainContainer">
+      <div class="main-nav">
+          <button data-tempid="blog" class="tabs">Blog</button>
+          <button data-tempid="about" data-defopen=true class="tabs">About</button>
+          <!-- <button data-tempid="skill" class="tabs">Skills</button>
+          <button data-tempid="likes" class="tabs">Interests</button> -->
       </div>
 
+      <div id="main-content">
+        <div class="noscript">
+          <p>For (slow connections) or (No Javascript mode),</p>
+          <p>Use the <a href="/noscript">Alternate plain website</a></p>
+        </div>
+      </div>
+    </div>
 
     {# Add Pinned Posts feature #}
     <div class="zero-display">
       <div id="templ-blog">
-        <h2 class="tab-content-heading">Blogs / Journals</h2>
+        <h2 class="tab-content-heading">Blogs | Journals</h2>
         <div class="recent-blogs">
           {% set allpages = [] %}
           {% set articles = get_section(path="blog/_index.md") %}
@@ -85,14 +77,6 @@
         <div class="about-container">
           {{ section.content | safe }}
         </div>
-      </div>
-
-      <div id="templ-skill">
-        <h2 class="tab-content-heading">Unlimited Skills</h2>
-      </div>
-
-      <div id="templ-likes">
-        <h2 class="tab-content-heading">. . . got my Curiosity</h2>
       </div>
     </div>
   </main>

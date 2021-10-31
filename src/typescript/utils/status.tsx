@@ -17,11 +17,11 @@ const App = () => {
 
   return (
     <>
-      <Show when={status()} fallback={<span>Getting Status...</span>}>
+      <Show when={status()} fallback={<p>Getting Status...</p>}>
         <>
           <p class="status-content">{status()?.body}</p>
           <div class="status-meta">
-            <a href={status()?.html_url}>DynamicStatus</a>
+            <a href={status()?.html_url}>Dynamic_Status</a>
             <p>Updated On: {status()?.created_at.substring(0, 10)}</p>
           </div>
         </>

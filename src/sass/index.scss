@@ -1,7 +1,6 @@
 @use "./variables/colors";
 @use "indexpage/_all";
 
-@use "shared/heading";
 @use "shared/social_links";
 
 body {
@@ -28,10 +27,8 @@ body {
 
 @media all and (max-width: 963px) {
   body {
-    border: none;
     padding: 10px clamp(10px, 8%, 70px);
     height: auto;
-    display: grid;
     grid-template-areas:
       "h h"
       "l l"
@@ -60,44 +57,7 @@ body {
   }
 }
 
-//---------------------------
-header {
-  min-width: 280px;
-  width: 100%;
-  grid-area: h;
-  text-align: center;
-  color: colors.$fg-text;
-  transform: skewX(1deg);
-
-  @include heading.var(54px);
-
-  p {
-    font-size: 12px;
-  }
-}
-
 @include social_links.var1(center);
-
-//---------------------------
-#NothingCard {
-  grid-area: i;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    fill: colors.$fg-text;
-    width: 240px;
-    height: 160px;
-    filter: drop-shadow(0 0 3px colors.$fg-text);
-  }
-}
-
-@media screen and (max-width: 560px) {
-  #NothingCard svg {
-    padding: 10px 0 25px;
-  }
-}
 
 //-----section----------------
 section {

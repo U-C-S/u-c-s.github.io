@@ -15,7 +15,6 @@ main {
 
 //----main-nav-tabs----------
 .main-nav {
-  grid-area: nav;
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
@@ -74,8 +73,6 @@ main {
 
 //----main-content----------
 #main-content {
-  grid-area: con;
-  padding: 10px 10px 0;
   color: colors.$fg-text;
 
   p {

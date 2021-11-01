@@ -1,5 +1,5 @@
-import "./utils/github-api";
-import "./utils/status";
+import "./components/gh-events";
+import "./components/status";
 
 console.log("site-version: 2.1.0");
 

@@ -1,8 +1,7 @@
 @use "./variables/colors";
 
-* {
-  transition: all 0.1s ease;
-}
+@use "shared/social_links";
+@use "shared/heading";
 
 body {
   height: 85vh;
@@ -22,37 +21,11 @@ main {
   padding: 20px;
 }
 
-//share the same style across all pages for h1 and social links
-h1 {
-  font-size: 60px;
-  color: colors.$ac1;
-  text-align: center;
-  margin: 0;
-  user-select: none;
-  filter: drop-shadow(0 0 2px colors.$ac1);
-}
+@include heading.var(60px);
 
-div {
-  margin: 20px;
-  display: flex;
-  justify-content: space-around;
-
-  a {
-    width: 40px;
-    height: 40px;
-    margin: 5px 15px;
-    fill: colors.$fg-text;
-
-    &:hover {
-      transform: scale(1.1);
-      fill: colors.$fg-links;
-    }
-  }
-}
-
-svg {
-  width: 100%;
-  height: 100%;
+@include social_links.var1(space-around);
+nav {
+  padding: 20px;
 }
 
 #website {

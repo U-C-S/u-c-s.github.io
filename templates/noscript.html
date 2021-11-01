@@ -4,7 +4,7 @@
 <!--head-->
 {% block head -%}
   {{ super() }}
-  <link rel="stylesheet" href="{{ get_url(path="styles/index.css") }}" />
+  <link rel="stylesheet" href="{{ get_url(path="styles/noscript.css") }}" />
 {% endblock head -%}
 
 
@@ -12,7 +12,7 @@
 {% block content %}
   {{ macros::Header() }}
 
-  {{ macros::SocialLinksIcons() }}
+  {{ macros::SocialLinksIcons(count=5) }}
 
   {{ macros::LogoDiv() }}
 

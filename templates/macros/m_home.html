@@ -26,11 +26,12 @@
 {% endmacro Header %}
 
 
-{% macro SocialLinksIcons() %}
+{% macro SocialLinksIcons(count) %}
   <nav class="OneCard">
     <ul>
       {% set socialdata = load_data(path="src/social_links.json", format="json") %}
-      {% for link in socialdata.data %}
+      {% set sociallimited = socialdata.data | slice(end=count) %}
+      {% for link in sociallimited %}
         <li>
           <a class="social-link" href="{{ link.link }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
             <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>

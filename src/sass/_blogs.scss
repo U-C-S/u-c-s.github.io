@@ -1,7 +1,9 @@
-@use "./variables/colors";
+@use "./variables/var";
+
+@use "shared/heading";
 
 body {
-  background: colors.$bg-page-gradient;
+  background: var.$bg-page-gradient;
   margin: 0 auto;
   width: clamp(550px, 75%, 1200px);
   min-height: 100vh;
@@ -21,19 +23,15 @@ header {
     background-color: black;
   }
 
+  @include heading.var(42px);
   h1 {
     width: 225px;
-    margin: 0;
     padding: 3px 10px 7px;
-    text-align: center;
-    font-size: 42px;
-    color: colors.$ac1;
-    filter: drop-shadow(0 0 2px colors.$ac1);
   }
 }
 
 main {
-  background-color: colors.$bg-card;
+  background-color: var.$bg-card;
   border-radius: 20px;
   padding: 10px 0;
   box-shadow: 0 0 8px hsl(0, 0%, 60%);

@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% import "macros/m_home.html" as macros %}
+
+<!--head-->
+{% block head -%}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ get_url(path="styles/index.css") }}" />
+{% endblock head -%}
+
+
+<!-- prettier-ignore -->
+{% block content %}
+  {{ macros::Header() }}
+
+  {{ macros::SocialLinksIcons() }}
+
+  {{ macros::LogoDiv() }}
+
+  <main class="OneCard">
+      <div id="main-content">
+          {{ macros::BlogSection() }}
+      </div>
+
+    {# Add Pinned Posts feature #}
+    <div class="zero-display">
+      <div id="templ-about">
+        <h2 class="tab-content-heading">About Me!!</h2>
+        <div class="about-container">
+          {{ section.content | safe }}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {{ macros::Footer() }}
+
+{% endblock content %}

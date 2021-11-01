@@ -3,9 +3,8 @@
 body {
   background: colors.$bg-page-gradient;
   margin: 0 auto;
-  width: 75%;
+  width: clamp(550px, 75%, 1200px);
   min-height: 100vh;
-  min-width: 550px;
 }
 
 header {
@@ -37,6 +36,7 @@ main {
   background-color: colors.$bg-card;
   border-radius: 20px;
   padding: 10px 0;
+  box-shadow: 0 0 8px hsl(0, 0%, 60%);
 }
 
 footer {

@@ -1,5 +1,9 @@
 @use "./variables/colors";
 
+* {
+  transition: all 0.1s ease;
+}
+
 body {
   height: 85vh;
   min-height: 500px;
@@ -10,18 +14,22 @@ body {
 }
 
 main {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  background: hsla(0, 0%, 100%, 0.3);
   border: 3px solid colors.$fg-text;
   border-radius: 15px;
   width: clamp(370px, 80%, 420px);
   padding: 20px;
 }
 
+//share the same style across all pages for h1 and social links
 h1 {
   font-size: 60px;
   color: colors.$ac1;
   text-align: center;
   margin: 0;
   user-select: none;
+  filter: drop-shadow(0 0 2px colors.$ac1);
 }
 
 div {
@@ -48,14 +56,10 @@ svg {
 }
 
 #website {
-  position: relative;
-  bottom: 18px;
-  padding: 5px 15px;
-  background-color: colors.$bg-page;
-  user-select: none;
+  position: absolute;
+  bottom: 20px;
 
   &:hover {
-    padding: 5px 25px;
     color: colors.$ac1;
   }
 }

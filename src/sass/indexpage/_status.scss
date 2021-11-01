@@ -32,3 +32,9 @@
   text-align: center;
   color: aliceblue;
 }
+
+@media (max-width: 963px) {
+  #dynamic-status {
+    margin: 0;
+  }
+}

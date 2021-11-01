@@ -1,6 +1,6 @@
 @use "./variables/var";
 @use "shared/social_links";
-@use "indexpage/_all";
+@use "indexpage/_noscript";
 
 body {
   width: 100%;
@@ -46,11 +46,10 @@ body {
 
 @include social_links.var1(space-around);
 
-#templ-about {
+#AboutCard {
   grid-area: d;
 }
 
-#templ-about,
-main {
-  padding: 15px 0;
+#BlogCard {
+  grid-area: a;
 }

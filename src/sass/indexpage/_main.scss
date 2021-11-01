@@ -2,7 +2,7 @@
 @use "../variables/fonts";
 
 main {
-  grid-area: a;
+  grid-area: m;
   min-height: 400px;
   width: 100%;
   height: 100%;
@@ -104,80 +104,3 @@ main {
   }
 }
 
-.tab-content-heading {
-  display: block;
-  margin: 0 80px;
-  min-width: 200px;
-  color: colors.$fg-text;
-  text-align: center;
-  font-size: 24px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid colors.$fg-text;
-}
-
-@media screen and (max-width: 560px) {
-  .tab-content-heading {
-    margin: 0 20px;
-    font-size: 20px;
-  }
-}
-
-//----blog-content-----
-.recent-blogs {
-  padding: 0 10px;
-}
-
-.blog-list {
-  padding-left: 25px;
-  margin: 0;
-}
-
-.blog-item {
-  margin: 10px 0;
-
-  a {
-    display: block;
-    font-size: 22px;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  p {
-    font-size: 10px;
-    margin: 3px 0;
-  }
-}
-
-#blog-read-more {
-  float: right;
-  font-size: 12px;
-
-  &:hover {
-    color: colors.$ac1;
-  }
-}
-
-@media screen and (max-width: 963px) {
-  .blog-item {
-    a {
-      font-size: 20px;
-    }
-    p {
-      font-size: 8px;
-    }
-  }
-}
-
-//----about-content-----
-.about-container {
-  margin-top: 10px;
-  padding: 0px 5%;
-  // border: 1px solid colors.$fg-text;
-
-  p {
-    margin: 15px 0;
-    font-family: fonts.$text-reg;
-    font-size: 16px;
-  }
-}

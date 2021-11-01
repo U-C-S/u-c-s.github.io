@@ -16,17 +16,12 @@
 
   {{ macros::LogoDiv() }}
 
-  <main class="OneCard">
-      <div id="main-content">
-          {{ macros::BlogSection() }}
-      </div>
-  </main>
+  <div id="AboutCard" class="OneCard">      
+      {{ macros::AboutSection() }}
+  </div>
 
-  <div id="templ-about" class="OneCard">
-    <h2 class="tab-content-heading">About Me!!</h2>
-    <div class="about-container">
-      {{ section.content | safe }}
-    </div>
+  <div id="BlogCard" class="OneCard">
+      {{ macros::BlogSection() }}
   </div>
 
   {{ macros::Footer() }}

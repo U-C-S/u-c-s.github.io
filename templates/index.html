@@ -20,8 +20,8 @@
   <main class="OneCard">
     <div class="MainContainer">
       <div class="main-nav">
-          <button data-tempid="blog" class="tabs">Blog</button>
-          <button data-tempid="about" data-defopen=true class="tabs">About</button>
+          <button data-content-name="blog" class="tabs">Blog</button>
+          <button data-content-name="about" data-defopen=true class="tabs">About</button>
           <!-- <button data-tempid="skill" class="tabs">Skills</button>
           <button data-tempid="likes" class="tabs">Interests</button> -->
       </div>
@@ -34,15 +34,13 @@
       </div>
     </div>
 
-    {# Add Pinned Posts feature #}
     <div class="zero-display">
-      {{ macros::BlogSection() }}
+      <div id="content-blog">
+        {{ macros::BlogSection() }}
+      </div>
 
-      <div id="templ-about">
-        <h2 class="tab-content-heading">About Me!!</h2>
-        <div class="about-container">
-          {{ section.content | safe }}
-        </div>
+      <div id="content-about">
+        {{ macros::AboutSection() }}
       </div>
     </div>
   </main>

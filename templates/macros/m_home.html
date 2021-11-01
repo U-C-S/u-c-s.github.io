@@ -1,22 +1,3 @@
-{% macro post_list(posts) %}
-
-  {% if posts | length > 0 %}
-    <ul class="blog-list">
-      {% for post in posts %}
-      <li class="blog-item">
-        <a class="post-link" href="{{ post.permalink }}">{{ post.title }}</a>
-        {% if post.date %}
-          <p class="post-meta">{{ post.date | date(format="%b %-d, %Y") }}</p>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-    <a id="blog-read-more" href="{{ get_url(path="/blog") }}">. . . . read more</a>
-  {% endif %}
-
-{% endmacro post_list %}
-
-
 {% macro Header() %}
   <header class="OneCard">
     <h1>Chanakya</h1>
@@ -43,8 +24,20 @@
 {% endmacro SocialLinksIcons %}
 
 
+{# Tabs starts from here #}
+{# note: these are not cards #}
+{% macro AboutSection() %}
+  <div class="about_container">
+    <h2 class="tab-content-heading">About Me!!</h2>
+    <div class="about-me">
+      {{ section.content | safe }}
+    </div>
+  </div>
+{% endmacro AboutSection %}
+
 {% macro BlogSection() %}
-  <div id="templ-blog">
+  {# Add Pinned Posts feature #}
+  <div id="blog_container">
     <h2 class="tab-content-heading">Blogs | Journals</h2>
     <div class="recent-blogs">
       {% set allpages = [] %}
@@ -55,10 +48,28 @@
         {% set_global allpages = allpages | concat(with=subpages) %}
       {% endfor %}
       {% set recentones = allpages | slice(end=5) %}
-      {{ macros::post_list(posts=recentones) }}
+      {{ self::post_list(posts=recentones) }}
     </div>
   </div>
 {% endmacro Footer %}
+
+{% macro post_list(posts) %}
+
+  {% if posts | length > 0 %}
+    <ul class="blog-list">
+      {% for post in posts %}
+      <li class="blog-item">
+        <a class="post-link" href="{{ post.permalink }}">{{ post.title }}</a>
+        {% if post.date %}
+          <p class="post-meta">{{ post.date | date(format="%b %-d, %Y") }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <a id="blog-read-more" href="{{ get_url(path="/blog") }}">Read more...</a>
+  {% endif %}
+
+{% endmacro post_list %}
 
 
 {% macro LogoDiv() %}

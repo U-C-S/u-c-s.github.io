@@ -1,5 +1,5 @@
 @use "./variables/colors";
-@use "indexpage/_all";
+@use "indexpage/_index";
 
 @use "shared/social_links";
 
@@ -10,9 +10,9 @@ body {
   row-gap: 25px;
   column-gap: 25px;
   grid-template-areas:
-    "l h a"
-    "l i a"
-    "b b a"
+    "l h m"
+    "l i m"
+    "b b m"
     "b b s"
     "f f f";
   grid-template-columns: 75px 5fr 8fr;
@@ -34,7 +34,7 @@ body {
       "l l"
       "s s"
       "i i"
-      "a a"
+      "m m"
       "b b"
       "f f";
     grid-template-rows: 118px 60px auto auto minmax(250px, auto) auto auto;

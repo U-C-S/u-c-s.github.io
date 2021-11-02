@@ -1,67 +1,46 @@
-@use "./variables/colors";
+@use "./variables/var";
+
+@use "shared/heading";
 
 body {
-  background-color: hsl(0, 0%, 8%);
+  background: var.$bg-page-gradient;
   margin: 0 auto;
-  width: 80%;
-  min-width: 550px;
-  border-width: 0 2px;
-}
-
-body,
-header,
-header h1,
-footer {
-  border-style: solid;
-  border-color: colors.$fg-text;
+  width: clamp(550px, 75%, 1200px);
+  min-height: 100vh;
 }
 
 header {
-  position: sticky;
-  top: 0;
-  background-color: white;
   display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  background: radial-gradient(circle, hsla(0, 0%, 100%, 0.4) 0%, transparent 60%);
 
-  border-width: 0 0 2px;
-  box-shadow: 0 0 20px black;
-
-  a {
-    text-align: center;
-    padding: 2px 10px 8px;
-    min-width: 100px;
-
-    span {
-      display: block;
-      margin: 0px;
-      font-size: 24px;
-    }
-  }
-
-  h1 {
+  .after-h1,
+  .befor-h1 {
+    margin: 4px 10px;
     width: 100%;
-    margin: 0;
-    border-width: 0 2px;
-    text-align: center;
-    font-size: 50px;
-    color: colors.$ac1;
+    height: 2px;
+    background-color: black;
   }
 
-  button {
-    font-family: monospace;
-    font-size: 36px;
-    min-width: 100px;
+  @include heading.var(42px);
+  h1 {
+    width: 225px;
+    padding: 3px 10px 7px;
   }
 }
 
 main {
-  background-color: colors.$bg-page;
-  min-height: 92vh;
+  background-color: var.$bg-card;
+  border-radius: 20px;
+  padding: 10px 0;
+  box-shadow: 0 0 8px hsl(0, 0%, 60%);
 }
 
 footer {
   padding: 10px;
   border-width: 2px 0 0;
-  background-color: white;
+
   p {
     margin: 0;
     text-align: center;
@@ -70,28 +49,13 @@ footer {
 
 @media screen and (max-width: 560px) {
   body {
-    width: 100%;
+    width: 98%;
     min-width: 380px;
-    border-width: 0px;
   }
 
   header {
-    a {
-      min-width: 80px;
-      padding: 0px 0px 8px;
-
-      span {
-        font-size: 20px;
-      }
-    }
-
     h1 {
-      padding-top: 3px;
-      font-size: 40px;
-    }
-
-    button {
-      min-width: 80px;
+      font-size: 36px;
     }
   }
 }

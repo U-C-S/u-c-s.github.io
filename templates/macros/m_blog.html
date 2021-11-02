@@ -1,10 +1,8 @@
 {% macro header(backlink,backbtn) %}
   <header>
-    <a href="{{ backlink }}">
-      <span>&larr;</span>
-      <span>{{ backbtn }}</span>
-    </a>
-    <h1>Chanakya</h1>
+    <div class="befor-h1"></div>
+    <a href="/?tab=blog"><h1>Chanakya</h1></a>
+    <div class="after-h1"></div>
   </header>
 {% endmacro header %}
 

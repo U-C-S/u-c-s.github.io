@@ -1,0 +1,55 @@
+@use "./variables/var";
+@use "shared/social_links";
+@use "indexpage/_noscript";
+
+body {
+  width: 100%;
+  height: clamp(666px, 100vh, 1000px);
+  padding: 50px;
+  display: grid;
+  grid-template-areas:
+    "d h a"
+    "d l a"
+    "d i a"
+    "f f a";
+  grid-template-columns: 10fr minmax(300px, 8fr) 10fr;
+  grid-template-rows: 118px 80px 250px auto;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.OneCard {
+  border-radius: 10px;
+  background-color: var.$bg-card;
+  box-shadow: 0 0 8px hsl(0, 0%, 60%);
+  transform: none !important;
+}
+
+@media all and (max-width: 963px) {
+  body {
+    padding: 15px;
+    height: auto;
+    grid-template-areas:
+      "h"
+      "l"
+      "i"
+      "a"
+      "d"
+      "f";
+    grid-template-rows: 118px 60px auto auto auto auto;
+    grid-template-columns: 1fr;
+  }
+  .OneCard {
+    border-radius: 0px; //sc
+  }
+}
+
+@include social_links.var1(space-around);
+
+#AboutCard {
+  grid-area: d;
+}
+
+#BlogCard {
+  grid-area: a;
+}

@@ -1,6 +1,6 @@
 {
   "name": "chanakya-website",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "concurrently": "^6.3.0",
-    "esbuild": "^0.13.11",
+    "esbuild": "^0.13.12",
+    "esbuild-plugin-solid": "^0.4.0",
     "sass": "^1.43.4",
+    "solid-js": "^1.2.1",
     "typescript": "^4.4.4"
   },
   "devDependencies": {

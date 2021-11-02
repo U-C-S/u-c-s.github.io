@@ -1,5 +1,5 @@
 +++
-  template = "index.html"
+  template = "noscript.html"
 +++
 
 Hi! I'm a Curious and Quick-learner. I currently love Programming and Open Source stuff. I learn most of the coding stuff through Documentations and References. Also likes to cycle and explore the cities and my surrondings.

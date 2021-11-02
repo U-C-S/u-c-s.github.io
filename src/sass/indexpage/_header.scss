@@ -1,0 +1,17 @@
+@use "../variables/colors";
+@use "../shared/heading";
+
+header {
+  min-width: 280px;
+  width: 100%;
+  grid-area: h;
+  text-align: center;
+  color: colors.$fg-text;
+  transform: skewX(1deg);
+
+  @include heading.var(54px);
+
+  p {
+    font-size: 12px;
+  }
+}

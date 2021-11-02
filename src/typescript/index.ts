@@ -1,6 +1,7 @@
-import "./utils/github-api";
+import "./components/gh-events";
+import "./components/status";
 
-console.log("site-version: 2.1.0");
+console.log("site-version: 2.2.0");
 
 /**
  * Simple API for updating the current URL with search queries
@@ -35,8 +36,9 @@ const URLparams = {
   //loop over all the tab buttons and give them the click event-listeners
   for (let i = 0; i < AboutTabs.length; i++) {
     const tab = <HTMLButtonElement>AboutTabs[i];
-    let temp_data = <string>tab.dataset.tempid;
-    const templ = <HTMLDivElement>document.getElementById(`templ-${temp_data}`);
+    let temp_data = <string>tab.dataset.contentName;
+    //console.log(temp_data);
+    const templ = <HTMLDivElement>document.getElementById(`content-${temp_data}`);
 
     tab.addEventListener("click", () => {
       if (!tab.classList.contains(ACTIVE_TAB)) {

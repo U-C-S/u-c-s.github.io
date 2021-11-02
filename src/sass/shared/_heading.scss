@@ -1,0 +1,12 @@
+@use "../variables/var";
+
+@mixin var($font_size) {
+  h1 {
+    font-size: $font_size;
+    text-align: center;
+    margin: 0;
+    user-select: none;
+    color: var.$ac1;
+    filter: drop-shadow(0 0 2px var.$ac1);
+  }
+}

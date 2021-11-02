@@ -1,0 +1,50 @@
+@use "../variables/var";
+
+@mixin var1($flex_x_content) {
+  nav {
+    grid-area: l;
+
+    ul {
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: $flex_x_content;
+      align-items: center;
+
+      li {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  .social-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    svg {
+      fill: var.$fg-text;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 1px var.$fg-text);
+      transition: all 0.1s ease;
+
+      &:hover,
+      &:active {
+        transform: scale(1.15);
+      }
+    }
+  }
+
+  @media screen and (max-width: 963px) {
+    nav ul {
+      justify-content: space-around;
+
+      li {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}

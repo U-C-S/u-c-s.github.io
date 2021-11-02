@@ -1,5 +1,5 @@
 {% extends "_base.html" %}
-{% import "includes/home-macros.html" as macros %}
+{% import "macros/m_home.html" as macros %}
 
 <!--head-->
 {% block head -%}
@@ -11,92 +11,41 @@
 
 <!-- prettier-ignore -->
 {% block content %}
-  <header class="OneCard">
-    <h1>Chanakya</h1>
-    <div class="pline pline-center"></div>
-    <p>--- Website Homepage ---</p>
-  </header>
+  {{ macros::Header() }}
 
-  <nav class="OneCard">
-    <ul>
-      {% set socialdata = load_data(path="src/social_links.json", format="json") %}
-      {% for link in socialdata.data %}
-        <li>
-          <a class="social-link" href="{{ link.link }}" title="{{ link.title }}" target="_blank" rel="noreferrer">
-            <svg viewbox="{{ link.viewBox }}"><path d="{{ link.svg }}"/></svg>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
+  {{ macros::SocialLinksIcons(count=5) }}
 
-  <div id="NothingCard">
-    <svg viewBox="0 0 321 210" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 210L153 6V49L78 175H219L236 210H0Z" />
-      <path d="M142 163H100L196.629 0L321 210H266L196.5 73L142 163Z" />
-      <path d="M224 125H164.11L155 140L240 155L224 125Z" />
-    </svg>
-  </div>
+  {{ macros::LogoDiv() }}
 
   <main class="OneCard">
-      <div class="NavContainer">
-        <div class="main-nav">
-          <div class="nav-btns-container">
-            <div class="nav-btns">
-              <button data-tempid="blog" class="tabs">Blog</button>
-              <button data-tempid="about" data-defopen=true class="tabs">About</button>
-              <!-- <button data-tempid="skill" class="tabs">Skills</button>
-              <button data-tempid="likes" class="tabs">Interests</button> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="em1"></div>
-        <div class="em2"></div>
-
-        <div id="main-content">
-          <div class="noscript">
-            <p>For (slow connections) or (No Javascript mode),</p>
-            <p>Use the <a href="/noscript">Alternate plain website</a></p>
-          </div>
-        </div>
-        <div id="my-status"></div>
+    <div class="MainContainer">
+      <div class="main-nav">
+          <button data-content-name="blog" class="tabs">Blog</button>
+          <button data-content-name="about" data-defopen=true class="tabs">About</button>
+          <!-- <button data-tempid="skill" class="tabs">Skills</button>
+          <button data-tempid="likes" class="tabs">Interests</button> -->
       </div>
 
+      <div id="main-content">
+        <div class="noscript">
+          <p>For (slow connections) or (No Javascript mode),</p>
+          <p>Use the <a href="/noscript">Alternate plain website</a></p>
+        </div>
+      </div>
+    </div>
 
-    {# Add Pinned Posts feature #}
     <div class="zero-display">
-      <div id="templ-blog">
-        <h2 class="tab-content-heading">Blogs / Journals</h2>
-        <div class="recent-blogs">
-          {% set allpages = [] %}
-          {% set articles = get_section(path="blog/_index.md") %}
-          {% for p in articles.subsections %}
-            {% set subsection = get_section(path=p) %}
-            {% set subpages = subsection.pages %}
-            {% set_global allpages = allpages | concat(with=subpages) %}
-          {% endfor %}
-          {% set recentones = allpages | slice(end=5) %}
-          {{ macros::post_list(posts=recentones) }}
-        </div>
+      <div id="content-blog">
+        {{ macros::BlogSection() }}
       </div>
 
-      <div id="templ-about">
-        <h2 class="tab-content-heading">About Me!!</h2>
-        <div class="about-container">
-          {{ section.content | safe }}
-        </div>
-      </div>
-
-      <div id="templ-skill">
-        <h2 class="tab-content-heading">Unlimited Skills</h2>
-      </div>
-
-      <div id="templ-likes">
-        <h2 class="tab-content-heading">. . . got my Curiosity</h2>
+      <div id="content-about">
+        {{ macros::AboutSection() }}
       </div>
     </div>
   </main>
+
+  <div id="dynamic-status" class="OneCard"></div>
 
   <section class="OneCard">
     <div class="github-info">
@@ -105,16 +54,6 @@
     </div>
   </section>
 
-  <footer class="OneCard">
-    <ul>
-      <li><a href="/blog">Blog Page</a></li>
-      <li><a href="/webcard">WebCard</a></li>
-      <li><a href="/noscript">Noscript Page</a></li>
-      <li><a href="https://github.com/U-C-S/u-c-s.github.io">Site-Source</a></li>
-      <li><a href="https://github.com/U-C-S/u-c-s.github.io/issues/new">Report an Issue</a></li>
-    </ul>
-    <div class="footer-of-footer">
-      <p>Made with ♥ and Zola by Chanakya</p>
-    </div>
-  </footer>
+  {{ macros::Footer(midLink="/noscript",linkName="Noscript page") }}
+
 {% endblock content %}

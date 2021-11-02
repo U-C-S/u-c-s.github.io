@@ -5,7 +5,10 @@
     "target": "ES2019",
     "noEmit": true,
     "removeComments": true,
-    "strict": true
+    "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "moduleResolution": "node"
   },
 
   "include": ["src/typescript/**/*"],

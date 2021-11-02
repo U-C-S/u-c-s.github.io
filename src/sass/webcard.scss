@@ -1,28 +1,23 @@
 @use "./variables/colors";
-
 @use "shared/social_links";
 @use "shared/heading";
 
 body {
-  height: 85vh;
-  min-height: 500px;
+  min-height: 550px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 main {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-  background: hsla(0, 0%, 100%, 0.3);
-  border: 3px solid colors.$fg-text;
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+  background: hsla(0, 0%, 100%, 0.4);
   border-radius: 15px;
-  width: clamp(370px, 80%, 420px);
-  padding: 20px;
+  width: 380px;
+  padding: 20px 10px;
 }
 
 @include heading.var(60px);
-
 @include social_links.var1(space-around);
 nav {
   padding: 20px;
@@ -30,9 +25,5 @@ nav {
 
 #website {
   position: absolute;
-  bottom: 20px;
-
-  &:hover {
-    color: colors.$ac1;
-  }
+  bottom: 50px;
 }

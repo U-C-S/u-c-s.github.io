@@ -13,7 +13,7 @@
   border-top: 1px solid #000;
   padding: 5px;
   margin: auto;
-  width: 70%;
+  max-width: 70%;
   display: flex;
   justify-content: space-around;
 
@@ -30,7 +30,7 @@
   margin: 0;
   padding: 10px;
   text-align: center;
-  color: aliceblue;
+  color: #fff;
 }
 
 @media (max-width: 963px) {

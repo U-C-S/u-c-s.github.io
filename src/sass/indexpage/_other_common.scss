@@ -1,11 +1,12 @@
 @use "../variables/var";
 
 .tab-content-heading {
-  display: block;
   color: var.$fg-text;
   text-align: center;
   font-size: 24px;
-  padding-bottom: 5px;
+  margin: auto;
+  max-width: 70%;
+  padding: 0 0 5px;
   border-bottom: 2px solid var.$fg-text;
 }
 

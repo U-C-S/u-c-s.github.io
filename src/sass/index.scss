@@ -27,7 +27,9 @@ body {
 
 @media all and (max-width: 963px) {
   body {
-    padding: 10px clamp(10px, 8%, 70px);
+    padding: 10px;
+    margin: auto;
+    max-width: 640px;
     height: auto;
     grid-template-areas:
       "h h"

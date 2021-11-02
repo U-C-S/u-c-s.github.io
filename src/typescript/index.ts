@@ -1,7 +1,7 @@
 import "./components/gh-events";
 import "./components/status";
 
-console.log("site-version: 2.1.0");
+console.log("site-version: 2.2.0");
 
 /**
  * Simple API for updating the current URL with search queries

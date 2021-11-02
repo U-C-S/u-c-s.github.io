@@ -83,12 +83,12 @@
 {% endmacro LogoDiv %}
 
 
-{% macro Footer() %}
+{% macro Footer(midLink, linkName) %}
   <footer class="OneCard">
     <ul>
       <li><a href="/blog">Blog Page</a></li>
       <li><a href="/webcard">WebCard</a></li>
-      <li><a href="/noscript">Noscript Page</a></li>
+      <li><a href="{{ midLink }}">{{ linkName }}</a></li>
       <li><a href="https://github.com/U-C-S/u-c-s.github.io">Site-Source</a></li>
       <li><a href="https://github.com/U-C-S/u-c-s.github.io/issues/new">Report an Issue</a></li>
     </ul>

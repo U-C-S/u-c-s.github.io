@@ -1,11 +1,10 @@
-import { JSXElement } from "solid-js";
+import { JSX } from "solid-js";
 
 /**
  * For Parsing the Github REST API's list of user public Events
  * @param activity A Event Object from the list
- * @returns The Event in a sentence
  */
-export function EventParse(activity: ghEventApi): JSXElement {
+export function EventParse(activity: ghEventApi): JSX.Element {
   let repoURL = activity.repo.url.replace("api", "www").replace("/repos", "");
 
   let post_Info = (
@@ -20,75 +19,65 @@ export function EventParse(activity: ghEventApi): JSXElement {
   // https://github.com/thelittlewonder/gitstalk/blob/master/src/components/Profile.vue#L324
   // Ordered according to https://docs.github.com/en/developers/webhooks-and-events/events/github-event-types
 
-  switch (activity.type) {
-    case "CreateEvent":
-      return (
-        <>
-          Created a {activity.payload.ref_type} {post_Info}
-        </>
-      );
+  let EventType: Record<string, () => JSX.Element> = {
+    CreateEvent: () => (
+      <>
+        Created a {activity.payload.ref_type} {post_Info}
+      </>
+    ),
 
-    case "DeleteEvent":
-      return (
-        <>
-          Deleted {activity.payload.ref_type} {activity.payload.ref} from {post_Info}
-        </>
-      );
+    DeleteEvent: () => (
+      <>
+        Deleted {activity.payload.ref_type} {activity.payload.ref} from {post_Info}
+      </>
+    ),
 
-    case "ForkEvent":
-      return (
-        <>
-          Forked {Ahref(activity.payload.forkee.html_url, activity.payload.forkee.full_name)} from {post_Info}
-        </>
-      );
+    ForkEvent: () => (
+      <>
+        Forked {Ahref(activity.payload.forkee.html_url, activity.payload.forkee.full_name)} from {post_Info}
+      </>
+    ),
 
-    case "IssueCommentEvent":
-      return (
-        <>
-          {action} {Ahref(activity.payload.comment.html_url, "comment")} on an issue in {post_Info}
-        </>
-      );
+    IssueCommentEvent: () => (
+      <>
+        {action} {Ahref(activity.payload.comment.html_url, "comment")} on an issue in {post_Info}
+      </>
+    ),
 
-    case "IssuesEvent":
-      return (
-        <>
-          {action} {Ahref(activity.payload.issue.html_url, "issue")} in {post_Info}
-        </>
-      );
+    IssuesEvent: () => (
+      <>
+        {action} {Ahref(activity.payload.issue.html_url, "issue")} in {post_Info}
+      </>
+    ),
 
-    case "PublicEvent":
-      return <>{post_Info} is made public</>;
+    PublicEvent: () => <>{post_Info} is made public</>,
 
-    case "PullRequestEvent":
-      return (
-        <>
-          {action} {Ahref(activity.payload.pull_request.html_url, "pull request")} in {post_Info}
-        </>
-      );
+    PullRequestEvent: () => (
+      <>
+        {action} {Ahref(activity.payload.pull_request.html_url, "pull request")} in {post_Info}
+      </>
+    ),
 
-    case "PullRequestReviewCommentEvent":
-      return (
-        <>
-          {action} {Ahref(activity.payload.comment.html_url, "comment")} on a pull request in {post_Info}
-        </>
-      );
+    PullRequestReviewCommentEvent: () => (
+      <>
+        {action} {Ahref(activity.payload.comment.html_url, "comment")} on a pull request in {post_Info}
+      </>
+    ),
 
-    case "PushEvent":
-      return <>Commits in {post_Info}</>;
+    PushEvent: () => <>Commits in {post_Info}</>,
 
-    case "ReleaseEvent":
-      return (
-        <>
-          Released {activity.payload.release.tag_name} in {post_Info}
-        </>
-      );
+    ReleaseEvent: () => (
+      <>
+        Released {activity.payload.release.tag_name} in {post_Info}
+      </>
+    ),
 
-    case "WatchEvent":
-      return <>Starred {post_Info}</>;
+    WatchEvent: () => <>Starred {post_Info}</>,
 
-    default:
-      return <>Some event at {post_Info}</>;
-  }
+    _default: () => <>Some event at {post_Info}</>,
+  };
+
+  return (EventType[activity.type] || EventType._default)();
 }
 
 function Ahref(link: string, text: string) {

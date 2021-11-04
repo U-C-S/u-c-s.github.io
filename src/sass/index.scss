@@ -22,7 +22,7 @@ body {
 .OneCard {
   border-radius: 10px;
   background-color: colors.$bg-card;
-  box-shadow: 0 0 8px hsl(0, 0%, 60%);
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
 }
 
 @media all and (max-width: 963px) {

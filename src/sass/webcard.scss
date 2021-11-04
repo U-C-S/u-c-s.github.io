@@ -3,7 +3,7 @@
 @use "shared/heading";
 
 body {
-  min-height: 550px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ body {
 main {
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
   background: hsla(0, 0%, 100%, 0.4);
-  border-radius: 15px;
+  border-radius: 10px;
   width: 380px;
   padding: 20px 10px;
 }

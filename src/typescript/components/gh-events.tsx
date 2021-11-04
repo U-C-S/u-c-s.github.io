@@ -1,4 +1,4 @@
-import { createMemo, createResource, For, JSXElement } from "solid-js";
+import { createMemo, createResource, For } from "solid-js";
 import { render } from "solid-js/web";
 import { EventParse } from "./gh-event-parser";
 

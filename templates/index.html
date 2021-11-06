@@ -22,8 +22,8 @@
       <div class="main-nav">
           <button data-content-name="blog" class="tabs">Blog</button>
           <button data-content-name="about" data-defopen=true class="tabs">About</button>
-          <!-- <button data-tempid="skill" class="tabs">Skills</button>
-          <button data-tempid="likes" class="tabs">Interests</button> -->
+          <button data-content-name="github" class="tabs">Github</button>
+          <!--<button data-tempid="likes" class="tabs">Interests</button> -->
       </div>
 
       <div id="main-content">
@@ -42,17 +42,17 @@
       <div id="content-about">
         {{ macros::AboutSection() }}
       </div>
+
+      <div id="content-github">
+        <div class="github-info">
+          <h3>Recent Github Events</h3>
+          <ul id="git-events"></ul>
+        </div>
+      </div>
     </div>
   </main>
 
   <div id="dynamic-status" class="OneCard"></div>
-
-  <section class="OneCard">
-    <div class="github-info">
-      <h3>Recent Github Events</h3>
-      <ul id="git-events"></ul>
-    </div>
-  </section>
 
   {{ macros::Footer(midLink="/noscript",linkName="Noscript page") }}
 

@@ -4,24 +4,32 @@
 @use "shared/social_links";
 
 body {
+  margin: auto;
+  width: clamp(800px, 80%, 1200px);
   height: clamp(666px, 100vh, 1000px);
-  padding: 80px 80px;
+  padding: 20px;
   display: grid;
   row-gap: 25px;
   column-gap: 25px;
+  // grid-template-areas:
+  //   "l h m"
+  //   "l i m"
+  //   "s s m"
+  //   "f f f";
   grid-template-areas:
-    "l h m"
-    "l i m"
-    "s s m"
+    "l h x"
+    "l m x"
+    "s s s"
     "f f f";
-  grid-template-columns: 75px 3fr 5fr;
-  grid-template-rows: 118px minmax(140px, 1fr) auto 72px;
+  grid-template-columns: 75px 1fr 75px;
+  grid-template-rows: 110px auto auto 72px;
 }
 
 .OneCard {
   border-radius: 10px;
   background-color: colors.$bg-card;
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+  transform: none !important;
 }
 
 @media all and (max-width: 963px) {
@@ -59,7 +67,9 @@ body {
 }
 
 @include social_links.var1(center);
-
+nav {
+  height: 70%;
+}
 //-----section----------------
 section {
   grid-area: b;

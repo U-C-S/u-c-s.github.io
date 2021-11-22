@@ -6,15 +6,17 @@
   "scripts": {
     "develop": "node bin/develop.js",
     "build": "node bin/build.js --base-url https://chanakya3721.netlify.app",
-    "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && gh-pages -d public"
+    "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && gh-pages -d public",
+    "esb": "esbuild --version"
   },
   "dependencies": {
     "concurrently": "^6.4.0",
     "esbuild": "^0.13.15",
-    "esbuild-plugin-solid": "U-C-S/esbuild-plugin-solid#master",
+    "esbuild-plugin-solid": "^0.4.1",
     "sass": "^1.43.4",
     "solid-js": "^1.2.5",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "zola-bin": "^0.0.6"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"

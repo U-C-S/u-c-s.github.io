@@ -1,6 +1,6 @@
 {
   "name": "chanakya-website",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,12 +9,12 @@
     "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && gh-pages -d public"
   },
   "dependencies": {
-    "concurrently": "^6.3.0",
-    "esbuild": "^0.13.12",
-    "esbuild-plugin-solid": "^0.4.0",
+    "concurrently": "^6.4.0",
+    "esbuild": "^0.13.15",
+    "esbuild-plugin-solid": "U-C-S/esbuild-plugin-solid#master",
     "sass": "^1.43.4",
-    "solid-js": "^1.2.1",
-    "typescript": "^4.4.4"
+    "solid-js": "^1.2.5",
+    "typescript": "^4.5.2"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"

@@ -6,7 +6,7 @@
   "scripts": {
     "develop": "node bin/develop.js",
     "build": "node bin/build.js --base-url https://chanakya3721.netlify.app",
-    "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && gh-pages -d public",
+    "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && cp ./CNAME ./public/CNAME && gh-pages -d public",
     "esb": "esbuild --version"
   },
   "dependencies": {

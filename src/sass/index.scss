@@ -5,7 +5,7 @@
 
 body {
   margin: auto;
-  width: clamp(800px, 75%, 1200px);
+  width: clamp(800px, 70%, 1200px);
   height: clamp(666px, 100vh, 1000px);
   padding: 20px;
   display: grid;
@@ -14,7 +14,7 @@ body {
   grid-template-areas:
     "l h h"
     "l m x"
-    "i s x"
+    ". s i"
     "f f f";
   grid-template-columns: 75px 1fr 75px;
   grid-template-rows: 75px 1fr 75px 75px;
@@ -41,7 +41,7 @@ body {
       "x"
       "m"
       "f";
-    grid-template-rows: 78px 80px 80px 50px minmax(250px, auto) auto;
+    grid-template-rows: 75px 54px auto 54px minmax(250px, auto) auto;
     grid-template-columns: 1fr;
     row-gap: 15px;
   }
@@ -51,17 +51,16 @@ body {
   }
 }
 
-@media screen and (max-width: 560px) {
-  body {
-    grid-template-columns: 1fr;
-    row-gap: 25px; //sc
-  }
-}
-
 @include social_links.var1(center);
 nav {
   height: 70%;
 }
+@media screen and (max-width: 800px) {
+  nav {
+    height: 100%;
+  }
+}
+
 //-----section----------------
 section {
   grid-area: b;

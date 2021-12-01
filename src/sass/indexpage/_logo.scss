@@ -11,8 +11,8 @@
   }
 }
 
-@media screen and (max-width: 560px) {
-  #NothingCard svg {
-    padding: 10px 0 25px;
+@media screen and (max-width: 800px) {
+  #NothingCard {
+    display: none;
   }
 }

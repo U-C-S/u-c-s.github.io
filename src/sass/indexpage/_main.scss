@@ -18,11 +18,9 @@ main {
   grid-area: x;
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
-  // margin-bottom: 10px;
   padding: 20px 10px;
-  height: 70%;
+  height: 75%;
 }
 
 .tabs {
@@ -65,12 +63,37 @@ main {
 .activetab {
   background-color: colors.$ac1;
   width: 80px;
-  right: 10px !important;
+  right: 10px;
   &:before {
     border-left-color: darken(colors.$ac1, 20%);
   }
   &::after {
     border-right-color: colors.$ac1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-nav {
+    padding: 0;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .tabs {
+    right: 0;
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  .activetab {
+    width: 60px;
+    right: 0;
+    &:before,
+    &::after {
+      display: none;
+    }
   }
 }
 

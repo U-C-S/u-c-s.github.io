@@ -5,24 +5,19 @@
 
 body {
   margin: auto;
-  width: clamp(800px, 80%, 1200px);
+  width: clamp(800px, 75%, 1200px);
   height: clamp(666px, 100vh, 1000px);
   padding: 20px;
   display: grid;
   row-gap: 25px;
   column-gap: 25px;
-  // grid-template-areas:
-  //   "l h m"
-  //   "l i m"
-  //   "s s m"
-  //   "f f f";
   grid-template-areas:
-    "l h x"
+    "l h h"
     "l m x"
-    "s s s"
+    "i s x"
     "f f f";
   grid-template-columns: 75px 1fr 75px;
-  grid-template-rows: 110px auto auto 72px;
+  grid-template-rows: 75px 1fr 75px 75px;
 }
 
 .OneCard {
@@ -32,24 +27,23 @@ body {
   transform: none !important;
 }
 
-@media all and (max-width: 963px) {
+@media all and (max-width: 800px) {
   body {
     padding: 10px;
     margin: auto;
+    width: auto;
     max-width: 640px;
     height: auto;
     grid-template-areas:
-      "h h"
-      "l l"
-      "s s"
-      "i i"
-      "m m"
-      "b b"
-      "f f";
-    grid-template-rows: 118px 60px auto auto minmax(250px, auto) auto auto;
-    grid-template-columns: 1fr 75px;
+      "h"
+      "l"
+      "s"
+      "x"
+      "m"
+      "f";
+    grid-template-rows: 78px 80px 80px 50px minmax(250px, auto) auto;
+    grid-template-columns: 1fr;
     row-gap: 15px;
-    column-gap: 15px;
   }
   .OneCard {
     transform: none !important;
@@ -59,10 +53,8 @@ body {
 
 @media screen and (max-width: 560px) {
   body {
-    padding: 10px;
-    grid-template-columns: 1fr 60px;
-    row-gap: 15px; //sc
-    column-gap: 5px;
+    grid-template-columns: 1fr;
+    row-gap: 25px; //sc
   }
 }
 

@@ -67,7 +67,29 @@
 
   p {
     margin: 15px 0;
-    font-family: var.$text-reg;
     font-size: 16px;
+  }
+}
+
+//----github-updates-----
+.github-info {
+  h3 {
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+    border-bottom: 1px solid var.$fg-text;
+    padding: 0 0 5px;
+  }
+}
+
+#git-events {
+  padding: 10px 5%;
+  li {
+    padding: 5px 10px;
+  }
+
+  span {
+    color: hsl(0, 0%, 50%);
+    font-size: 10px;
   }
 }

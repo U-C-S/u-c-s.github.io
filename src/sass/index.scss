@@ -1,5 +1,5 @@
 @use "./variables/colors";
-@use "indexpage/_index";
+@use "indexpage/__index";
 
 @use "shared/social_links";
 
@@ -17,7 +17,7 @@ body {
     ". s i"
     "f f f";
   grid-template-columns: 75px 1fr 75px;
-  grid-template-rows: 75px 1fr 75px 75px;
+  grid-template-rows: 70px 1fr auto 75px;
 }
 
 .OneCard {
@@ -58,42 +58,5 @@ nav {
 @media screen and (max-width: 800px) {
   nav {
     height: 100%;
-  }
-}
-
-//-----section----------------
-section {
-  grid-area: b;
-  padding: 10px;
-}
-
-.github-info {
-  h3 {
-    text-align: center;
-    margin: 0 auto;
-    width: 70%;
-    border-bottom: 1px solid colors.$fg-text;
-    padding: 0 0 5px;
-  }
-}
-
-#git-events {
-  padding: 5px 5px 5px 25px;
-  list-style-type: disc;
-
-  li {
-    padding: 5px 10px;
-    font-size: 14px;
-  }
-
-  span {
-    color: hsl(0, 0%, 50%);
-    font-size: 10px;
-  }
-
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }

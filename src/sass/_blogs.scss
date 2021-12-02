@@ -13,7 +13,7 @@ header {
   display: flex;
   align-items: center;
   padding: 5px 20px;
-  background: radial-gradient(circle, hsla(0, 0%, 100%, 0.4) 0%, transparent 60%);
+  background: radial-gradient(circle, hsla(0, 0%, 100%, 0.5) 0%, transparent 60%);
 
   .after-h1,
   .befor-h1 {
@@ -23,10 +23,10 @@ header {
     background-color: black;
   }
 
-  @include heading.var(42px);
+  @include heading.var(40px);
   h1 {
-    width: 225px;
-    padding: 3px 10px 7px;
+    width: 250px;
+    padding: 0px 10px 0px;
   }
 }
 

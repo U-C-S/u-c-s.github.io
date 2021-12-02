@@ -9,10 +9,6 @@ main {
   transform: skewX(-1deg);
 }
 
-.MainContainer {
-  height: 100%;
-}
-
 //----main-nav-tabs----------
 .main-nav {
   grid-area: x;
@@ -100,6 +96,7 @@ main {
 //----main-content----------
 #main-content {
   color: colors.$fg-text;
+  height: 100%;
   padding: 10px;
 
   p {

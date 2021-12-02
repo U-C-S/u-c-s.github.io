@@ -6,7 +6,6 @@
   grid-area: s;
   background-color: colors.$ac1;
   padding: 0px;
-  margin-left: 40px;
 }
 
 .status-meta {
@@ -31,10 +30,4 @@
   padding: 10px;
   text-align: center;
   color: #fff;
-}
-
-@media (max-width: 963px) {
-  #dynamic-status {
-    margin: 0;
-  }
 }

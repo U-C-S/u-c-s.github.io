@@ -3,19 +3,16 @@
 #NothingCard {
   grid-area: i;
   display: flex;
-  justify-content: center;
   align-items: center;
 
   svg {
     fill: var.$fg-text;
-    width: 240px;
-    height: 160px;
-    filter: drop-shadow(0 0 3px var.$fg-text);
+    filter: drop-shadow(0 0 2px var.$fg-text);
   }
 }
 
-@media screen and (max-width: 560px) {
-  #NothingCard svg {
-    padding: 10px 0 25px;
+@media screen and (max-width: 800px) {
+  #NothingCard {
+    display: none;
   }
 }

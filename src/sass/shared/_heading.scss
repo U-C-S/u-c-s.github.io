@@ -2,6 +2,7 @@
 
 @mixin var($font_size) {
   h1 {
+    font-family: "Caveat", cursive;
     font-size: $font_size;
     text-align: center;
     margin: 0;

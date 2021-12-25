@@ -9,13 +9,13 @@
     "ghpages": "node bin/build.js --base-url https://u-c-s.github.io && cp ./CNAME ./public/CNAME && gh-pages -d public"
   },
   "dependencies": {
-    "concurrently": "^6.4.0",
-    "esbuild": "^0.14.1",
-    "esbuild-plugin-solid": "^0.4.1",
-    "sass": "^1.44.0",
-    "solid-js": "^1.2.5",
-    "typescript": "^4.5.2",
-    "zola-bin": "^0.0.7"
+    "concurrently": "^6.5.1",
+    "esbuild": "^0.14.8",
+    "esbuild-plugin-solid": "^0.4.2",
+    "sass": "^1.45.1",
+    "solid-js": "^1.2.6",
+    "typescript": "^4.5.4",
+    "zola-bin": "^0.2.0"
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"

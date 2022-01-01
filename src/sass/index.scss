@@ -12,11 +12,11 @@ body {
   row-gap: 25px;
   column-gap: 25px;
   grid-template-areas:
-    "l h h"
-    "l m x"
-    ". s i"
+    "h h l"
+    "x m l"
+    "i s ."
     "f f f";
-  grid-template-columns: 75px 1fr 75px;
+  grid-template-columns: 90px 1fr 75px;
   grid-template-rows: 70px 1fr auto 75px;
 }
 

@@ -22,11 +22,13 @@ const URLparams = {
   },
 };
 
+// ----------------------------------------------------------------------------
+
 // Tab implementation
 (async () => {
+  const AboutContent = <HTMLDivElement>document.getElementById("main-content");
   const ACTIVE_TAB = "activetab";
   const AboutTabs = document.getElementsByClassName("tabs");
-  const AboutContent = <HTMLDivElement>document.getElementById("main-content");
 
   let def_Tab;
   let param_Tab;
@@ -72,6 +74,41 @@ const URLparams = {
 
   //End of IIFE
 })();
+
+// ----------------------------------------------------------------------------
+
+// (() => {
+//   const AboutContent = <HTMLDivElement>document.getElementById("main-content");
+//   const ContentsOfTab = <HTMLCollectionOf<HTMLDivElement>>document.getElementsByClassName("TabContent");
+
+//   const ACTIVE_TAB = <HTMLButtonElement>document.getElementsByClassName("activetab")[0];
+//   let temp_data = <string>ACTIVE_TAB.dataset.contentName;
+
+//   for (let i = 0; i < ContentsOfTab.length; i++) {
+//     if (!ContentsOfTab[i].classList.contains(temp_data)) {
+//       AboutContent.innerHTML = "none";
+//     }
+//   }
+
+//   AboutContent.addEventListener("wheel", (e) => {});
+
+//   const tab = <HTMLButtonElement>document.getElementsByClassName(ACTIVE_TAB)[0];
+//   let temp_data = <string>tab.dataset.contentName;
+//   const templ = <HTMLDivElement>document.getElementById(`content-${temp_data}`);
+
+//   AboutContent.addEventListener("wheel", () => {
+//     tab?.classList.remove(ACTIVE_TAB);
+
+//     tab.classList.add(ACTIVE_TAB);
+
+//     //copies the HTML template code to the main div
+//     let x = templ.cloneNode(true);
+//     AboutContent.innerHTML = "0";
+//     AboutContent.appendChild(x);
+
+//     URLparams.add("tab", temp_data);
+//   });
+// })();
 
 // const x = document.getElementById("The-Pro-Button");
 // const thisPage = new URL(window.location.toString());

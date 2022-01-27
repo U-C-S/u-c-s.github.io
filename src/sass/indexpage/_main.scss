@@ -13,9 +13,8 @@ main {
 .main-nav {
   grid-area: x;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 25px 10px;
+  justify-content: start;
+  padding: 5px;
   height: fit-content;
 }
 
@@ -27,6 +26,7 @@ main {
   }
   border-radius: 5px;
   height: 40px;
+  min-width: 70px;
   background-color: lighten(colors.$ac-blue, 10%);
   filter: drop-shadow(0px 0px 4px hsl(0, 0%, 50%));
   transition: all 0.1s linear;
@@ -55,9 +55,6 @@ main {
 
 //----main-content----------
 #main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: colors.$fg-text;
   height: 100%;
   padding: 10px;

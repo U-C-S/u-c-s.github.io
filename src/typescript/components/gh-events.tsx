@@ -2,7 +2,7 @@ import { createResource, For } from "solid-js";
 import { render } from "solid-js/web";
 import { EventParse } from "../utils/gh-event-parser";
 
-const App = () => {
+const GhEventsComponent = () => {
   const [eventsAPI] = createResource<ghEventApi[]>(async () => {
     let res = await fetch(`https://api.github.com/users/U-C-S/events/public?per_page=5`);
     return res.json();
@@ -17,4 +17,4 @@ const App = () => {
   );
 };
 
-render(App, document.getElementById("git-events") as HTMLUListElement);
+export default GhEventsComponent;

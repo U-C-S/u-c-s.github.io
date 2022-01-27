@@ -1,7 +1,9 @@
-import "./components/gh-events";
+// import "./components/gh-events";
 import "./components/status";
+import "./components/main-nav";
+import "./components/main-content";
 
-console.log("site-version: 2.2.0");
+console.log("site-version: 2.3.0");
 
 /**
  * Simple API for updating the current URL with search queries
@@ -25,55 +27,55 @@ const URLparams = {
 // ----------------------------------------------------------------------------
 
 // Tab implementation
-(async () => {
-  const AboutContent = <HTMLDivElement>document.getElementById("main-content");
-  const ACTIVE_TAB = "activetab";
-  const AboutTabs = document.getElementsByClassName("tabs");
+// (async () => {
+//   const AboutContent = <HTMLDivElement>document.getElementById("main-content");
+//   const ACTIVE_TAB = "activetab";
+//   const AboutTabs = document.getElementsByClassName("tabs");
 
-  let def_Tab;
-  let param_Tab;
+//   let def_Tab;
+//   let param_Tab;
 
-  let tabParam = URLparams.get("tab");
+//   let tabParam = URLparams.get("tab");
 
-  //loop over all the tab buttons and give them the click event-listeners
-  for (let i = 0; i < AboutTabs.length; i++) {
-    const tab = <HTMLButtonElement>AboutTabs[i];
-    let temp_data = <string>tab.dataset.contentName;
-    //console.log(temp_data);
-    const templ = <HTMLDivElement>document.getElementById(`content-${temp_data}`);
+//   //loop over all the tab buttons and give them the click event-listeners
+//   for (let i = 0; i < AboutTabs.length; i++) {
+//     const tab = <HTMLButtonElement>AboutTabs[i];
+//     let temp_data = <string>tab.dataset.contentName;
+//     //console.log(temp_data);
+//     const templ = <HTMLDivElement>document.getElementById(`content-${temp_data}`);
 
-    tab.addEventListener("click", () => {
-      if (!tab.classList.contains(ACTIVE_TAB)) {
-        //change btn color
-        document.getElementsByClassName(ACTIVE_TAB)[0]?.classList.remove(ACTIVE_TAB);
-        tab.classList.add(ACTIVE_TAB);
+//     tab.addEventListener("click", () => {
+//       if (!tab.classList.contains(ACTIVE_TAB)) {
+//         //change btn color
+//         document.getElementsByClassName(ACTIVE_TAB)[0]?.classList.remove(ACTIVE_TAB);
+//         tab.classList.add(ACTIVE_TAB);
 
-        //copies the HTML template code to the main div
-        let x = templ.cloneNode(true);
-        AboutContent.innerHTML = "";
-        AboutContent.appendChild(x);
+//         //copies the HTML template code to the main div
+//         let x = templ.cloneNode(true);
+//         AboutContent.innerHTML = "";
+//         AboutContent.appendChild(x);
 
-        URLparams.add("tab", temp_data);
-      }
-    });
+//         URLparams.add("tab", temp_data);
+//       }
+//     });
 
-    //we also check if the URLparam "tab" is equal to any of the tabs
-    //during if it is equal to any, we store it in param_Tab
-    //else if tab has a defopen data attr, we store it in def_Tab
-    if (tabParam == temp_data) {
-      param_Tab = tab;
-    } else if (tab.dataset.defopen) {
-      def_Tab = tab;
-    }
-  }
+//     //we also check if the URLparam "tab" is equal to any of the tabs
+//     //during if it is equal to any, we store it in param_Tab
+//     //else if tab has a defopen data attr, we store it in def_Tab
+//     if (tabParam == temp_data) {
+//       param_Tab = tab;
+//     } else if (tab.dataset.defopen) {
+//       def_Tab = tab;
+//     }
+//   }
 
-  //After the above looping, check if param_Tab existence and click on that if it is...
-  //else click on default tab button
-  if (param_Tab) param_Tab.click();
-  else def_Tab?.click();
+//   //After the above looping, check if param_Tab existence and click on that if it is...
+//   //else click on default tab button
+//   if (param_Tab) param_Tab.click();
+//   else def_Tab?.click();
 
-  //End of IIFE
-})();
+//   //End of IIFE
+// })();
 
 // ----------------------------------------------------------------------------
 

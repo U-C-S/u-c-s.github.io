@@ -1,6 +1,6 @@
 import { createResource, For } from "solid-js";
 import { render } from "solid-js/web";
-import { EventParse } from "./gh-event-parser";
+import { EventParse } from "../utils/gh-event-parser";
 
 const App = () => {
   const [eventsAPI] = createResource<ghEventApi[]>(async () => {

@@ -19,12 +19,14 @@ const GhEventsComponent = () => {
   let [eventsAPI] = createResource(fetchData);
 
   return (
-    <Show when={eventsAPI()} fallback={<h2>Getting Github Events....</h2>}>
-      {(events) => {
-        sessionStorage.setItem("gh-events", JSON.stringify(events));
-        return <Index each={events}>{(item) => <li>{EventParse(item())}</li>}</Index>;
-      }}
-    </Show>
+    <div id="git-events">
+      <Show when={eventsAPI()} fallback={<h2>Getting Github Events....</h2>}>
+        {(events) => {
+          sessionStorage.setItem("gh-events", JSON.stringify(events));
+          return <Index each={events}>{(item) => <li>{EventParse(item())}</li>}</Index>;
+        }}
+      </Show>
+    </div>
   );
 };
 

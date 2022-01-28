@@ -2,6 +2,7 @@ import { createSignal, For, JSX } from "solid-js";
 import { render } from "solid-js/web";
 
 import GhEventsComponent from "./gh-events";
+import URLparams from "../utils/url-params";
 
 export const TabContents: { tabname: string; heading: string; Content: JSX.Element | HTMLElement }[] = [
   {
@@ -22,9 +23,10 @@ export const TabContents: { tabname: string; heading: string; Content: JSX.Eleme
 ];
 
 const App = () => {
-  let [activeTab, setActiveTab] = createSignal("About");
+  let [activeTab, setActiveTab] = createSignal(URLparams.get("tab") || "About");
 
   function TabClick(name: string) {
+    URLparams.add("tab", name);
     setActiveTab(name);
   }
 
@@ -41,7 +43,7 @@ const App = () => {
       </div>
       <div class="main-content">
         {() => {
-          let x = TabContents.find((item) => item.tabname === activeTab());
+          let x = TabContents.find((item) => item.tabname === activeTab()) || TabContents[0];
           return (
             <>
               <h2 class="tab-content-heading">{x?.heading}</h2>

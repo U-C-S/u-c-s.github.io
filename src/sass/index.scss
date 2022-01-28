@@ -16,7 +16,7 @@ body {
     "i m m l"
     "f f f f";
   grid-template-columns: 90px 1fr 2fr 75px;
-  grid-template-rows: 75px 1fr 75px;
+  grid-template-rows: 90px 1fr 75px;
 }
 
 .OneCard {
@@ -29,10 +29,9 @@ body {
 @media all and (max-width: 800px) {
   body {
     padding: 10px;
-    margin: auto;
     width: auto;
-    max-width: 640px;
     height: auto;
+    max-width: 640px;
     grid-template-areas:
       "h"
       "l"
@@ -43,10 +42,12 @@ body {
     grid-template-columns: 1fr;
     row-gap: 15px;
   }
-  .OneCard {
-    transform: none !important;
-    border-radius: 0px; //sc
-  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @include social_links.var1(center);

@@ -9,14 +9,21 @@ interface IComment {
 
 const App = () => {
   const [commentsAPI] = createResource<IComment[]>(async () => {
+    let statusStore = sessionStorage.getItem("status");
+
+    if (statusStore) {
+      return JSON.parse(statusStore);
+    }
+
     let res = await fetch(`https://api.github.com/repos/U-C-S/u-c-s.github.io/issues/10/comments`);
     return res.json();
   });
 
   return (
     <>
-      <Show when={commentsAPI()?.pop()} fallback={<p>Getting Status...</p>}>
+      <Show when={commentsAPI()?.slice(-1)[0]} fallback={<p>Getting Status...</p>}>
         {(status) => {
+          sessionStorage.setItem("status", JSON.stringify(commentsAPI()));
           return (
             <>
               <p class="status-content">{status.body}</p>

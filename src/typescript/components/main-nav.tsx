@@ -2,25 +2,27 @@ import { createSignal, For, JSX } from "solid-js";
 import { render } from "solid-js/web";
 
 import GhEventsComponent from "./gh-events";
-// import { TabMain } from "./main-content";
 
-export const TabContents: { heading: string; Content: JSX.Element | HTMLElement }[] = [
+export const TabContents: { tabname: string; heading: string; Content: JSX.Element | HTMLElement }[] = [
   {
-    heading: "github",
-    Content: <GhEventsComponent />,
+    tabname: "About",
+    heading: "About Me!!",
+    Content: document.getElementById("content-about"),
   },
   {
-    heading: "blog",
+    tabname: "Blogs",
+    heading: "Blogs | Journals",
     Content: document.getElementById("content-blog"),
   },
   {
-    heading: "about",
-    Content: document.getElementById("content-about"),
+    tabname: "Github",
+    heading: "Github Events",
+    Content: <GhEventsComponent />,
   },
 ];
 
 const App = () => {
-  let [activeTab, setActiveTab] = createSignal("about");
+  let [activeTab, setActiveTab] = createSignal("About");
 
   function TabClick(name: string) {
     setActiveTab(name);
@@ -31,18 +33,25 @@ const App = () => {
       <div class="main-nav">
         <For each={TabContents}>
           {(item) => (
-            <button class={`tabs`} onClick={[TabClick, item.heading]}>
-              {item.heading}
+            <button class={`tabs`} onClick={[TabClick, item.tabname]}>
+              {item.tabname}
             </button>
           )}
         </For>
       </div>
-      <div>
-        <h2 class="tab-content-heading">{activeTab()}</h2>
-        {() => TabContents.find((item) => item.heading === activeTab())?.Content}
+      <div class="main-content">
+        {() => {
+          let x = TabContents.find((item) => item.tabname === activeTab());
+          return (
+            <>
+              <h2 class="tab-content-heading">{x?.heading}</h2>
+              {x?.Content}
+            </>
+          );
+        }}
       </div>
     </>
   );
 };
 
-render(App, document.getElementById("main-content") as HTMLDivElement);
+render(App, document.getElementById("main-container") as HTMLDivElement);

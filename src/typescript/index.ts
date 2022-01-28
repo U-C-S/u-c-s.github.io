@@ -1,7 +1,5 @@
-// import "./components/gh-events";
 import "./components/status";
 import "./components/main-nav";
-import "./components/main-content";
 
 console.log("site-version: 2.3.0");
 

@@ -15,21 +15,12 @@
 
   {{ macros::SocialLinksIcons(count=5) }}
 
-  {{ macros::LogoDiv() }}
-
-  <div class="main-nav OneCard">
-      <button data-content-name="blog" class="tabs">Blog</button>
-      <button data-content-name="about" data-defopen=true class="tabs">About</button>
-      <button data-content-name="github" class="tabs">Github</button>
-      <!--<button data-tempid="likes" class="tabs">Interests</button> -->
-  </div>
-
   <main class="OneCard">
-    <div id="main-content">
-      <div class="noscript">
+    <div id="main-container">
+      <noscript>
         <p>For (slow connections) or (No Javascript mode),</p>
         <p>Use the <a href="/noscript">Alternate plain website</a></p>
-      </div>
+      </noscript>
     </div>
 
     <div class="zero-display">
@@ -40,13 +31,6 @@
       <div id="content-about" class="TabContent">
         {{ macros::AboutSection() }}
       </div>
-
-      <div id="content-github" class="TabContent">
-        <div class="github-info">
-          <h2 class="tab-content-heading">Recent Github Events</h2>
-          <ul id="git-events"></ul>
-        </div>
-      </div>
     </div>
   </main>
 
@@ -55,3 +39,8 @@
   {{ macros::Footer(midLink="/noscript",linkName="Noscript page") }}
 
 {% endblock content %}
+
+
+{#
+  {{ macros::LogoDiv() }}
+#}

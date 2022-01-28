@@ -26,7 +26,6 @@
 {# note: these are not cards #}
 {% macro AboutSection() %}
   <div class="about_container">
-    <h2 class="tab-content-heading">About Me!!</h2>
     <div class="about-me">
       {{ section.content | safe }}
     </div>
@@ -36,7 +35,6 @@
 {% macro BlogSection() %}
   {# Add Pinned Posts feature #}
   <div id="blog_container">
-    <h2 class="tab-content-heading">Blogs | Journals</h2>
     <div class="recent-blogs">
       {% set allpages = [] %}
       {% set articles = get_section(path="blog/_index.md") %}

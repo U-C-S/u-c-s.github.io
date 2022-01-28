@@ -1,12 +1,13 @@
-import { createSignal, For, JSX } from "solid-js";
+import { createEffect, createSignal, For, JSX } from "solid-js";
 import { render } from "solid-js/web";
 
 import GhEventsComponent from "./gh-events";
 import URLparams from "../utils/url-params";
 
-export const TabContents: { tabname: string; heading: string; Content: JSX.Element | HTMLElement }[] = [
+const DEFAULT_TAB = "About";
+const TabContents: { tabname: string; heading: string; Content: JSX.Element | HTMLElement }[] = [
   {
-    tabname: "About",
+    tabname: DEFAULT_TAB,
     heading: "About Me!!",
     Content: document.getElementById("content-about"),
   },
@@ -23,19 +24,25 @@ export const TabContents: { tabname: string; heading: string; Content: JSX.Eleme
 ];
 
 const App = () => {
-  let [activeTab, setActiveTab] = createSignal(URLparams.get("tab") || "About");
+  let [activeTab, setActiveTab] = createSignal(URLparams.get("tab") || DEFAULT_TAB);
 
   function TabClick(name: string) {
     URLparams.add("tab", name);
     setActiveTab(name);
   }
 
+  createEffect(() => {
+    const A_T = "activetab";
+    document.getElementsByClassName(A_T)[0]?.classList.remove(A_T);
+    document.getElementsByClassName(`tab-${activeTab()}`)[0]?.classList.add(A_T);
+  });
+
   return (
     <>
       <div class="main-nav">
         <For each={TabContents}>
           {(item) => (
-            <button class={`tabs`} onClick={[TabClick, item.tabname]}>
+            <button class={`tabs tab-${item.tabname}`} onClick={[TabClick, item.tabname]}>
               {item.tabname}
             </button>
           )}
@@ -43,7 +50,9 @@ const App = () => {
       </div>
       <div class="main-content">
         {() => {
-          let x = TabContents.find((item) => item.tabname === activeTab()) || TabContents[0];
+          let x =
+            TabContents.find((item) => item.tabname === activeTab()) ||
+            TabContents.find((item) => item.tabname === DEFAULT_TAB);
           return (
             <>
               <h2 class="tab-content-heading">{x?.heading}</h2>

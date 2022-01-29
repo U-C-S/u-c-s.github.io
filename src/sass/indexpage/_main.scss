@@ -9,83 +9,15 @@ main {
   transform: skewX(-1deg);
 }
 
-.MainContainer {
+#main-container {
   height: 100%;
+  padding: 10px;
 }
 
-//----main-nav-tabs----------
-.main-nav {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-  padding: 0px 10px;
-  height: 50px;
-}
-
-.tabs {
-  font-family: fonts.$text-reg;
-  margin-right: 15px;
-  position: relative;
-  width: 75px;
-  height: 40px;
-  background-color: lighten(colors.$ac-blue, 10%);
-  top: -6px;
-  filter: drop-shadow(0px 0px 4px hsl(0, 0%, 50%));
-  transition: all 0.2s ease-in-out;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    height: 0;
-    width: 0;
-    transition: all 0.2s ease-in-out;
-  }
-
-  &:before {
-    border-bottom: 6px solid colors.$ac-blue;
-    border-right: 6px solid transparent;
-    right: -5px;
-    top: 0px;
-  }
-
-  //hsl(200, 75%, 65%)
-  &:after {
-    border-width: 20px 37px 0 38px;
-    border-style: solid;
-    border-color: lighten(colors.$ac-blue, 10%) transparent transparent;
-    bottom: -20px;
-    right: 0px;
-  }
-}
-
-.activetab {
-  font-size: 18px;
-  height: 50px;
-  background-color: colors.$ac1;
-  &:before {
-    border-bottom-color: darken(colors.$ac1, 20%);
-  }
-  &::after {
-    border-top-color: colors.$ac1;
-  }
-}
-
-//----main-content----------
-#main-content {
-  color: colors.$fg-text;
-  padding: 0px 10px;
-
-  p {
-    color: colors.$fg-text;
-  }
-}
-
-.noscript {
+noscript {
+  display: block;
   padding: 5px;
   background-color: colors.$ac1;
-  opacity: 0;
-  animation: slowUnhide 1s linear 2s forwards;
 
   p {
     text-align: center;
@@ -96,11 +28,37 @@ main {
   }
 }
 
-@keyframes slowUnhide {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+//----main-nav-tabs----------
+.main-nav {
+  display: flex;
+  justify-content: start;
+}
+
+.tabs {
+  font-family: fonts.$text-reg;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 40px;
+  min-width: 70px;
+  background-color: lighten(colors.$ac-blue, 10%);
+  filter: drop-shadow(0px 0px 4px hsl(0, 0%, 50%));
+  transition: all 0.1s linear;
+}
+
+.activetab {
+  background-color: colors.$ac1;
+  filter: none;
+}
+
+.main-content {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .main-content {
+    margin-top: 20px;
+    p {
+      font-size: 14px;
+    }
   }
 }

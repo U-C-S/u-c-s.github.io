@@ -1,99 +1,62 @@
 @use "./variables/colors";
-@use "indexpage/_index";
+@use "indexpage/__index";
 
 @use "shared/social_links";
 
 body {
+  margin: auto;
+  width: clamp(800px, 65%, 1200px);
   height: clamp(666px, 100vh, 1000px);
-  padding: 25px 50px;
+  padding: 20px;
   display: grid;
   row-gap: 25px;
   column-gap: 25px;
   grid-template-areas:
-    "l h m"
-    "l i m"
-    "b b m"
-    "b b s"
-    "f f f";
-  grid-template-columns: 75px 5fr 8fr;
-  grid-template-rows: 118px minmax(140px, 1fr) auto auto 72px;
+    "h h s s"
+    "i m m l"
+    "f f f f";
+  grid-template-columns: 90px 1fr 2fr 75px;
+  grid-template-rows: 90px 1fr 75px;
 }
 
 .OneCard {
   border-radius: 10px;
   background-color: colors.$bg-card;
-  box-shadow: 0 0 8px hsl(0, 0%, 60%);
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+  transform: none !important;
 }
 
-@media all and (max-width: 963px) {
+@media all and (max-width: 800px) {
   body {
     padding: 10px;
-    margin: auto;
-    max-width: 640px;
+    width: auto;
     height: auto;
+    min-height: 99vh;
+    max-width: 640px;
     grid-template-areas:
-      "h h"
-      "l l"
-      "s s"
-      "i i"
-      "m m"
-      "b b"
-      "f f";
-    grid-template-rows: 118px 60px auto auto minmax(250px, auto) auto auto;
-    grid-template-columns: 1fr 75px;
+      "h"
+      "l"
+      "s"
+      "m"
+      "f";
+    grid-template-rows: 75px 54px auto minmax(250px, 1fr) auto;
+    grid-template-columns: 1fr;
     row-gap: 15px;
-    column-gap: 15px;
-  }
-  .OneCard {
-    transform: none !important;
-    border-radius: 0px; //sc
   }
 }
 
-@media screen and (max-width: 560px) {
-  body {
-    padding: 10px;
-    grid-template-columns: 1fr 60px;
-    row-gap: 15px; //sc
-    column-gap: 5px;
-  }
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @include social_links.var1(center);
-
-//-----section----------------
-section {
-  grid-area: b;
-  padding: 10px;
+nav {
+  height: 80%;
 }
-
-.github-info {
-  h3 {
-    text-align: center;
-    margin: 0 auto;
-    width: 70%;
-    border-bottom: 1px solid colors.$fg-text;
-    padding: 0 0 5px;
-  }
-}
-
-#git-events {
-  padding: 5px 5px 5px 25px;
-  list-style-type: disc;
-
-  li {
-    padding: 5px 10px;
-    font-size: 14px;
-  }
-
-  span {
-    color: hsl(0, 0%, 50%);
-    font-size: 10px;
-  }
-
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
+@media screen and (max-width: 800px) {
+  nav {
+    height: 100%;
   }
 }

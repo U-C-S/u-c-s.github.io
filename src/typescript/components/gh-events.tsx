@@ -1,21 +1,33 @@
-import { createMemo, createResource, For, JSXElement } from "solid-js";
-import { render } from "solid-js/web";
-import { EventParse } from "./gh-event-parser";
+import { createResource, Index, Show } from "solid-js";
+import { EventParse } from "../utils/gh-event-parser";
 
-const [eventsAPI] = createResource<ghEventApi[]>(async () => {
-  let res = await fetch(`https://api.github.com/users/U-C-S/events/public?per_page=5`);
-  return res.json();
-});
+const fetchData = async (): Promise<ghEventApi[]> => {
+  let temp = sessionStorage.getItem("gh-events");
 
-const App = () => {
-  const status = createMemo(() => eventsAPI());
+  if (temp == null || temp === "undefined" || temp == undefined) {
+    // console.log("Fetching Github Events");
+    // sessionStorage.setItem("gh-fetch-time", new Date().toString());
+    let res = await fetch(`https://api.github.com/users/U-C-S/events/public?per_page=5`);
+    return res.json();
+  } else {
+    // console.log("Using cached data");
+    return Promise.resolve(JSON.parse(temp as string));
+  }
+};
+
+const GhEventsComponent = () => {
+  let [eventsAPI] = createResource(fetchData);
+
   return (
-    <>
-      <For each={status()} fallback={<h2>Getting Github Events....</h2>}>
-        {(item) => <li>{EventParse(item)}</li>}
-      </For>
-    </>
+    <div id="git-events">
+      <Show when={eventsAPI()} fallback={<p>Getting Github Events....</p>}>
+        {(events) => {
+          sessionStorage.setItem("gh-events", JSON.stringify(events));
+          return <Index each={events}>{(item) => <li>{EventParse(item())}</li>}</Index>;
+        }}
+      </Show>
+    </div>
   );
 };
 
-render(App, document.getElementById("git-events") as HTMLUListElement);
+export default GhEventsComponent;

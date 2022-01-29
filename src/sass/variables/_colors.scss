@@ -1,9 +1,9 @@
 $bg-page: hsl(0, 0%, 95%);
 $bg-page-gradient: linear-gradient(90deg, hsl(340, 40%, 70%), hsl(260, 40%, 70%));
-$bg-card: hsl(80, 35%, 90%);
+$bg-card: hsla(80, 35%, 90%, 0.8);
 
-$fg-text: black;
-$fg-links: hsl(220, 100%, 55%);
+$fg-text: #000;
+$fg-links: hsl(220, 100%, 60%);
 
 $ac1: hsl(350, 90%, 60%);
 $ac-blue: hsl(220, 100%, 55%);

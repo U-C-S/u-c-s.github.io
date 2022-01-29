@@ -4,6 +4,11 @@ date= 2021-11-01
 slug= "this_month_i_learned"
 +++
 
+## November & December 2021
+- Understood Assembly and some basic low-level stuff
+- Even more about ASP.NET core
+- NPM packages and ecosystem, Node.js APIs
+
 ## September & October 2021 <!-- Nov 1 -->
 - Intermediate level in Desktop App Development with WPF like MVVM and Data binding
 - Even more about Express and building APIs

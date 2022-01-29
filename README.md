@@ -13,17 +13,19 @@
 
 ## Local Environment Setup:
 
-- You need to install
-  - **Node.js v16+** (IMPORTANT)
-  - **Zola** v0.13+ (IMPORTANT | [installation process](https://www.getzola.org/documentation/getting-started/installation/) | make sure it's available with `zola` command)
-  - Optional: Git and VS Code
+- You need to install - `nodejs >v16` , `git` and `vscode`
 - Clone this Repository into your PC and In the cloned directory, use the following commands
 ```sh
 npm install       # To install all the project dependencies
 npm run develop   # To start a local Dev Server which opens the site directly in the browser
 ```
 
-### Directory Structure
+**Note:** This project uses [zola-bin](https://www.npmjs.com/package/zola-bin), not the official zola binaries. This makes it easier to develop and deploy.
+
+<details>
+  <summary>Directory Structure</summary>
+
+Similar to every site created using `Zola`, but adds 2 extra directories - `src`,`bin` while not using `sass` directory
 
 | Directory | What it contains                                                                        |
 | --------- | --------------------------------------------------------------------------------------- |
@@ -34,3 +36,4 @@ npm run develop   # To start a local Dev Server which opens the site directly in
 | templates | Contains the Tera (Zola templating language) template files                             |
 
 \* = The Json files will be used by Templates while sass and ts files will be compiled to css and js and used as static files for the website
+</details>

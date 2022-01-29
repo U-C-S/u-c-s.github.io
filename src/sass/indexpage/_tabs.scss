@@ -47,10 +47,6 @@
   display: block;
   text-align: center;
   font-size: 16px;
-
-  &:hover {
-    color: var.$ac1;
-  }
 }
 
 @media screen and (max-width: 963px) {
@@ -71,7 +67,19 @@
 
   p {
     margin: 15px 0;
-    font-family: var.$text-reg;
     font-size: 16px;
+  }
+}
+
+//----github-updates-----
+#git-events {
+  padding: 10px 5%;
+  li {
+    padding: 5px 10px;
+  }
+
+  span {
+    color: hsl(0, 0%, 50%);
+    font-size: 10px;
   }
 }

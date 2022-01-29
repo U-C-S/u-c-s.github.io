@@ -1,4 +1,4 @@
-@use "./variables/colors";
+@use "./variables/var";
 
 @font-face {
   font-family: "Quicksand";
@@ -12,28 +12,38 @@
   src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2) format("woff2");
 }
 
+@font-face {
+  font-family: "Caveat";
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/caveat/v10/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9eIWpYQ.woff2) format("woff2");
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: colors.$bg-page-gradient;
+  background: var.$bg-page-gradient;
   margin: 0;
   min-width: 370px;
   min-height: 300px;
 }
 
 button,
-p,
 a,
 h1,
 h2,
 h3,
-h4,
-li,
-span {
+h4 {
   font-family: "Quicksand", "Open Sans", sans-serif;
-  color: colors.$fg-text;
+  color: var.$fg-text;
+}
+
+li,
+span,
+p {
+  font-family: var.$text-reg;
+  color: var.$fg-text;
 }
 
 ul {
@@ -43,9 +53,13 @@ ul {
 }
 
 a {
-  color: colors.$fg-links;
+  color: var.$fg-links;
   text-decoration: none;
   outline: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button {
@@ -59,7 +73,7 @@ button {
   margin: 5px;
   width: 70%;
   height: 2px;
-  background-color: colors.$fg-text;
+  background-color: var.$fg-text;
 }
 .pline-center {
   margin: 5px auto;
@@ -77,6 +91,6 @@ button {
   background: hsla(0, 0%, 50%, 0.5);
 
   &:hover {
-    background: colors.$ac1;
+    background: var.$ac1;
   }
 }

@@ -2,6 +2,10 @@
 @use "./variables/colors";
 @use "./variables/fonts";
 
+:root {
+  --text-size: 16px;
+}
+
 .the-head {
   padding: 0 10px;
   h1,
@@ -10,7 +14,6 @@
     text-align: center;
   }
   h1 {
-    font-size: 36px;
     padding: 10px 0;
   }
 }
@@ -23,7 +26,7 @@ article {
   h4 {
     font-family: fonts.$text-reg;
     color: colors.$ac-blue;
-    width: 60%;
+    max-width: 70%;
     padding: 10px;
     border-bottom: 2px solid colors.$fg-text;
   }
@@ -32,7 +35,7 @@ article {
   li,
   a,
   span {
-    font-size: 16px;
+    font-size: var(--text-size);
     font-family: fonts.$text-reg;
   }
 
@@ -47,9 +50,9 @@ article {
   }
   img {
     display: block;
-    margin: 10px auto;
-    width: 90%;
-    border-radius: 10px;
+    margin: 15px auto;
+    width: 95%;
+    border-radius: 5px;
   }
 
   ul {
@@ -64,5 +67,11 @@ article {
   }
   article {
     padding: 15px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  :root {
+    --text-size: 14px;
   }
 }

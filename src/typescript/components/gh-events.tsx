@@ -20,7 +20,7 @@ const GhEventsComponent = () => {
 
   return (
     <div id="git-events">
-      <Show when={eventsAPI()} fallback={<h2>Getting Github Events....</h2>}>
+      <Show when={eventsAPI()} fallback={<p>Getting Github Events....</p>}>
         {(events) => {
           sessionStorage.setItem("gh-events", JSON.stringify(events));
           return <Index each={events}>{(item) => <li>{EventParse(item())}</li>}</Index>;

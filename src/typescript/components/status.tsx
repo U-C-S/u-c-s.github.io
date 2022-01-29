@@ -21,15 +21,16 @@ const App = () => {
 
   return (
     <>
-      <Show when={commentsAPI()?.slice(-1)[0]} fallback={<p>Getting Status...</p>}>
+      <Show when={commentsAPI()?.slice(-1)[0]} fallback={<p class="status-content">Getting Status...</p>}>
         {(status) => {
           sessionStorage.setItem("status", JSON.stringify(commentsAPI()));
           return (
             <>
               <p class="status-content">{status.body}</p>
               <div class="status-meta">
-                <a href={status.html_url}>Dynamic_Status</a>
-                <p>Updated On: {status.created_at.substring(0, 10)}</p>
+                <p>
+                  <a href={status.html_url}>Dynamic_Status</a> - Updated On: {status.created_at.substring(0, 10)}
+                </p>
               </div>
             </>
           );

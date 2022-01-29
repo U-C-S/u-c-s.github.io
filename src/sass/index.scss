@@ -31,6 +31,7 @@ body {
     padding: 10px;
     width: auto;
     height: auto;
+    min-height: 99vh;
     max-width: 640px;
     grid-template-areas:
       "h"
@@ -38,7 +39,7 @@ body {
       "s"
       "m"
       "f";
-    grid-template-rows: 75px 54px auto minmax(250px, auto) auto;
+    grid-template-rows: 75px 54px auto minmax(250px, 1fr) auto;
     grid-template-columns: 1fr;
     row-gap: 15px;
   }

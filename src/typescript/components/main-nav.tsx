@@ -4,6 +4,7 @@ import { render } from "solid-js/web";
 import GhEventsComponent from "./gh-events";
 import URLparams from "../utils/url-params";
 
+// solid-tabs
 const DEFAULT_TAB = "About";
 const TabContents: { tabname: string; heading: string; Content: JSX.Element | HTMLElement }[] = [
   {
@@ -24,11 +25,19 @@ const TabContents: { tabname: string; heading: string; Content: JSX.Element | HT
 ];
 
 const App = () => {
-  let [activeTab, setActiveTab] = createSignal(URLparams.get("tab") || DEFAULT_TAB);
+  let [activeTab, __setActiveTab] = createSignal(URLparams.get("tab") || DEFAULT_TAB);
 
-  function TabClick(name: string) {
+  function setActiveTab(name: string) {
     URLparams.add("tab", name);
-    setActiveTab(name);
+    __setActiveTab(name);
+  }
+
+  function wheelEvent() {
+    let ci = TabContents.findIndex((tab) => tab.tabname === activeTab());
+    if (ci === -1) return;
+    // console.log(ci, TabContents.length);
+
+    TabContents.length == ci + 1 ? setActiveTab(TabContents[0].tabname) : setActiveTab(TabContents[ci + 1].tabname);
   }
 
   createEffect(() => {
@@ -42,13 +51,13 @@ const App = () => {
       <div class="main-nav">
         <For each={TabContents}>
           {(item) => (
-            <button class={`tabs tab-${item.tabname}`} onClick={[TabClick, item.tabname]}>
+            <button class={`tabs tab-${item.tabname}`} onClick={[setActiveTab, item.tabname]}>
               {item.tabname}
             </button>
           )}
         </For>
       </div>
-      <div class="main-content">
+      <div class="main-content" onWheel={wheelEvent}>
         {() => {
           let x =
             TabContents.find((item) => item.tabname === activeTab()) ||

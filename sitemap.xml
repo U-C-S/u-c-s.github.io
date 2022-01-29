@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>/</loc>
+        <loc>https://u-c-s.github.io/</loc>
     </url>
     <url>
-        <loc>/blog/</loc>
+        <loc>https://u-c-s.github.io/blog/</loc>
     </url>
     <url>
-        <loc>/blog/2021/</loc>
+        <loc>https://u-c-s.github.io/blog/2021/</loc>
     </url>
     <url>
-        <loc>/blog/2021/making-of-v2/</loc>
+        <loc>https://u-c-s.github.io/blog/2021/making-of-v2/</loc>
         <lastmod>2021-06-30</lastmod>
     </url>
     <url>
-        <loc>/blog/2021/this-month-i-learned/</loc>
+        <loc>https://u-c-s.github.io/blog/2021/this-month-i-learned/</loc>
         <lastmod>2021-11-01</lastmod>
     </url>
     <url>
-        <loc>/blog/2021/who-am-i/</loc>
+        <loc>https://u-c-s.github.io/blog/2021/who-am-i/</loc>
         <lastmod>2021-06-14</lastmod>
     </url>
     <url>
-        <loc>/noscript/</loc>
+        <loc>https://u-c-s.github.io/blog/2022/</loc>
     </url>
     <url>
-        <loc>/webcard/</loc>
+        <loc>https://u-c-s.github.io/noscript/</loc>
+    </url>
+    <url>
+        <loc>https://u-c-s.github.io/webcard/</loc>
     </url>
 </urlset>

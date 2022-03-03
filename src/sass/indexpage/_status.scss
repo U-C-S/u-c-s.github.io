@@ -5,7 +5,6 @@
 #dynamic-status {
   grid-area: s;
   background-color: colors.$ac1;
-  // padding: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -19,6 +18,14 @@
   color: #fff;
   display: flex;
   align-items: center;
+}
+
+#status-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .status-meta {

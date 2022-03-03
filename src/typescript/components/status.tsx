@@ -7,6 +7,12 @@ interface IComment {
   body: string;
 }
 
+const StatusLoading = () => (
+  <div id="status-loading">
+    <p class="status-content">Fetching Status with GitHub API....</p>
+  </div>
+);
+
 const App = () => {
   const [commentsAPI] = createResource<IComment[]>(async () => {
     let statusStore = sessionStorage.getItem("status");
@@ -21,7 +27,7 @@ const App = () => {
 
   return (
     <>
-      <Show when={commentsAPI()?.slice(-1)[0]} fallback={<p class="status-content">Getting Status...</p>}>
+      <Show when={commentsAPI()?.slice(-1)[0]} fallback={<StatusLoading />}>
         {(status) => {
           sessionStorage.setItem("status", JSON.stringify(commentsAPI()));
           return (

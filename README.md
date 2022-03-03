@@ -15,6 +15,7 @@
 
 - You need to install - `nodejs >v16` , `git` and `vscode`
 - Clone this Repository into your PC and In the cloned directory, use the following commands
+
 ```sh
 npm install       # To install all the project dependencies
 npm run develop   # To start a local Dev Server which opens the site directly in the browser
@@ -36,4 +37,5 @@ Similar to every site created using `Zola`, but adds 2 extra directories - `src`
 | templates | Contains the Tera (Zola templating language) template files                             |
 
 \* = The Json files will be used by Templates while sass and ts files will be compiled to css and js and used as static files for the website
+
 </details>

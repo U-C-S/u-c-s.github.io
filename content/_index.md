@@ -1,10 +1,6 @@
 +++
 +++
 
-Hello there! I'm Chanakya. I like to Program stuff and learnt it through reading Documentations. I also like to pedal and explore my surrondings.
+Nothing specifically awesome about me. One could say curiousity is my fuel. Additionally, Stuff about Maps, geography, programming, travelling and bit of gaming, films catches my attention frequently.
 
-\- Student at The National Institute of Engineering, Mysore (2023).
-
-\- My Home Town is in [Andhra Pradesh, India](https://www.google.com/maps/place/Narasaraopeta,+Andhra+Pradesh)
-
-\- Active user of Reddit, Github and Wikipedia.
+I live in Southern India. Currently, A year-three student at National Institute of Engineering, Mysore.

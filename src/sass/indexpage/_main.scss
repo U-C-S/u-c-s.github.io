@@ -12,6 +12,8 @@ main {
 #main-container {
   height: 100%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 noscript {
@@ -52,6 +54,11 @@ noscript {
 
 .main-content {
   margin-top: 10px;
+  background-color: hsla(210, 0%, 99%, 0.8);
+  box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.2);
+  border-radius: 7px;
+  height: 100%;
+  padding: 10px 5px;
 }
 
 @media screen and (max-width: 800px) {

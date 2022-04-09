@@ -5,7 +5,7 @@
 
 body {
   margin: auto;
-  width: clamp(800px, 65%, 1200px);
+  width: clamp(800px, 70%, 1000px);
   height: clamp(666px, 100vh, 1000px);
   padding: 20px;
   display: grid;
@@ -53,7 +53,7 @@ header {
 
 @include social_links.var1(center);
 nav {
-  height: 80%;
+  height: clamp(300px, 75%, 450px);
 }
 @media screen and (max-width: 800px) {
   nav {

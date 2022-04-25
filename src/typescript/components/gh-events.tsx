@@ -7,7 +7,7 @@ const fetchData = async (): Promise<ghEventApi[]> => {
   if (temp == null || temp === "undefined" || temp == undefined) {
     // console.log("Fetching Github Events");
     // sessionStorage.setItem("gh-fetch-time", new Date().toString());
-    let res = await fetch(`https://api.github.com/users/U-C-S/events/public?per_page=5`);
+    let res = await fetch(`https://api.github.com/users/U-C-S/events/public?per_page=10`);
     return res.json();
   } else {
     // console.log("Using cached data");

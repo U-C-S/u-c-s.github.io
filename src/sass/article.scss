@@ -52,12 +52,16 @@ article {
     display: block;
     margin: 15px auto;
     width: 95%;
-    border-radius: 5px;
+    border-radius: 7px;
   }
 
   ul {
     padding-left: 20px;
     list-style-type: disc;
+  }
+
+  li {
+    padding: 3px 0;
   }
 }
 

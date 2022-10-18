@@ -7,6 +7,8 @@ interface IComment {
   body: string;
 }
 
+const IssueNum = 24; //prev 10, now changed to 24 to prevent bad response
+
 const StatusLoading = () => (
   <div id="status-loading">
     <p class="status-content">Fetching Status with GitHub API....</p>
@@ -21,7 +23,7 @@ const App = () => {
       return JSON.parse(statusStore);
     }
 
-    let res = await fetch(`https://api.github.com/repos/U-C-S/u-c-s.github.io/issues/10/comments`);
+    let res = await fetch(`https://api.github.com/repos/U-C-S/u-c-s.github.io/issues/${IssueNum}/comments`);
     return res.json();
   });
 
@@ -32,7 +34,8 @@ const App = () => {
           sessionStorage.setItem("status", JSON.stringify(commentsAPI()));
           return (
             <>
-              <p class="status-content">{status.body}</p>
+              {/* <p class="status-content">{status.body}</p> */}
+              <p>A new v3 site is currently being developed. It might take some time. Check my github profile for more info</p>
               <div class="status-meta">
                 <p>
                   <a href={status.html_url}>Dynamic_Status</a> - Updated On: {status.created_at.substring(0, 10)}

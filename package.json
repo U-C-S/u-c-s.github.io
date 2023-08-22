@@ -1,24 +1,25 @@
 {
   "name": "chanakya-website",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "type": "module",
   "private": true,
   "scripts": {
     "develop": "node bin/develop.js",
-    "build": "node bin/build.js --base-url https://chanakya3721.netlify.app",
-    "ghpages": "node bin/build.js --base-url https://chanakya-is-awesome.me/ && cp ./CNAME ./public/CNAME && gh-pages -d public"
+    "build": "node bin/build.js --base-url https://uchanakya.netlify.app",
+    "ghpages": "node bin/build.js --base-url https://u-c-s.github.io/ && cp ./CNAME ./public/CNAME && gh-pages -d public"
   },
   "dependencies": {
-    "concurrently": "^7.3.0",
-    "esbuild": "^0.15.5",
-    "esbuild-plugin-solid": "^0.4.2",
-    "sass": "^1.54.4",
-    "solid-js": "^1.4.8",
-    "typescript": "^4.7.4",
-    "zola-bin": "^0.3.5"
+    "concurrently": "^8.2.1",
+    "esbuild": "^0.19.2",
+    "esbuild-plugin-solid": "^0.5.0",
+    "sass": "^1.66.1",
+    "solid-js": "^1.7.11",
+    "zola-bin": "^0.3.7"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "typescript": "^5.1.6",
+    "@types/node": "^20.5.2",
+    "gh-pages": "^6.0.0"
   },
   "prettier": {
     "printWidth": 120

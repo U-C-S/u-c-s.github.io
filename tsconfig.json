@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
-    "module": "ESNext",
-    "target": "ES2019",
+    "module": "NodeNext",
+    "target": "ES2021",
     "noEmit": true,
     "removeComments": true,
     "strict": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "moduleResolution": "node"
+    "moduleResolution": "NodeNext",
+    "checkJs": true
   },
 
   "include": ["src/typescript/**/*"],

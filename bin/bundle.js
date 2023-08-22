@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-import { build } from "esbuild";
+import { context } from "esbuild";
 import { solidPlugin } from "esbuild-plugin-solid";
 import { readdirSync } from "fs";
 
 var IsWatch = process.argv.at(2) === "--watch";
 
 // get array of files loacted in the "./src/typescript" directory
-const rawfiles = readdirSync("./src/typescript", { withFileTypes: true });
 // All the files in the root of "./src/typescript" dir
 // are considered as main files
 let Files = [];
+const rawfiles = readdirSync("./src/typescript", { withFileTypes: true });
 
 rawfiles.forEach((i) => {
   if (i.isFile()) {
@@ -18,13 +18,13 @@ rawfiles.forEach((i) => {
   }
 });
 
-build({
+
+let esbuild = await context({
   platform: "browser",
   entryPoints: Files,
   format: "esm",
   outdir: "./static/scripts",
   target: "es2019",
-  watch: IsWatch,
   bundle: true,
   minify: !IsWatch,
   sourcemap: false,
@@ -32,3 +32,5 @@ build({
   logLevel: "info",
   plugins: [solidPlugin()],
 });
+
+esbuild.watch();

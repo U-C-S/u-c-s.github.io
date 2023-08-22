@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { context } from "esbuild";
+import { context,build } from "esbuild";
 import { solidPlugin } from "esbuild-plugin-solid";
 import { readdirSync } from "fs";
 
@@ -19,7 +19,7 @@ rawfiles.forEach((i) => {
 });
 
 
-let esbuild = await context({
+let buildConfig = {
   platform: "browser",
   entryPoints: Files,
   format: "esm",
@@ -31,6 +31,11 @@ let esbuild = await context({
   tsconfig: "./tsconfig.json",
   logLevel: "info",
   plugins: [solidPlugin()],
-});
+};
 
-esbuild.watch();
+if(IsWatch){  
+  let esbuild = await context(buildConfig);
+  esbuild.watch();
+} else {
+  build(buildConfig);
+}

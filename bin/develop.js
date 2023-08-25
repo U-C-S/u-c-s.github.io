@@ -6,8 +6,8 @@ cleanPreviousOutput();
 
 console.log("Getting the tools ready for local development...");
 let developCmds = [
-  { command: "node bin/bundle.js --watch", name: "esbuild", prefixColor: "blue" },
-  { command: "sass --watch --no-source-map src/sass:static/styles", name: "sass", prefixColor: "magenta" },
+  { command: "node bin/bundle.js --watch", name: "esbuild", prefixColor: "yellow" },
+  { command: "tailwindcss -i ./src/index.css -o ./static/index.css --watch", name: "tailwind", prefixColor: "blue" },
   { command: "sleep 3 && zola-bin serve --port 7321", name: "zola", prefixColor: "white" },
 ];
 

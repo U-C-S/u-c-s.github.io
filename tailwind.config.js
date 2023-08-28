@@ -2,8 +2,11 @@
 export default {
   content: ["./templates/**/*.html", "./src/typescript/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "cosmic-violets": "url('/assets/cosmic-violets.webp')",
+      },
+    },
   },
   plugins: [],
-}
-
+};

@@ -2,5 +2,6 @@ public
 node_modules
 static/scripts
 static/styles
+static/index.css
 
 _dump

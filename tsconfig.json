@@ -2,7 +2,7 @@
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
     "module": "NodeNext",
-    "target": "ES2021",
+    "target": "ES2024",
     "noEmit": true,
     "removeComments": true,
     "strict": true,
